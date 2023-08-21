@@ -1,0 +1,455 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Beamer Presentation
+% LaTeX Template
+% Version 1.0 (10/11/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND THEMES
+%----------------------------------------------------------------------------------------
+
+\documentclass{beamer}
+
+\mode<presentation> {
+
+% The Beamer class comes with a number of default slide themes
+% which change the colors and layouts of slides. Below this is a list
+% of all the themes, uncomment each in turn to see what they look like.
+
+%\usetheme{default}
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen}
+%\usetheme{Berkeley}
+\usetheme{Berlin}
+%\usetheme{Boadilla}
+%\usetheme{CambridgeUS}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+%\usetheme{Dresden}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+%\usetheme{Madrid}
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+%\usetheme{PaloAlto}
+%\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+%\usetheme{Warsaw}
+
+% As well as themes, the Beamer class has a number of color themes
+% for any slide theme. Uncomment each of these in turn to see how it
+% changes the colors of your current slide theme.
+
+%\usecolortheme{albatross}
+\usecolortheme{beaver}
+%\usecolortheme{beetle}
+%\usecolortheme{crane}
+%\usecolortheme{dolphin}
+%\usecolortheme{dove}
+%\usecolortheme{fly}
+%\usecolortheme{lily}
+%\usecolortheme{orchid}
+%\usecolortheme{rose}
+%\usecolortheme{seagull}
+%\usecolortheme{seahorse}
+%\usecolortheme{whale}
+%\usecolortheme{wolverine}
+
+%\setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
+%\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
+
+%\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+}
+
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+\usepackage[authoryear]{natbib}
+
+\usepackage{tikz}
+\usetikzlibrary{trees}
+
+\usetikzlibrary{shapes,decorations,arrows,calc,arrows.meta,fit,positioning}
+\tikzset{
+    -Latex,auto,node distance =1 cm and 1 cm,semithick,
+    state/.style ={ellipse, draw, minimum width = 0.7 cm},
+    point/.style = {circle, draw, inner sep=0.04cm,fill,node contents={}},
+    bidirected/.style={Latex-Latex,dashed},
+    el/.style = {inner sep=2pt, align=left, sloped}
+}
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+
+
+\title[POLS3316: Course Introduction]{POLS3316 - Statistics for Political Science \\ Course Introduction: Introductions, Course Policies, Brief Overview \\ Fall 2023} % The short title appears at the bottom of every slide, the full title is only on the title page
+
+
+
+\author{Tom Hanna, MA} % Your name
+\institute[University of Houston] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+{
+University of Houston \\ % Your institution for the title page
+\medskip
+\textit{tlhanna@uh.edu} % Your email address
+}
+\date{\today} % Date, can be changed to a custom date
+
+\begin{document}
+
+
+
+\begin{frame}
+
+\titlepage % Print the title page as the first slide
+
+\end{frame}
+
+
+
+\begin{frame}
+
+\frametitle{Overview} % Table of contents slide, comment this block out to remove it
+
+\tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
+
+\end{frame}
+
+
+
+%----------------------------------------------------------------------------------------
+
+%	PRESENTATION SLIDES
+
+%----------------------------------------------------------------------------------------
+
+\section{Welcome to Statistics for Political Science} % Sections can be created in order to organize your presentation into discrete blocks, all sections and subsections are automatically printed in the table of contents as an overview of the talk
+
+%------------------------------------------------
+
+\begin{frame}
+\frametitle{Welcome to Statistics for Political Science}
+
+\centering
+\includegraphics[width=0.7\linewidth]{Political-science-major-median-salary-over-time}
+Political science salaries by career experience (Brookings Institute)
+
+
+\end{frame}
+
+\begin{frame}
+
+\centering
+\includegraphics[width=0.7\linewidth]{xt3GlQ3UQwOfR6r4XMpy_Wages_Compared_to_other_Occupations}\\
+Political Scientists - PhD; Survey Researcher - BS/MS\\
+Both require statistics!
+
+
+\end{frame}
+
+
+\begin{frame}
+
+
+\includegraphics[width=0.7\linewidth]{Political-science-degrees-conferred-by-gender-all-levels}
+
+
+
+\end{frame}
+
+
+%------------------------------------------------
+
+\section{Introductions} % Sections can be created in order to organize your presentation into discrete blocks, all sections and subsections are automatically printed in the table of contents as an overview of the talk
+
+%------------------------------------------------
+
+
+
+\subsection{} % A subsection can be created just before a set of slides with a common theme to further break down your presentation into chunks
+
+\begin{frame}
+\frametitle{Introductions!}
+\begin{itemize}
+\item Name 
+\item Major/minor
+\item Why you're taking the class
+\item A hobby or something that interests you
+\item Note: When I call on you for the first couple of weeks, please remind me of your name
+\end{itemize}
+
+\end{frame}
+
+
+%------------------------------------------------
+
+\section{Course Policies} % Sections can be created in order to organize your presentation into discrete blocks, all sections and subsections are automatically printed in the table of contents as an overview of the talk
+
+%------------------------------------------------
+
+
+
+\subsection{Syllabus} % A subsection can be created just before a set of slides with a common theme to further break down your presentation into chunks
+
+\begin{frame}
+\begin{itemize}
+\item Course objectives
+\item Email - Courtesy!
+\item Course Policies - Professionalism!
+\item Grading - Total Points vs Required Points
+\item Problem Sets, Quizzes, Tests, Project
+\item Software and Tools
+\item Lectures and Labs
+\item Course Resources
+\end{itemize}
+\end{frame}
+
+%------------------------------------------------
+
+\section{Brief Overview} % Sections can be created in order to organize your presentation into discrete blocks, all sections and subsections are automatically printed in the table of contents as an overview of the talk
+
+%------------------------------------------------
+
+
+\begin{frame}
+\frametitle{Why do we need statistical tools?}
+\centering
+\includegraphics[width=0.5\linewidth]{image}\\
+
+{\large Better than a crystal ball for prediction!}
+
+
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Why do we need statistical tools?}
+\begin{itemize}
+\item Prediction
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Why do we need statistical tools?}
+
+
+
+
+\centering
+\includegraphics[width=0.7\linewidth]{CumulativeEmploymentGrowth-RTW2}\\
+Evaluating and formulating public policy!\\
+https://www.mackinac.org/10515
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Why do we need statistical tools?}
+\begin{itemize}
+\item Prediction
+\item Public policy
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+
+
+\centering
+\includegraphics[width=0.7\linewidth]{2013-12-daniel-nadler-nba-stats-large}\\
+Money! Hedge funds! Stocks! Business!\\
+https://www.institutionalinvestor.com/article/b14zbbks457k6t/hedge-fund-moneyball-big-data-sports-and-finance
+
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Why do we need statistical tools?}
+\begin{itemize}
+\item Prediction
+\item Public policy
+\item Business and money!
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+
+
+\centering
+\includegraphics[width=0.7\linewidth]{basebal-data-growth}
+
+What about sports?!\\
+https://www.datanami.com/2014/10/24/todays-baseball-analytics-make-moneyball-look-like-childs-play/
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Why do we need statistical tools?}
+\begin{itemize}
+\item Prediction
+\item Public policy
+\item Business and money!
+\item Sports!
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+
+
+\centering
+\includegraphics[width=0.7\linewidth]{gambling-20technicalities-2-optimized}\\
+Roulette anyone? Blackjack? Poker?
+
+
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Why do we need statistical tools?}
+\begin{itemize}
+\item Prediction
+\item Public policy
+\item Business and money!
+\item Sports!
+\item Gambling!
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+
+
+\centering
+\includegraphics[width=0.7\linewidth]{journal.pone.0249937.g001}\\
+
+RESEARCH!\\
+https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0249937
+
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Why do we need statistical tools?}
+\begin{itemize}
+\item Prediction
+\item Public policy
+\item Business and money!
+\item Sports!
+\item Gambling!
+\item Cause and effect - RESEARCH!
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Research!}
+\begin{figure}
+\centering
+\includegraphics[width=0.7\linewidth]{journal.pone.0249937.g001}
+\caption{https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0249937}
+\label{fig:journal}
+\end{figure}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{First two weeks}
+{\LARGE Tomorrow: Course Topics Intro}
+
+	\begin{itemize}
+	\item Survey and pre-quiz
+	\begin{itemize}
+	\item Extra credit
+	\item 10-15 minutes
+	\item For your benefit! 
+	\end{itemize}
+	\item Basic probability
+	\item Simple descriptive statistics
+	\item Graphical look at correlation
+	\item Graphical look at OLS regression
+	\item Role of statistics in proving causation
+	\item Your questions about issues with lab prep for Monday!
+	\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{First Two Weeks}
+{\Large Monday the 28th: R programming introduction - come prepared!}
+	\begin{itemize}
+	\item Look over https://happygitwithr.com/index.html (Parts 4, 5, 6, 7 and 12 are most important.)
+	\item Sign up for a Github account *
+	\item Sign up for a free R Studio Cloud account *
+	\item Install \& configure Git on your computer *
+	\item Install R on your computer *
+	\item Install R Studio on your computer *
+	\item Create a project in R Studio using the class Github repo *
+	\begin{itemize}
+	\item https://github.com/tomhanna-uh/pols3316-summer2022
+	\end{itemize}
+	\item * = potential EC
+	\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{First Two Weeks}
+{\Large Wednesday the 30th: NO CLASS! Work at home on:}\\
+{\Large Project, Project Data, Syllabus Quiz, and Problem Set 1}
+\begin{itemize}
+\item The Project is step-by-step
+\item Work in steps all semester
+\item You pick your data (discuss more Wednesday and Monday)
+\item Pick simple data!
+\item Produce something you can share
+\item Syllabus Quiz
+\item Problem set 1 - Sums, means, medians, modes, variance, standard deviation, questions about your project data, copy and paste R results
+\end{itemize}
+\end{frame}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{frame}
+
+\Huge{\centerline{The End}}
+
+\end{frame}
+
+
+
+%----------------------------------------------------------------------------------------
+
+
+
+\end{document} 
+
