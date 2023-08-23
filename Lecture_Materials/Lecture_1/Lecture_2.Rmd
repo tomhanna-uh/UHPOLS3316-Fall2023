@@ -1,0 +1,299 @@
+---
+title: "Lecture 2 (POLS 3316: Statistics for Political Science, Summer 2022)"
+author: "Tom Hanna"
+output: html_notebook
+---
+
+##Lecture 2
+
+### Descriptive Statistics
+
+Descriptive statistics are ways that we describe *variables* from our data. 
+
+What is a variable? In math, a variable is a symbol and placeholder for a quantity that may change, or any mathematical object (quiz question 4). In science, a variable is any factor that can be manipulated, controlled for, or measured in an experiment or observed in an observational study (quiz question 5).
+
+Descriptive statistics help us identify typical examples of the variable and summarize information about the about the variables. 
+
+*For purposes of demonstration, I'm going to start be generating a series of 1000 random numbers and put them in a "vector" in R Studio. This is something you will become familiar with later but for now, I'm just generating some numbers that are random but predictable in certain ways.*
+
+```{r}
+set.seed(143)
+my_vector <- rnorm(1000, mean=100, sd=2)  
+
+```
+
+
+#### Measure of Central Tendendy
+
+Measures of central tendency perform the first function - helping us find the "typical" examples. 
+
+The example you are most familiar with is the **mean** which is often referred to as the average.
+
+R is a great tool, it can very quickly give us the mean of very large groups of numbers like that sequence of 1000 that I created earlier.
+
+```{r}
+
+mean(my_vector)
+
+
+```
+
+What if we wanted to get the mean of a smaller group of numbers?
+
+There is a formula:
+
+equation: $mean =  sum\ of\  the\ terms / number\ of\ terms$
+
+So let's try one. Quiz question 7 - (5, 6, 7, 8, 9, 10):
+
+First we get the sum: 
+
+```{r}
+
+sum_7 <- 5 + 6 + 7 + 8 + 9 + 10
+sum_7 
+
+```
+Then we divide by the number of terms. Count them up - 5,6,7,8,9,10 - there are 6 terms.
+
+```{r}
+
+mean_7 <- sum_7 / 6
+mean_7
+
+```
+Just to doublecheck the math, I'm going to ask R to do it for me:
+
+```{r}
+
+mean(c(5,6,7,8,9,10))
+
+```
+
+The second measure of central tendency is the **median**. The median is simply the middle of the group of observations. 
+
+Question 8 asked for the median of (5, 10, 15, 20, 25).
+
+This one looks pretty simple. What is it?
+
+Let's have R check it:
+
+```{r}
+
+median(c(5, 10, 15, 20, 25))
+
+```
+
+The next measure is the **mode**. The mode is the most common value or the value that appears most often. 
+
+
+Question 9 asked for the mode of (5, 10, 15, 15, 20, 20, 20, 20, 25, 25, 30, 35)
+
+5, 10, 30, and 35 appear once
+15 and 25 appear twice
+20 appears 4 times
+
+What is the mode?
+
+R doesn't have a function for this, so you'll just have to trust your eyes at least for now.
+
+Let's look at the big group of 1000 numbers again. It would be a little harder to find the median in that group by counting. Let's compute the mean and the median.
+
+```{r}
+mean(my_vector)
+
+median(my_vector)
+
+```
+You'll notice that they are very close together. That's normal because I specified that I wanted my numbers from a normal distribution. 
+
+Question 10 asked you about the name of the normal distribution. Let's look at the shape of this group of 1000 numbers for a hint:
+
+```{r}
+
+hist(my_vector, breaks = 50)
+
+```
+
+```{r}
+
+new_vector <- rnorm(100000, mean=100, sd=2)  
+hist(new_vector, breaks = 100)
+
+```
+
+## Other descriptive statistics
+
+Minimum
+Maximum
+Range
+Quartiles - dividing into 4 equal chunks
+Percentile - dividing into 100 equal chunks
+Interquartile range - the range between the 1st and 4th quartiles
+
+## Measures of dispersion or variability
+
+The *variance* is a measure of how much each observation differs from the mean. It's essentially a way of getting something like the average distance from mean of each data point. We'll get into the nitty gritty of that on Thursday and Friday.
+
+The *standard deviation* is an important measure and it's nothing more than the square root of the variance. 
+
+Let's look at that original group of 1000 and the new group of 100,000 just to see examples:
+
+```{r}
+#This is the variance
+myvar <- var(my_vector)
+myvar
+
+#this is computing the standard deviation from the square root
+sqrt(myvar)
+
+#this is letting R compute the standard deviation
+sd(my_vector)
+```
+
+And now for the group of 100,000
+
+```{r}
+
+newvar <- var(new_vector)
+newvar
+
+sd(new_vector)
+
+```
+
+## Probabilities
+
+11. What is the probability of a fair, six-sided die landing on 3?
+
+The answer is that this is one possible outcome out of six total possible outcomes or 1 divided by 6:
+
+```{r}
+
+1 / 6
+
+```
+
+12. I throw a fair, six-sided die and it lands on 3. I throw it again. What is the probability it lands on 3 this time?
+
+The answer is that **because each roll of the dice is independent of all others* it is also 1 divided by 6:
+
+```{r}
+1/6
+```
+
+13. I flip a fair coin one time, what is the probability that the coin comes up heads?
+
+That's one posssibility out of two or 1/2.
+
+14. I flip a fair coin ten times, the probability that the coin comes up heads exactly five times is (~ means approximately). 
+
+This one is complicated and there is a formula for it, which will we go over. R can also compute it for us:
+
+```{r}
+
+#probability of exactly 5 heads out of 10 for a fair coin
+dbinom( 5, 10, 0.5 )
+
+```
+
+15. I flip a fair coin five times in a row, what is the probability that the coin comes up heads all five times?
+
+We go back to the idea that the flips are *independent* and each one has a probability of 1/2. So to get the answer we have to multiply 1/2 x 1/2 x 1/2 x 1/2 x 1/2 
+
+```{r}
+
+.5*.5*.5*.5*.5
+
+(.5)^5
+
+```
+
+16. What does OLS stand for in OLS regression?
+
+The answer is *Ordinary Least Squares* which sounds very intimidating. It sounds very intimidating, but it actually describes how we can produce the **line** that has the smallest error from the data we have available. And that is the answer to:
+
+17. What does standard OLS regression with one independent variable give us (there are a few correct answers)?
+
+It gives us a line, or more specifically an equation describing a line, that fits the data. So, let's look at an example.
+
+First, we need some data:
+
+```{r}
+data <- mtcars
+data$miles_per_gallon <- data$mpg
+data$horsepower <- data$hp
+
+```
+
+Now, I'm going to plot the data by itself:
+
+```{r}
+
+
+plot(data$horsepower,data$miles_per_gallon)
+
+```
+
+Now, I'm going to plot the regression line:
+
+```{r}
+
+plot(data$horsepower,data$miles_per_gallon)
+abline(lm(data$miles_per_gallon ~ data$horsepower))
+
+```
+
+Of course, actual regression analysis gives us more than just a line. I told you it actually gives us a formula to draw that line. More importantly, we can take the formula it gives us and apply it to new data and see if the prediction holds. When we do a regression in R, R also computes *hypothesis test* information for us to tell us whether the *correlation* is due to a real relationship or just random chance.
+
+We can briefly look at this, just to show you what it looks like:
+
+```{r}
+my_model <- lm(miles_per_gallon ~ horsepower, data = data)
+
+library(stargazer)
+stargazer(my_model, type = "text")
+
+
+
+
+```
+
+18. In a survey experiment, one group is shown a photo of a lion then asked a question. The other group is just asked the question without seeing the photo. The second group is the **control** group? 
+
+19. In a research study on the causes of war, the author claims that differences in national wealth lead to war. In this study, war is the **dependent** variable? (There are a few correct answers, you only need one.) **outcome** **target** **response** **explained** **output**
+
+20. In the same research study, national wealth is the **explanatory** or **independent** variable? (Again, there is more than one correct answer.) 
+
+30. If you don't come to class regularly, don't complete assignments regularly, don't ask for help, don't take advantage of extra credit, don't answer the professor's emails offering help, and at the end of the semester you aren't satisfied with your grade, who is to blame? 
+
+
+## Preparing for Wednesday Lab
+
+This guide is your friend:
+
+https://happygitwithr.com/index.html (Parts 4,5,6,7, 9 and 12)
+
+Do these things:
+
+1. Sign up for a Github account
+
+2. Sign up for an R Studio Cloud account
+
+3. Join the R Studio Cloud class space 
+
+https://rstudio.cloud/spaces/260761/join?access_code=mv0pyFqMtTIxD7jrgLYPFwAtf4nMlMHYVnCYT_XH
+
+4. Install & configure Git on your computer
+
+5. Install R on your computer (Install R before R Studio!)
+
+6. Install R Studio on your computer (Install R first!)
+
+7a. (Optional) Make a test repository on Github and clone it with R studio (see part9 and part 12 on Happy Git with R)
+
+7. Create a project in R Studio by cloning the class Github repository
+
+https://github.com/tomhanna-uh/pols3316-summer2022
+
+### Has anyone started on this? Are there any questions or issues so far?
