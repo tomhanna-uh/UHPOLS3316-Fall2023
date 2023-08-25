@@ -1,0 +1,84 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+## if and ifelse
+
+```{r}
+
+#create a test object - a vector
+test_vector <-  99
+# the condition is in parentheses
+# the action to take if the condition is true is in
+# curly braces
+if (test_vector > 90){print('You got an A!')}
+```
+
+What if we want multiple steps? We use ifelse
+```{r}
+#create a new test vector
+test_vector2 <- 75
+
+#the test condition is in parentheses
+#first curly braces are executed if condition is #true
+#If condition is not true, the "else" is executed
+if (test_vector2 > 90) {
+        print('You got an A!')
+}  else 
+        {print('Sorry, not an A')}
+
+
+
+```
+
+```{r}
+#the test condition is in parentheses
+#first curly braces are executed if condition is #true
+#If condition is not true, the "else" is executed
+#what if you want to check a second condition?
+# You can nest if else statements
+test_vector3 <- 59
+if (test_vector3 > 90) {
+        print('You got an A!')
+}  else 
+        {if (test_vector3 > 60) {print('You passed')} else {print('Sorry, you did not pass')}}
+
+```
+
+## Chi square
+
+#### Checking scores
+
+Use pchisq - first argument is the score, second argument is degrees of freedom
+
+So, to get the p-score for X^2 score of 4, df of 1:
+
+```{r}
+
+pchisq(4,1)
+```
+
+## Running chisquare on data
+
+
+
+```{r}
+
+#Reading in some sample data
+#Author DataFlair
+data_frame <- read.csv("https://goo.gl/j6lRXD")  #Reading CSV
+table(data_frame$treatment, data_frame$improvement)
+
+
+
+```
+
+```{r}
+
+chisq.test(data_frame$treatment,data_frame$improvement, correct = FALSE)
+```
+
+
+
+

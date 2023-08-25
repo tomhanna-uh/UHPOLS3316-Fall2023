@@ -1,0 +1,59 @@
+---
+title: 'Lecture 13: Chi Square'
+output:
+  html_document:
+    df_print: paged
+---
+
+## Hypothesis Testing: Chi-square $X^2$
+
++ Background
++ Examples
++ Practice
+
+$$\\[5in]$$
+
+## What is $X^2$ 
+
++ Frequency distribution
++ Used in hypothesis testing
++ Categorical variables
++ Ideal sample size 50- 1000
+
+                + Less than 10 very unreliable
+                
++ Two hypothesis tests
+
+                + Test of goodness of fit (1 variable)
+                + **Test of independence (2 variables)*
+                
+$$\\[5in]$$
+
+$X^2$ Test of independence
+
++ Categorical variables 
+
+        + Testing if categories are related
+        + Men/women, Republicans/Democracts, Northerners/Southerners, Black/White
+        
++ 2nd variable is the thing we look for a difference in
+
+        + Pay, attitudes toward taxes, attitudes toward military service, victimization by police
+        
+$$\\[5in]$$
+
+## $X^2$ Test
+
++  $X^2$ tests the P($\frac{(Observed - Expected)^2}{Expected}$)
++ The score is $\frac{(Observed - Expected)^2}{Expected}$) 
++ Expected = $\frac{row total x column total}{sample size}$
++ H0 (null hypothesis): in the population, the two categorical variables are independent *not related*
++ H1 (alternative/research hypothesis): in the population, the two categorical variables are dependent *related*
++ p-value is P(random effect > computed effect) *so smaller is better*
+
+## Example
+
+
+ 
+
+        

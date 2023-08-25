@@ -1,0 +1,198 @@
+---
+title: 'Lecture : Probabilities and Frequency Distributions - conclusion (POLS 3316 -
+  Statistics for Political Scientists)'
+author: "Tom Hanna"
+output:
+  html_document:
+    df_print: paged
+---
+
+### Announcements
+
++ Grading - quiz and problem sets
++ Lab changes
+
+        + More hands on
+        + More real data including yours
+        + Actually trying things *you* ask about             + This will require using the help files or searching for answers
+        + There will be more technical issues
+        + Some things may require overnight research
+        
++ 
+
+        
++ 
+
+
+
+### Probabilities and Frequence Distributions Conclusion
+
+### Other probability topics
+
+Question 14: I flip a fair coin ten times, the probability that coin comes up heads exactly five times is:
+
+**Let's look at a simpler example**
+
+Exactly 2 tails out of 3 flips:
+
+S = {TTT,TTH,THT,THH,HTT,HTH,HHT,HHH} - 8 possibilities
+Possible ways it we can get exactly two tails
+A = {TTH,THT,HTT} - 3 favorable
+P(A) = 3/8
+
+If we wanted **at least two tails**:
+B = {TTT,TTH,THT,HTT}
+P(B) = 4/8 = 1/2
+
+**For bigger numbers this is too cumbersome to do by hand**
+
+$$\\[4in]$$
+
+There are 10 flips, each with two possible outcomes. which means there are $2^{10}$ possible outcomes. The number of favorable possibilities is the *combinations* that can result in 5 heads, found with the combinations formula for $\binom{n}{r}$ or $\binom{10}{5}$
+
+
++ Permutations: Order matters
++ With repetition - number possible: $n^r$
++ Without repetition - Number possible: $\frac{n!}{(n − r)!}$
++ Combinations: Order doesn't matter
++ Number possible: $\binom{n}{r}$  = \frac{n!}{r!(n − r)!}$ 
+
+
+$$\\[4in]$$
+
+**That yields this cumbersome formula:**
+
+$\frac{10!}{(5!)^2 * 2^{10}}$
+
+This can be rewritten as this:
+
+$\frac{10*9*8*7*6*5*4*3*2*1}{(5*4*3*2*1)*(5*4*3*2*1)*2^{10}}$
+
+which simplifies to 
+
+$\frac{10*9*8*7*6}{(5*4*3*2*1)*2^{10}}$
+
+```{r}
+(10*9*8*7*6*5*4*3*2*1)/((5*4*3*2*1)^2 * 2^10)
+
+(10*9*8*7*6)/((5*4*3*2*1)*2^10)
+```
+$$\\[4in]$$
+
+ **If you see a test question on this, I would expect you to be able to:**
+ 
+ + Identify if there is a combination vs permutation
+ + Identify if it is with or without repetition
+ + Complete a very simple example using sets, i.e. exactly 2 tails out of 3 flips.
+ + Set up the problem without completing it. For example you might answer: 
+ 
+        + Narrative: The answer to this problem would be figured by dividing the combination 10 choose 5 by the number of possible outcomes, which is 2 to the tenth power
+        + Formula: $\frac{\binom{n}{r}}{2^{10}}$ 
+        + Narrative: The favorable outcomes are a combination choosing 5 from 10 and the possible outcomes are $2^10$
+        + Narrative: I would use a combination to find the favorable outcomes and use 2^10 as the total possible outcomes
+ + Solving a *permutation* question may be bonus material
+
+
+
+If you would like to have more fun with this or if you intend to take the GRE, here are some sources.
+
+[https://www.mathsisfun.com/combinatorics/combinations-permutations.html](https://www.mathsisfun.com/combinatorics/combinations-permutations.html)
+
+[https://statisticsbyjim.com/probability/permutations-probabilities/](https://statisticsbyjim.com/probability/permutations-probabilities/)
+
+[https://www.khanacademy.org/math/precalculus/x9e81a4f98389efdf:prob-comb/x9e81a4f98389efdf:prob-combinatorics-precalc/e/probability_with_perm_comb](https://www.khanacademy.org/math/precalculus/x9e81a4f98389efdf:prob-comb/x9e81a4f98389efdf:prob-combinatorics-precalc/e/probability_with_perm_comb)
+
+$$\\[4in]$$
+
+### Types of variables
+
++ Continuous - numbers with decimal places
++ Discrete - whole numbers or integers
++ Categorical - numbers just represent categories
+
+        + Ordinal - ordered highest to lowest
+        + Nominal - no particular order
+        
+
+$$\\[4in]$$
+### Correlations
+
++ What is it?
++ 1 is perfect positive correlation
+
+        + It doesn't mean you just multiply times 1 and get the other
+        + The relationship can be complex
+        + It just means there is no variation at all in the relationship
+        
++ 0 is perfectly uncorrelated
++ -1 is a perfect negative correlation
++ Many ways to figure it. Probably the most common is Pearson's Correlation Coefficient:
+
+![Pearson's Correlation Formula](pearson.jpg)
++ This is the default method when using the *cor()* function in R
+
+### Probability Distribution Functions
+
++ Two meanings of function - both apply
+
+        + Mathematical "function" - a mathematical operation or equation - *f(x)* or *g(x)*
+        + R "function" - sets of instructions - mean(x) + pnorm(x)
+        
++ Probability mass function (PMF) - discrete variables
++ Probability density function (PDF) - continuous variables
+
+        + Both have the same objective
+        + Probability a random variable is exactly equal to some specific value
+        + PDF can not give a specific value 
+        + PDF - integral over a range (calculus)
+        + R does the PDF for us - *dnorm()* for normal, *dbinom()* for binomial, *dpois()* for Poisson and 17 or so others...
+
+
+
+```{r, figures-side, fig.show="hold", out.width="50%", echo=FALSE}
+#This code is to generate the data for the two plots
+rand.norma<- rnorm(100000)
+
+# calculate CDF 
+CDF <- ecdf(rand.norma)
+
+#This code draws the two plots, first the Red Histogram then the #Cumulative Distribution plot
+#the xaxp=c(-4,4,16)  argument sets the x-axis tick marks to run from -4 to 4 and to have a total of 16 tick marks 
+
+hist(rand.norma, breaks = 200, freq = TRUE, main = "Normal Distribution \n sd = 1, 100,000 random draws", xaxp=c(-4,4,16) , xlab = 'x', col = "red")
+
+hist(rand.norma, breaks = 200, freq = FALSE, main = "Normal Distribution \n sd = 1, 100,000 random draws", xaxp=c(-4,4,16) , xlab = 'x', col = "red")
+
+```
+$$\\[4in]$$
++ Cumulative distribution function (CDF)
+
+        + Gives the probability of finding the random variable at a value less than or equal to a a specific point. 
+        + R does the CDF for us *pnorm()* for normal, *pbinom()* for binomial, *punif()* for uniform and 17 or so others.
+        
+```{r, figures-sideb, fig.show="hold", out.width="50%", echo=FALSE}
+
+#This code draws the two plots, first the Red Histogram then the #Cumulative Distribution plot
+#the xaxp=c(-4,4,16)  argument sets the x-axis tick marks to run from -4 to 4 and to have a total of 16 tick marks 
+
+hist(rand.norma, breaks = 200, freq = FALSE, main = "Normal Distribution \n sd = 1, 100,000 random draws", xaxp=c(-4,4,16) , xlab = 'x', col = "red")
+
+plot(CDF, main = "Cumulative Distribution Function \n normal dist, sd = 1, 100,000 random draws")
+
+```
+
+** Related R functions
+
++ Similar commands for other distributions than normal
++ Quantiles (percentiles, deciles, etc.) - qnorm()
+
+        + Works the opposite of pnorm() 
+        + pnorm() tells us the probability for a value
+        + qnorm() tells us the value for a probability
+        
++ Random number generation - rnorm()
+
+        + Generates *n* random numbers from a normal distribution
+        + The more we create the more that it will look like that bell curve 
+        + **The Law of Large Numbers**
+        

@@ -1,0 +1,100 @@
+---
+title: 'Final Exam Review: August 8'
+output:
+  html_document:
+    df_print: paged
+---
+
++ Remaining Project or problem set help tomorrow one-on-one
++ Final Format and instructions
++ What is on the final?
++ Key points from the semester
++ Questions? If you have questions from the midterm after seeing the answers or from Problem Set 7 - all of that will be on the final.
+
+
+$$\\[5in]$$  
+
+# Final format and instructions
+
++ In Blackboard
++ There is a worksheet required - some questions will come off it. It will be in Blackboard and on R Studio Cloud/Github in the main directory.
++ The worksheet will have the formulas on the last page
++ The exam will be released tomorrow (or possibly tonight) as soon it is programmed into Blackboard.
++ If you are confident enough to take it before the Problem Set 7 questions are released, you can take it as soon as it's released.
++ It will be open until 11:59 PM Thursday the 11th.
++ **Have reliable internet!!**
++ If you lose connection, whatever you finished will autosubmit. I will do one reset, which will probably require starting over. I will have to be at a computer before I can do the reset and you will have over 48 hours, so I may not do it immediately. Best plan **Have reliable internet!!**
++ You will have two hours once you start the exam. At the end of two hours if you aren't done, it will automatically submit what you have finished. If you are low on time, make sure you have entered any worksheet answers that you finished so you get credit.
++ Take a picture/scan of your worksheet and other work for potential partial credit. There will be a Blackboard assignment called "Final Exam Worksheet" where you can upload it. 
++ You can use notes, books, R Studio, even internet resources (https://www.statisticshowto.com/). **You may NOT work together.** 
++ With only two hours, don't rely on Google. You won't find the answers on Chegg, since I wrote them. Having a good knowledge of where things are in the course resources, labs, and lectures will do you more good. 
+
+$$\\[5in]$$  
+
+#What is on the final?
+
++ Similar to the midterm but topics from all semester
++ First section will be three worksheets plus a few topical questions related to each for approximately 38 questions total. Some sections of the worksheet will have a red number. You will fill in the answer from that section to the corresponding Blackboard question. 
+
+                + One with mean, median, mode, variance, and standard deviation
+                + One covering Chi-square testing
+                + One with a paired sample t-test
+
++ I won't give partial credit for using the wrong equation between sample and population measures this time. If I ask for population variance, you need to use that equation. If I ask for sample variance, use that equation.
++ Second section will have another 20-30 questions. Many will be multiple choice or True/False about concepts from the semester. 
++ A few questions in the second section will be simple calculations: For example, I give you the population variance and ask you to give the population standard deviation. Second example, I give you the mean of differences and standard deviation of differences and ask you to compute a paired sample t-test score. 
+
+$$\\[5in]$$  
+
+# Key points from the semester
+
+## First half 
+
++ Measures of central tendency - mean, median, mode
++ Measures of dispersion or variation - variance, standard deviation
++ Difference between sample and population
++ Probabilities and sets
++ Frequency distribution concepts
+
+## Second half 
+
++ standard errors
++ z-score
++ hypothesis testing concepts
+
+                + How to handle other hypothesis tests if given the score and critical value (F-test is likely)
+                
++ $X^2$ (Chi-square)
++ Student's t-test
++ Ordinary Least Squares (OLS) regression 
+
+                +                + What are we trying to get?
+                + What are the assumptions for simple linear regression (1 through 4)
+                + What is the R-squared or R2 measuring?
+                + Expect to analyze some results for significance and for the effects
+
++ The equation: $y = \alpha + \beta X + \epsilon$
+
+
+                + What do each of the elements represent
+                + Which is the dependent or outcome variable?
+                + Which is the independent or explanatory variable?
+                + Which is the intercept?
+                + Which is the relationship between X and Y?
+                + Which is the error term?
+                
+                
++ Multiple linear regression: $y = \alpha + \beta_1 X_1 + \beta_2 X_2 ... + \epsilon$
+
+                + What is the same?
+                + What is different?
+                + What is the additional assumption (7)
+                + With two variables, we are looking for something else besides a line
+                + Expect to see results printed and answer simple questions especially about significance.
+
+$$\\[5in]$$  
+
+# Your Questions
+
++ First, if you have questions from the midterm after seeing the answers or from Problem Set 7. All of that will be on the final.
+

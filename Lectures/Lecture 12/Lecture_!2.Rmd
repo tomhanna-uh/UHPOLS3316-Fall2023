@@ -1,0 +1,204 @@
+---
+title: "Lecture 12 July 28: Causal Inference and Hypothesis Testing"
+output: html_notebook
+---
+
+##Causal Inference and Hypothesis Testing
+
+### Where we were 
+
++ Standard Errors - distance between sample and population data
++ Z-scores - probability that sample represents the true population data
+
+                + We actually take the Z-score to a table to translate it into a probability 
+                
+### Today - Look at Z-tables / Talk about statistics and causal inference
+
+$$\\[5in]$$
+### Statistics: Cause and effect
+
++ What is a cause?
+
++ Causes are complicated!
+
++ The Fundamental Problem
+
++ Hypothesis Testing
+
++ So what does a hypothesis test tell us?
+
++ That Bayes Rule Thing Again
+
+$$\\[5in]$$
+
++ What is a cause?
+
+
+$$\\[6in]$$
+# A cause is the thing that Y wouldn't happen without
+
+# If X didn't exist, Y wouldn't happen
+
+# Except
+
+$$\\[6in]$$
+
+
++ Causes are complicated!
+
+$$\\[6in]$$
++ Causes are complicated!
+
+        + Multiple causes (non-rival)
+        + Causes may be necessary but not sufficient (conditional)
+        + Causes may be sufficient but not necessary
+        + Some causes may be neither
+        + The randomness factor (stochastic factor)
+        + Causes can have feedbacks or intermediate steps (mediating variables or effects)
+        + These are actually the "easy problems"
+        
+
+$$\\[6in]$$
+
++ The Fundamental Problem
+
+$$\\[6in]$$
+
+        + We can't observe the "what if"?
+        + The technical term for the "what if?" is the **counterfactual**
+        + We don't know if Y would have happened without X because X happened
+        + This is a huge problem for observational studies, it's still a problem for experiments
+        + Experiments can solve the problem by designing how the data is generated
+        + Observational studies ultimately rely on our treatment of the data
+
+$$\\[6in]$$
+
++ Hypothesis Testing
+
+$$\\[6in]$$
++ Hypothesis Testing
+
+        + The null hypothesis ~ any effect on Y is due to random chance
+        + Null hypothesis is *as if* X didn't exist, only random chance
+        + We want to design our hypothesis and model so that the null hypothesis ~ the counterfactual
+        + That's aspirational
+
+$$\\[6in]$$
+
+
++ So what does a hypothesis test tell us?
+
+$$\\[6in]$$
++ So what does a hypothesis test tell us?
+
+        + It may tell us "the null hypothesis is retained" - The Theory is Wrong
+
+$$\\[6in]$$
++ So what does a hypothesis test tell us?
+
+        + It may tell us "the null hypothesis is retained" - **The Theory is Wrong**
+        + What if "null is rejected?" - Does that mean **The Theory is Right**?
+
+$$\\[6in]$$
+
++ So what does a hypothesis test tell us?
+
+        + It may tell us "the null hypothesis is retained" - **The Theory is Wrong**
+        + What if "null is rejected?" - Does that mean **The Theory is Right**?
+        
+<p style="color:red;text-align:center;font-size: 60px;">NO!!!!!!</p>  
+
+
+$$\\[6in]$$
+
++ So what does a hypothesis test tell us?
+
+        + It may tell us "the null hypothesis is retained" - **The Theory is Wrong**
+        + What if "null is rejected?" - Does that mean **The Theory is Right**?
+        
+<p style="color:red;text-align:center;font-size: 20px;">NO!!!!!!</p>  
+
+<p style="color:green;text-align:center;font-size: 40px;">The evidence supports the hypothesis.</p>  
+
+<p style="color:green;text-align:center;font-size: 40px;">The evidence is consistent with the hypothesis.</p>  
+
+<p style="color:green;text-align:center;font-size: 40px;">The null hypothesis is rejected and the evidence is consistent with the hypothesized effect.</p>  
+
+<p style="color:blue;text-align:center;font-size: 40px;">What about certainty and proof?</p>  
+
+
+$$\\[6in]$$
+
+## That Bayes Rule Thing Again
+
+![Bayes Rule](bayes.png)
+
+$$\\[6in]$$
+
+# This way madness lies 
+# Everything after here is draft notes for your reading. Beware of typos, etc.
+
+Some of the things in these notes are from courses I took, some are from assorted books, some are from these two sources which are at least somewhat readable and free:
+
+[https://egap.org/resource/10-things-to-know-about-hypothesis-testing/](https://egap.org/resource/10-things-to-know-about-hypothesis-testing/)
+
+
+[https://egap.org/resource/10-things-to-know-about-causal-inference/](https://egap.org/resource/10-things-to-know-about-causal-inference/)
+
++ We need to understand what statistics can tell us about causation
++ Correlation doesn't prove causation but that doesn't mean statistics can't help
++ We need to be precise about what we mean by a cause
++ We need to understand the limits of data and statistics
++ We need to understand the capabilities of data and statistics
+
+$$\\[5in]$$
+
+### What do we know about causation?
+
+1. Correlation $\notequal$ causation. 
+
+                + Correlation does imply a relationship that may involve some cause and effect somewhere.
+                + The relationship could go either direction
+                + The relationship could involve other variables
+                + Lack of correlation doesn't necessarily mean anything -- correlation is linear and causal effects aren't always linear
+
+
+2. A cause is a claim about something that didn't happen.
+
+                + If we say X caused Y, we mean: *If X didn't happen, Y would not happen, everything else being held the same.*
+                
+3. **The Fundamental Problem of Causal Inference**
+
+                + Our proposed cause, which did happen, is the factual
+                + The thing that didn't happen is called the *counterfactual*
+                + We can't actually observe the thing that didn't happen
+                + The inability to observe the counterfactual is the fundamental problem of causal inference
+                + Experiments are a potential way around this
+
+4. Causes have to involve a possible manipulation of circumstances so that the counterfactual occurred
+
+5. Statistics looks for average causal effects, not single data points or individual effects. The average effects may conflict with anecdotal evidence. This is partially because...
+                
+6. There can be multiple causes. (Causes are non-rival.)
+
+7. Causes can be necessary, sufficient, neither, or both and still be causes. 
+
+8. It's a lot easier to measure effects than to find causes.
+
+
+### What can statistics do for us?
+
++ The Null Hypothesis and counterfactuals
+
+                + We can measure the probability an effect is due to random chance (the null hypothesis)
+                + Formal hypothesis tests give us this value, the *p-value*
+                + Theory provides an *alternative hypothesis* which we believe to be true based on the theory
+                + Well designed hypotheses can help with the unobserved counterfactual
+                + When we reject the null, we can determine that "the evidence is consistent with the alternative hypothesis" and the theory
+                
+
+                
+
+
+
+

@@ -1,0 +1,49 @@
+---
+title: 'Bonus Problem Set: Due Wednesday, July 27 2022, 11:59 PM'
+date: "Last compiled on `r format(Sys.time(), '%d %B, %Y, %H : %M : %S')`"
+output: html_notebook
+---
+
+**This bonus problem set is worth 15% of a normal problem set**
+
+**You can complete these any way you like, but be sure you complete the type of statistic asked for and consider what will help you most in practicing for the midterm**
+
+For these questions use the following data sequence of numbers:
+
+21.68727, 21.36817, 21.93509, 19.40038, 18.39717, 15.49597, 25.37059, 19.39648, 19.43999, 14.77839, 20.89514, 16.25224, 19.27104, 20.55040, 17.86700
+
+1. How many observations are there?
+
+2. What is the sum of the numbers?
+
+3. What is the mean of the numbers?
+
+4. What is the median of the numbers?
+
+5. What is the **population variance** of the numbers?
+
+6. What is the **sample variance** of the numbers?
+
+7. What is the **population standard deviation** of the numbers?
+
+8. What is the **sample standard deviation* of the numbers?
+
+Complete the same questions using these numbers:
+
+59.44320,55.73531,47.49488,67.98193,45.69111,54.39180,53.77792, 46.15730,58.2188,47.07120,39.92231,49.07843
+
+9. How many observations are there?
+
+10. What is the sum of the numbers?
+
+11. What is the mean of the numbers?
+
+12. What is the median of the numbers?
+
+13. What is the **population variance** of the numbers?
+
+14. What is the **sample variance** of the numbers?
+
+15. What is the **population standard deviation** of the numbers?
+
+16. What is the **sample standard deviation* of the numbers?

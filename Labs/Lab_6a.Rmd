@@ -1,0 +1,155 @@
+---
+title: 'Lab 6: July 20'
+author: 'POLS 3316, Summer 2022, University of Houston, Instructor: Tom Hanna'
+output:
+  html_document:
+    df_print: paged
+---
+
+##Probabilities with R frequency distribution functions
+
+In this lab, we use the distribution functions from R for calculating probabilities.
+
+1. Create a variable x with values (-2,-1,0,1,2)
+
+```{r}
+
+x <- c(-2,-1,0,1,2)
+
+```
+
+2. What is the probability of getting a value less than a given value (to the left of that value in the distribution) in a normal distribution with mean 0 and standard deviation 1? 
+
+*mean = 0, standard deviation = 1 is the default for the normal distribution functions in R*
+
+First, let's look graphically at what that means:
+
+
+```{r, figures-side, fig.show="hold", out.width="50%", echo=FALSE}
+#This code is to generate the data for the two plots
+rand.norma<- rnorm(100000)
+
+# calculate CDF 
+CDF <- ecdf(rand.norma)
+
+#This code draws the two plots, first the Red Histogram then the #Cumulative Distribution plot
+#the xaxp=c(-4,4,16)  argument sets the x-axis tick marks to run from -4 to 4 and to have a total of 16 tick marks 
+
+hist(rand.norma, breaks = 200, freq = TRUE, main = "Normal Distribution \n sd = 1, 100,000 random draws", xaxp=c(-4,4,16) , xlab = 'x', col = "red")
+
+plot(CDF, main = "Cumulative Distribution Function \n normal dist, sd = 1, 100,000 random draws")
+
+```
+
+**What would we expect with each of those values?**
+
+$$\\[4in]$$
+## Example with minus -2: 
+
+```{r}
+#pnorm gives the probability to the left of (x)
+pnorm(-2)
+
+```
+3. Create a vector that contains the probabilities for all values of x and return the vector.
+
+```{r}
+
+pnorm_x <- pnorm(x)
+pnorm_x
+
+```
+
+4. Now create a variable “y” with values: (0,1,2,5,8,10,15,20)
+
+```{r}
+
+y <- c(0,1,2,5,8,10,15,20)
+
+```
+
+
+5. Using a binomial distribution, calculate the value of the cumulative distribution function at a given value of y. Example: 0
+
+```{r}
+
+pbinom(0,size=20,prob=.2)
+
+```
+
+6. Now create a vector with the binomial probabilities of all y values. 
+
+```{r}
+
+pbin_y <- pbinom(y,size=20,prob=.2)
+
+```
+
+7. Repeat Question 6 but using the Poisson and Uniform Distributions - commands are *ppois()* and *puni* - create vectors named vector_y_pois and vector_y_uni
+
+```{r}
+
+
+
+```
+
+## Calculating probabilities with the functions: 
+
+8. Probability that a normal random variable with mean 22 and variance 25 lies between 16.2 and 27.5. 
+
+First, to make this clearer, I'm going to plot this distribution function by simulating it with 100000 randomly generated numbers:
+
+
+
+```{r}
+#First, we need the standard deviation
+sqrt(25)
+
+#we use the pnorm function - the probability distribution function #for the normal distribution
+#The first argument is the vector (or scalar) we want to compute
+#The second argument is the mean of the distribution (22)
+#The third argument is the standard deviation 
+# First, I am going to compute the values at each point and assign to vectors
+point_1 <- pnorm(27.5,22,sd=5)
+point_2 <- pnorm(16.2,22,sd=5)
+
+#We subtract one result from the other
+answer8 <- point_1 - point_2
+answer8
+
+#It is possible to just subtract one function from the other
+answer_8a <- pnorm(27.5,22,sd=5) - pnorm(16.2,22,sd=5)
+answer_8a
+
+```
+9. Probability that a normal random variable with mean 22 and variance 25  is greater than 29 
+
+```{r}
+#We use the same function for a value of 29
+#and subtract from 1
+
+1 - pnorm(29,22,sd=5)
+
+```
+
+10. If we wanted to know the probability for **less than** 17 instead of greater than:
+
+```{r}
+
+pnorm(17,22,sd=5)
+
+```
+
+11. And if we wanted to know the probability that it was less than 15 or greater than 25 (mutually exclusive possibilities):
+
+
+```{r}
+#The parentheses around the two parts aren't strictly necessary
+#I just wanted to separate the two probabilities
+(pnorm(15,22,sd=5)) +  (1-pnorm(25,22,sd=5))
+
+```
+
+
+
+

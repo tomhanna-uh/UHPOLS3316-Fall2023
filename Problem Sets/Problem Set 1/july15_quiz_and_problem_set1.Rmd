@@ -1,0 +1,285 @@
+---
+title: 'July 15 Quiz: POLS 3316'
+output:
+  html_document:
+    df_print: paged
+---
+
+## Quiz 2 and Problem Set 1 combined
+
+### Due 11:59 PM July 16
+
+## Part 1 - Complete before leaving class Friday
+
+**Run code in R Studio or R Studio Cloud. Download the finished HTML or PDF file and upload to Blackboard by the due date for full credit**
+
+**The areas with ``` followed by {r} and ending with ``` are code chunks. The Run dropdown arrow in the upper right of this box give you options for running the code. Run *Current Chunk* runs just the piece you are working on. After you have finished, you can *Run all* then save the result. Where you see Preview (above just left of center) there is a dropdown arrow. If you select "Knit to HTML" or "Knit to PDF", you can produce a copy that can be downloaded and submitted in Blackboard.**
+
+**IF all else fails, screenshot your work and submit that in Blackbaord.**
+
+For more help with this RMarkdown notebook here are some resources:
+
+Cheatsheet - https://rmarkdown.rstudio.com/lesson-15.HTML
+
+Code Chunks - https://rmarkdown.rstudio.com/lesson-3.html
+
+
+1. a. (bonus) Create a vector named *my_vector* containing the sequence (1,2,3,4,5). Find the sum using the vector. 
+
+
+```{r}
+#use the assignment operator <- to assign the value
+#use the c binding method - c() - to create the sequence
+my_vector <- c(1,2,3,4,5)
+
+
+```
+
+1. Write the code to create an object named *object_sum* whose value is the sum of the sequence of numbers (1,2,3,4,5) from problem 1 and then return the value of that object to the console. (*Hint: you'll use the assignment operator to assign an operation on the right side to object_sum on the left side. Hint2: You can type in a math operation or you can use your code from question 1. Hint 3: To return the value, I've already written the code, all you have to do is uncomment it.*)
+
+```{r}
+
+#create it with a math operation
+object_sum <- 1 + 2 + 3 + 4 + 5
+
+#second option
+
+#create it using the sum() function on my_vector object
+object_sum2 <- sum(my_vector)
+
+```
+
+2. What is the sum of the sequence of numbers (1,2,3,4,5)? (You can code in R for practice by pressing CTRL-ALT-I to create a code "chunk" in the answer spot, or you can add the answer and type it.)
+
+Answer: 15
+
+3. How many observations (n) are in the sequence (1,2,3,4,5)?
+
+Answer: 5 **You can either count them, or look next to my_vector where is shows [1:5] indicating that it is a sequence of 5 values**
+
+3. a. Write simple code to create an object called *object_n* and assign this number to it. (*Hint: if you use more than the object name, the assignment operator, and a single digit number you are working too hard!*)
+
+```{r}
+
+#This createst the object
+object_n <- 5
+
+#This prints the object to the screen to verify it
+
+object_n
+
+```
+
+4. Write the code to create a new object named *object_mean* whose value is the mean of the above values using *object_sum* and the number of observations *object_n*? (Hint: You'll use the assignment operator with the *object_mean* on the left side and a math operation using the other objects on the right side.)
+
+```{r}
+
+#this creates the object
+object_mean <- object_sum / object_n
+
+#this returns the object as output to the screen (prints, returns, #echoes are various ways of saying this)
+object_mean
+
+```
+
+
+5. Get help with the *mean()* function in R in the next code chunk. If you need help for problem 6, you can type the same thing in the Console (bottom left): 
+
+```{r}
+
+#To get help with a function, you can use ?
+#For some non-base functions, you may need to use ??
+
+?mean
+
+
+
+```
+
+6. Now write the code to find the mean of the above values using the *mean()* function in R? (*Hint: If you did the bonus question, 1a it will save you time here*)
+
+
+```{r}
+
+#To just print the mean to the screen
+
+mean(my_vector)
+
+
+```
+
+7. Write the code to find the sample variance of the above observations using the objects you created (*object_n, object_mean, object_sum*) and the sequence of values? (*Hint: Creating an object with the sample variance will help with question 8 but remember to return the object's value if you do.*)
+
+**In the answer, I do this two ways and use the R function to check, if it's right all three values should agree**
+
+
+```{r}
+
+
+#code to do this
+my_sample_variance <- sum((my_vector - object_mean)^2)/(object_n -1)
+my_sample_variance
+
+#alternate method
+
+msv2 <- ((1 - object_mean)^2 + (2 - object_mean)^2 + (3 - object_mean)^2 + (4 - object_mean)^2 + (5 - object_mean)^2)/(object_n - 1)
+msv2
+
+var(my_vector)
+
+```
+
+8. Write code to find the standard deviation? 
+
+**There are two simple ways to do this:**
+
+```{r}
+
+my_sd <- sqrt(my_sample_variance)
+my_sd
+
+my_sd2 <- sd(my_vector)
+my_sd2
+
+```
+
+9. What is the median of sequence of values from question 1. 
+
+**with 5 numbers, just counting to the middle number is easy and you can do that to check. It's also an acceptable answer. Here is the R code:**
+
+```{r}
+
+median(my_vector)
+
+```
+
+10. What is the mode of  0, 1, 1, 2, 3, 5, 8, 13, 21, 34. 
+
+Answer: 1 **All that you need to do is count. This will be on the midterm and final and should be an easy point!**
+
+11. What is your favorite food?  
+
+Answer: any answer
+
+12. What is your Github username?  
+
+Answer: tomhanna-uh is mine
+
+13. What is the name of your project data set? 
+
+Answer: If you haven't picked, do so soon!
+
+14. What is the source of your data set?  
+
+Answer: varies - Kaggle, Dataverse, government agencies are good sources. Built in R Datasets are acceptable.
+
+15. What would you like to learn from the data set in one or two sentences? (How to use data/R studio/statistitcs is an acceptable answer, but if you want to know more I can help you.)
+
+Answer: Varies. Start thinking about that compelling answer for the first paragraph of the project - why is this data interesting? What can we learn from it?
+
+16. (Optional) How many variables does your data have? How many observations does your data have? 
+
+Answer: Varies by dataset. 
+
+17. (Optional) Does your data have observations across multiple time periods?
+
+Answer: Varies by dataset. 
+
+### Part 2
+
+*For the remaining problems, you can use math operations or R functions. You can use the methods above (creating objects, etc.) or you can just run the functions on the raw numbers. *
+
+18. What is the sum of the sequence (5,10,15,20,25,30,35,40)
+
+```{r}
+
+vector_2 <- c(5,10,15,20,25,30,35,40)
+sum_vector_2 <- sum(vector_2)
+sum_vector_2
+
+```
+
+19. How many observations (n) are in the sequence in question 18?
+
+Answer: 8
+
+20. What is the mean of the sequence in question 18?
+
+```{r}
+
+n_vector_2 <- 8
+mean_vector_2 <- sum_vector_2 / n_vector_2
+mean_vector_2
+
+```
+
+21. What is the sample variance of the sequence in question 18?
+
+```{r}
+
+#create an object with the variance
+vector_2_variance <- sum((vector_2 - mean_vector_2)^2)/(n_vector_2 - 1)
+#return the object to the screen
+vector_2_variance
+
+#check with the R function
+var(vector_2)
+
+```
+
+22. What is the sample standard deviation of the sequence in question 18?
+
+```{r}
+
+#use the square root of the sample variance
+vector_2_sd <- sqrt(vector_2_variance)
+vector_2_sd
+
+#check with the R functino
+sd(vector_2)
+```
+
+23. What is the median of the sequence in question 18?
+
+**Since it is an even number, it is halfway between the two middle numbers - 20 and 25. You can either do the math (20 + 25)/2 to find the midpoint or use the R function. If this happens on a test, you'll need to do the math.**
+
+```{r}
+median(vector_2)
+```
+
+
+24. What is the difference between a sample variance and a population variance? (One or two sentences.)
+
+The population variance is the number we get when we have data for every occurrence. The sample variance is what we get when we only have data for a subset of the population, a sample of the population. 
+
+25. What is the sum of the sequence (3,7,5,5,6,7,7,9)
+
+```{r}
+#create a vector of the sequence
+my_seq <- c(3,7,5,5,6,7,7,9)
+#use the sum function on the vector to create a new vector with #the answer
+sum_my_seq <- sum(my_seq)
+#return the new vector with the answer
+sum_my_seq
+
+#Option 2
+3 + 7 + 5 +5 + 6 + 7 + 7 + 9
+
+
+```
+
+26. What is the mode of the sequence? 7 
+
+27. How many observations (n) are in the sequence? 8
+
+28. What is the mean of the sequence?
+
+```{r}
+
+49/8
+
+mean(c(3,7,5,5,6,7,7,9))
+
+mean(my_seq)
+
+```

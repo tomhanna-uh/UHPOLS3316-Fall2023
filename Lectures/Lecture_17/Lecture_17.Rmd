@@ -1,0 +1,113 @@
+---
+title: "Lecture 17: Regression Continued"
+output: html_notebook
+---
+
+#Disregard the John Snow question on the practice. 
+The data won't work without doing some transformation that we haven't discussed. 
+
+# Extra credit:
+
++ A graduate student and faculty member in political science are doing a survey experiment. You can get extra credit equal to 1/2 point on your final grade if you take the survey and provide the information so they can report to me. (The survey results are separated out and kept anonymous.)
++ Deadline is midnight Saturday.
++ I have emailed this to everyone also.
++ [survey](https://sewg.az1.qualtrics.com/jfe/form/SV_3V1S2RkXOf60rKm)
+
+# Regression (Part 2)
+
++ Review
++ More on some terms that have been used occasionally: fit, fitted, predicted, residual, predictors, estimates (plus estimator and estimand)
++ Regression with two or more Xs: multiple linear regression
+
++ Review
+
+<p style="color:red;text-align:center;font-size: 40px;">$y = \alpha + \beta X + \epsilon$</p>  
+
++ Assumptions
+
+                + Linearity
+                + Normality
+                + Independence
+                + Homoskedasticity
+                + 7. No perfect multicollinearity
+                
++ The process of *least squared* residuals
+
+                + Similar to the process of finding variance by measuring squared distances to the mean
+                + This measures squared distances to the line given by the equation
+                + The method aims to minimize the sum of the squared distances - the sum of squared residuals
+
+
+$$\\[5in]$$  
+
++ New terms (new definitions)
+
+
++ fit
++ fitted
++ predicted 
++ predictors
++ estimates (plus estimator and estimand)
+
++ residual -  the vertical distance between the observed and the estimated (fitted, predicted) using estimated parameters.
+
+
+
+
+
++ Multiple Linear Regression
+
++ During the lecture on causation, I said that causes aren't simple - there are often multiple causes
++ So how do we analyze 2 (or 3 or 20) explanatory (X) variables
+
+
+With OLS regression.
+
+When we add a second X, we add a new axis so now we don't have a line, we have the 3d equivalent::
+
+$$\\[5in]$$  
+
+![Multiple Regression plane](mrplane.png)
+
+This is from one of the two best machine learning books out there and one that is available free from the authors:
+
+[Introduction to Statistical Learning with Applications in R](https://www.statlearning.com/)
+
+
+While it gets harder to graphically represent, from a practical perspective adding variables is just adding more elements to the equation:
+
+<p style="color:red;text-align:center;font-size: 40px;">$y = \alpha + \beta X + \epsilon$</p>  
+
+<p style="color:blue;text-align:center;font-size: 40px;">BECOMES</p>  
+
+<p style="color:red;text-align:center;font-size: 40px;">$y = \alpha + \beta_1 X_1 + \beta_2 X_2 ... + \epsilon$</p>  
+
+for as many Xes as we need.
+
+$$\\[5in]$$  
+
+There is one big complication we have to avoid with multiple Xes: 
+
+Multicollinearity
+
+Assumption #7 was "No perfect multicollinearity."
+
+What is multicollinearity?
+
+If two Xes have a linear relationship and they both have a linear relationship with Y, the relationships are co-linear.
+
+Multicollinearity just refers to any situation of two or more X variables with a relationship to Y and to each other. Perfect multicollinearity refers to the situation where two (or more) Xes have an exact linear relationship. 
+
+For example, if:
+
+$X_1 = \alpha_2 + \beta_2 X_2 + \epsilon$
+
+then we'd have a problem finding:
+
+$y = \alpha + \beta_1 X_1 + \beta_2 X_2 + \epsilon$ 
+
+Imagine a worst case where the two Xes are actually equal?
+
+
+
+

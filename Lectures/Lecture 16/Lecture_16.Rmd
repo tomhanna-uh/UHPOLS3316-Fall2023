@@ -1,0 +1,225 @@
+---
+title: 'Lecture 16: Introduction to Ordinary Least Squares Regression'
+output:
+  html_document:
+    df_print: paged
+---
+
+# Linear Regression - Ordinary Least Squares Regression
+
+<p style="color:red;text-align:center;font-size: 40px;">$y = \alpha + \beta X + \epsilon$</p>  
+
++ What is the purpose of regression?
++ What is required to do OLS?
++ How does OLS work?
+
+$$\\[5in]$$    
+
+## What is the purpose of regression?
+
+<p style="color:red;text-align:center;font-size: 40px;">$y = \alpha + \beta X + \epsilon$</p>  
+
++ To mathematically establish the relationship between our X and Y variables.
+
+$$\\[5in]$$  
+
+## What is the purpose of regression?
+
+
+<p style="color:red;text-align:center;font-size: 40px;">$y = \alpha + \beta X + \epsilon$</p>  
+
+
++ To mathematically establish the relationship between our X and Y variables.
++ To draw a line.
+
+```{r, echo = FALSE}
+
+my_data <- data.frame(USArrests)
+
+
+library(ggplot2)
+
+#create scatterplot with fitted regression line
+ggplot(my_data, aes(UrbanPop, Murder)) + 
+  geom_point() +
+  stat_smooth(method = "lm")
+
+```
+
+
+
+$$\\[5in]$$  
+
+
+## What is the purpose of regression?
+
+<p style="color:red;text-align:center;font-size: 40px;">$y = \alpha + \beta X + \epsilon$</p>  
+
++ To mathematically establish the relationship between our X and Y variables.
++ To draw a line.
++ To reveal our expectation of Y given X
+
+
+$y = \alpha + \beta X + \epsilon$ is our abstract model
+
+Technically, regression gives us:
+
+$E[y] = \alpha + \beta X + \epsilon$ 
+
+where E[y] is our expectation of y given X. 
+
+
+$$\\[5in]$$  
+
+
+## What is required to do OLS?
+
+<p style="color:red;text-align:center;font-size: 40px;">$y = \alpha + \beta X + \epsilon$</p>  
+
+### The Four (five, seven?) assumptions of linear regression
+
+1. Linearity
+2. Normality
+3. Independence
+4. Homoskedasticity
+
+Two are arguably consequences of the others
+
+5. Mean error is zero
+6. Error term observations are independent
+
+The last doesn't matter for single X variable
+
+7. No perfect multicollinearity
+
+
+$$\\[5in]$$  
+
+## What is required to do OLS?
+
+<p style="color:red;text-align:center;font-size: 40px;">$y = \alpha + \beta X + \epsilon$</p>  
+
+1. Linearity - X and Y have a linear relationship. 
+
+$$\\[5in]$$  
+
+## What is required to do OLS?
+
+### The Assumptions of Linear Regression
+
+<p style="color:red;text-align:center;font-size: 40px;">$y = \alpha + \beta X + \epsilon$</p>  
+
+1. Linearity - X and Y have a linear relationship. 
+2. Normality - For any value of X, Y is normally distributed.
+                
+                + We're in a random world
+                + So, X won't predict Y with precision
+                + X should predict Y according to a random, normal distribution
+
+
+$$\\[5in]$$  
+### The Assumptions of Linear Regression
+
+<p style="color:red;text-align:center;font-size: 40px;">$y = \alpha + \beta X + \epsilon$</p>  
+
+1. Linearity - X and Y have a linear relationship. 
+2. Normality - For any value of X, Y is normally distributed.
+3. Independence - The observations are independent of each other. 
+
+
+$$\\[5in]$$  
+
+### The Assumptions of Linear Regression
+
+<p style="color:red;text-align:center;font-size: 40px;">$y = \alpha + \beta X + \epsilon$</p>  
+
+1. Linearity - X and Y have a linear relationship. 
+2. Normality - errors are normally distributed.
+3. Independence - The observations are independent of each other. 
+4. Homoskedasticity - The variance of the residual ($\epsilon$) is constant. 
+                
+                + The error term is the same for any value of X as any other
+                + 2 told us the errors are normally distributed. The variance of that distribution is independent of the value of X. 
+                + The opposite of homoskedasticity is heteroskedasticity and it is bad
+                
+
+$$\\[5in]$$  
+
+
+
+### Assumptions of Linear Regression
+
+<p style="color:red;text-align:center;font-size: 40px;">$y = \alpha + \beta X + \epsilon$</p>  
+
+1. Linearity - X and Y have a linear relationship. 
+2. Normality - errors are normally distributed.
+3. Independence - The observations are independent of each other. 
+4. Homoskedasticity - The variance of the residual ($\epsilon$) is constant. 
+
+## You may hear about the Gaussian assumptions of OLS
+
++ Gaussian is another word for the normal distribution
++ The normality assumption and homoskedasticity assumption aren't necessary to fit a line
++ The normality assumption **is necessary** to prove that the OLS method is the most efficient, unbiased estimator of the line 
++ This has been mathematically proven as well as confirmed by simulation
+                
+
+$$\\[5in]$$  
+
+What if the assumptions are violated?
+
+Linearity - we can't draw a line without doing other things. 
+Independence - Have to account for whatever is causing the lack of independence. 
+Homoskedasticity - The precision of the estimates decreases. 
+Normality - The statistical tests are called into question. 
+
+These are all fixable in many cases, some fairly simply. 
+
+## How does OLS work?
+
+<p style="color:red;text-align:center;font-size: 40px;">$y = \alpha + \beta X + \epsilon$</p>  
+
+### Ordinary Least Squares Regression
+
++ This is another case of squared differences:
+        
+        + We did squared differences from the mean to get variance 
+        + We used squared differences in the $X^2$ test
+        
++ The differences in this case are the distance between the actual data points and the predicted location of Y based on X. 
+
++ OLS is the method that minimizes the sum of the squared distances - the method of *least squares*
+
++ There are formulas to find it by hand:
+
+
+<p style="color:red;text-align:center;font-size: 80px;">DON'T PANIC!</p>  
+
+$$\\[5in]$$  
+
+
+![Regression formula](regression-formula.png)
+
+m is the formula to find the intercept
+b is the formula to find the slope
+
+$$\\[5in]$$  
+
+<p style="color:red;text-align:center;font-size: 80px;">DON'T PANIC!</p>  
+
+There is a "simpler" way to find a regression line that uses the correlation coefficient. But if you had to find the correlation coefficient by hand, you'd have to use this formula:
+
+![correlation coefficient formula](correlation-coefficient.png)
+
+$$\\[5in]$$  
+
+<p style="color:red;text-align:center;font-size: 80px;">DON'T PANIC!</p>  
+
+I'm not asking you do any of that. 
+
+It is worth looking at the formulas all together to see some of the relationship:
+
+![Regression formula](regression-formula.png)
+
+![correlation coefficient formula](correlation-coefficient.png)
+

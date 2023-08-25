@@ -1,0 +1,100 @@
+---
+title: 'Problem Set 2: Due Wednesday July 20, 2022, 11:59 PM'
+date: "Last compiled on `r format(Sys.time(), '%d %B, %Y, %H : %M : %S')`"
+output:
+  html_document:
+    df_print: paged
+---
+
+## Problem Set 2
+
+### Remember to "knit" your final work. It is a good idea to export a copy to your local computer. 
+
+*Code is not required, unless it is convenient for you to calculate answers. You can type answers directly.*
+
+1. In R, if I want to assign the series of values 1,2,3,4,5 to a vector or to perform a function such as *mean()* on it, I would enclose it in parentheses with something in front. Would it be: _______
+
+        - a. function(1,2,3,4,5)
+        - b. makethis(1,2,3,4,5)
+        - c. c(1,2,3,4,5)
+        - d. wrap(1,2,3,4,5)
+        
+2. A __________ is a matrix of dimension 1 x 1.
+
+3. In R, if I have a vector x = c(5,10,15,20) and a scalar z = (5), what would the following code produce:
+        x * z
+        
+        - a. 250
+        - b. 100
+        - c. 5,10,15,20
+        - d. 25,50,75,100
+        - e. size mismatch error
+
+4. The ___________ measures the average squared distance of the data points from the mean. The _________ is the square root of this.
+
+**Please compute these using a calculator or math functions in R and using the population statistic method used in class (divide by n). Remember that the var() and sd() functions will give the slightly different sample statistics.**
+
+For the following problems, use these data points:
+
+(0.87,-6.92,-0.49,8.17,8.33,11.29,-4.85)
+
+5. Find the sum
+```{r}
+0.87 -6.92 -0.49 + 8.17 + 8.33 + 11.29 -4.85
+
+xvector <- c(0.87,-6.92,-0.49,8.17,8.33,11.29,-4.85)
+
+sum(c(0.87,-6.92,-0.49,8.17,8.33,11.29,-4.85))
+```
+
+
+6. How many observations are there? 
+7
+7. What is the mean?
+```{r}
+16.4 / 7
+
+xmean <- mean(c(0.87,-6.92,-0.49,8.17,8.33,11.29,-4.85))
+```
+
+8. What is the variance?
+
+
+
+```{r}
+
+xsquares <- sum((xvector-xmean)^2)
+xsquares
+
+xsquares/7
+
+sqrt(42.51213)
+
+
+```
+
+
+
+9. What is the standard deviation?
+
+For the following problems, use these data points:
+
+(-2,-3,15,0,3)
+
+10. Find the sum
+11. How many observations are there?
+12. What is the mean?
+13. What is the median? (Note: Put them in order first!)
+14. What is the variance?
+
+Here is a sample code chunk for your use:
+
+```{r}
+
+```
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.

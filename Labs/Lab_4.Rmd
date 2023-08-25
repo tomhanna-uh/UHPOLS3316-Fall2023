@@ -1,0 +1,6 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+Lab 4 was combined with Lecture 5. All R code materials are in lecture.

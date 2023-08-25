@@ -1,0 +1,228 @@
+---
+title: "R Notebook"
+output:
+  html_document:
+    df_print: paged
+---
+
+## paired sample t-test
+
+Second Example Data:
+
+
+Group 1: (12.2, 14.6, 13.4, 11.2, 12.7, 10.4, 15.8, 13.9, 9.5, 14.2)
+Group 2: (13.5, 15.2, 13.6, 12.8, 13.7, 11.3, 16.5, 13.4, 8.7, 14.6)
+
+## Loading the data as vectors
+                
+```{r}
+Group1 <- c(12.2, 14.6, 13.4, 11.2, 12.7, 10.4, 15.8, 13.9, 9.5, 14.2)
+Group2 <- c(13.5, 15.2, 13.6, 12.8, 13.7, 11.3, 16.5, 13.4, 8.7, 14.6)
+
+
+```
+ 
+#combining the vectors into a data frame
+ 
+```{r}
+
+data <- data.frame(Group1,Group2)
+
+head(data)
+```
+            
+```{r}
+summary(data)
+```
+
+Work it out step by step.
+
+First, create a variable with the differences.
+          
+```{r}
+
+data$difference <- data$Group1 - data$Group2
+
+summary(data$difference)
+
+```
+         
+Get the mean and standard deviation of the differences and assign to objects:
+
+```{r}
+n <- length(data$Group1)
+
+mean_diff <- mean(data$difference)
+mean_diff
+
+sd_diff <- sd(data$difference)
+sd_diff
+```
+
+Fill in the formula:
+
+```{r}
+
+mean_diff/(sd_diff/sqrt(n))
+
+
+```
+
+To find the critical value using R
+qt(p/2, df, lower.tail=FALSE)
+
+where:
+
+p: The significance level to use (/2 since it is a two tailed test)
+df: The degrees of freedom
+lower.tail: If TRUE, the probability to the left of p in the t distribution is returned. If FALSE, the probability to the right is returned. Default is TRUE.
+
+```{r}
+
+qt(.05/2, 9, lower.tail=FALSE)
+
+```
+
+More on reading t-tables plus 1- and 2- tailed tables here:
+
+[https://www.statisticshowto.com/tables/t-distribution-table/](https://www.statisticshowto.com/tables/t-distribution-table/)
+
+Or we can use the R function
+
+```{r}
+
+#Vectors go in x,y
+#this is a paired test, so paired = TRUE
+test1 <- t.test(Group1,Group2, paired = TRUE)
+test1
+
+```
+
+## Simulations in R
+
+### Why do simulations in R?
+
++ The real world is random (stochastic)
++ But we know data often falls within regular distributions (normal, binomial, Poisson, uniform, etc.)
++ R can generate random samples drawn from known distributions
+to help us model the real world
+
+### Where do we start?
+
+First, for most simulations, we use the *set.seed()* function in R to choose our random seed:
+
+```{r}
+#Set seed assures that our random outcome will be the same if we repeat the trial
+set.seed(2)
+
+```
+
+This actually takes the randomness out to an extent - it means we pick a specific random outcome that will be the same as long as we set the same seed. 
+
+Next, we determine what we want to simulate.
+
+We can simulate 25 random observations from a uniform distribution with a range from 0 to 10 as follows:
+
+```{r}
+
+#runif is a random number from a uniform distribution
+#The first argument (25) is the number of observations we want to
+#generate. Min and max set minimum and maximum values for the #range to be generated
+runif(25,min=0,max=10)
+
+```
+
+We can also generate round numbers:
+
+```{r}
+#using the tidyverse - dplyr
+#
+library(dplyr)
+
+#round with digits = 0 gives integers
+runif(25,min=0,max=10) %>% 
+  round(.,digits = 0)
+
+#or using base r
+#round with digits = 2 yields 2 decimal places
+round(runif(25,min=0,max=10), digits = 2)
+
+```
+
+So, far we've just created bunches of numbers on the screen. We actually need them assigned as objects. Here, we'll create vectors of equal length using random numbers from several distributions:
+
+```{r}
+#25 random numbers from 0 to 10, with 2 digits, drawn from a uniform distribution
+vector_a <- round(runif(25,min=0,max=10), digits = 2)
+
+#25 random numbers drawn from a normal distribution, mean =5 , #standard deviation = 2
+vector_b <- rnorm(25, mean = 5, sd = 2)
+
+#25 random numbers drawn from a poisson distribution with a lambda
+#(mean and variance) equal to 5
+vector_c <- rpois(25, lambda = 5)
+
+```
+
+We can also use the sample function:
+
+```{r}
+
+#We are selecting randomly from a sequence (seq) from 1 to 10
+#25 times, with replacement
+vector_d <- sample(seq(1,10), 25, replace = TRUE)
+
+
+```
+
+We can use sample to draw randomly from a vector or dataframe, which can be really useful in simulating with real data and we can mix it up by using unequal probabilities for the draws:
+
+```{r}
+
+sample(vector_b, 25, replace = TRUE, prob =c(0.1,0.25,0.4,0.25,0.1,0.25,0.4,0.25,0.1,0.1,0.25,0.4,0.25,0.4,0.25,0.1,0.25,0.4,0.25,0.1,0.1,0.25,0.4,0.25,0.25))
+```
+
+With a dataframe, we can use the row and column indexes to randomly select. For example, we can randomly select 10 of the 50 states from the USArrests dataset:
+
+```{r}
+
+# step 1: create an index vector for the elements/rows 
+index <- seq_len(nrow(USArrests))
+ 
+# step 2: sample the index vector
+set.seed(12)
+#to obtain a random sample of 10
+sample_index <- sample(index,10)
+# step 3: to show the sampled elements/rows 
+USArrests[sample_index,]
+
+```
+
+A common example is to simulate die rolls. Here we use a simulation to check the probability of rolling an 8:
+
+```{r}
+#setting a seed 
+set.seed(75)
+
+#creating a vector with the possible die rolls
+die <- 1:6
+
+# sample 10000 times with replacements for dice 1
+roll1 <- sample(die,10000,replace = TRUE,prob=NULL)
+
+
+# sample 10000 times with replacements for dice 2
+roll2 <-  sample(die,10000,replace=TRUE,prob = NULL)
+
+
+# the combined value of roll1 and roll2
+outcomes = roll1 + roll2
+
+# the probability of getting a 8 (actually the proportion of the outcomes that are 8)
+mean(outcomes == 8)
+
+```
+
+## Aside from random number generation
+
+Aside from just randomly generating numbers and randomly drawing variables, we can use the other R functions including loops (and the *apply* functions), conditional statements (*if* and *ifelse*) to simulate different scenarios with data. 

@@ -1,0 +1,48 @@
+---
+title: 'Problem Set 4: POLS 3316'
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+---
+
+1. What rule helps us tie the results of a large number of trials to the normal distribution?
+ 
+    + a. The Central Limit Theorem
+    +  b. The 68-95-99.7 rule
+    +  c. The Pythagorean Theorem
+    +  d. The Law of Large Numbers
+  
+2. What helps us find probabilities in a normal distribution based ons standard deviations?
+  
+    + a. The Standard Deviation Rule    
+    +  b. Standard Errors
+    +  c. The 68-95-99.7 Rules
+    +  d. The Law of Large Numbers
+  
+3. The mean is the sum of the observations divided by the ________ of observations.
+
+4. The standard deviation is the ___________ of the variance.
+
+5. The variance is the average squared distance to the ______.
+
+ 6. Find the correlation of your X and Y project variables. (This was done in Lab 7, including demonstration of two possible errors. If you have missing data points, NA or NaN values, you'll need to include *use = "pairwise.complete.obs"* in the cor() command. If you get a non-numeric variable error, you'll need to convert your variable to numeric, as done with the *episodes* variable.) **You can do this in R Studio or your R Studio Cloud project space, just copy and paste the code and result in a text area. Don't copy the code chunk \`\`\` {r}  \`\`\` of you will get an error.**
+ 
+
+7. Find the sum, mean, and population variance of (5,10,15,20)
+     sum:
+     mean:
+     population variance:
+
+
+Bonus: Write a loop of your choice (*for loop* or *while loop*) to print the the even numbers through ten. (Hint: the easiest way is to print the result of a multiplying something times 2.)
+
+
+```{r}
+
+
+```
+
+
+
+

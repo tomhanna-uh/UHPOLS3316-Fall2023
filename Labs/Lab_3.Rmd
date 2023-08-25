@@ -1,0 +1,236 @@
+---
+title: "Lab 3: July 15"
+author: "POLS 3316, Summer 2022, University of Houston, Instructor: Tom Hanna"
+output:
+  html_document:
+    df_print: paged
+  pdf_document: default
+---
+
+## Part 1: Scalars, Vectors, Matrices and Arrays
+
+### What is a matrix?
+
+A *matrix* is a rectangular array or table of numbers, symbols, or expressions, arranged in rows and columns, used to represent some mathematical object or property. 
+
+Practical examples of *matrices*? Spreadsheets and tables
+
+#### Matrixes in R
+
+In R, every *dataframe* or *table* or similar *object* is a matrix.
+
+For an example of building a matrix in R, we need to look at scalars and vectors. 
+
+
+### What is a scalar?
+
+A scalar is a single number. A scalar is matrix with dimension 1x1, 1 column by 1 row. A scalar is also a vector with only 1 element.
+
+#### Scalars in R
+
+To create a scalar in R, we can either assign a null value and add the value later, or we can assign a value when we creat it:
+
+```{r}
+#create an ojbect called a and assign the null value
+#making it a null value scalar
+a <- c()
+cat('a is a null scalar ')
+a
+
+#create an object called b and assign the value 5, making 
+#b a scalar object
+b <- 5
+cat('b is a scalar with value 5')
+b
+
+#assign the value 1 to a, making it a scalar with value 1
+a <- 1
+cat('Now I have given a the value 1')
+a
+```
+
+
+
+### What is a vector?
+
+A vector is a list of numbers. It is either a single column or a single row. It is a matrix with dimension 1 x n . 
+
+#### Vectors in R?
+
+To create a vector in R, we can assign a series of values either by just listing them or through a variety of functions including operations on other vectors:
+
+```{r}
+
+#create object c and assign <- a series of numbers 
+#using c() creating a vector object
+C <- c(1,2,4,5,6,7,8,9,10)
+cat('C is a vector ')
+C
+
+#create a vector D and assign the value of multiplying 
+#vector C by scalar b
+D <- C*b
+cat('D is a vector created by multiplying b * C ')
+D
+
+```
+
+```{r}
+
+#Create a vector E and assign the value
+#for the seq function - in this case
+#sequence starting at -5 and going to 5
+#by steps of 0.5
+E <- seq(-5, 5, by = .5)
+cat('E is a sequence of numbers from -5 to 5, by 0.5s ')
+E
+
+```
+
+```{r}
+
+#create the vector object F and 
+#assign a function of E and the 
+#normal distribution (more on this later)
+F <- dnorm(E, mean = 2.5, sd = 0.5)
+cat('F is a function of E and the normal distribution ')
+F
+
+
+```
+
+## Things to know
+
+- Multiplying anything times a scalar is simply multiplying every element by that scalar. It's almost always feasible. 
+- To do an operation on two vectors they must be the same length
+- Multiplying matrices is a complex version of multipying vectors. - If you see errors related to matrix/vector size, it usually means you are multiplying two matrixes who aren't a match in column and row size. 
+
+If you need more help with matrix operations in the future (not this class), you have two options:
+
+https://www.mathsisfun.com/algebra/matrix-multiplying.html
+
+or 
+
+**ask for help from someone with a good grasp of basic matrix algebra**
+
+## Back to matrices in R
+
+We built a scalar object and a vector object. How do we build a matrix object?
+
+Let's use two of the vectors we built, C and D:
+
+```{r}
+#create an object called data_cd and assign <- 
+#vector C and D as a matrix in R's data frame format
+#using the data.frame() function
+data_cd <- data.frame(C,D)
+
+#Show the first six lines of data_cd
+head(data_cd)
+
+```
+
+
+
+
+## Part 2: Measures of dispersion in R          
+
+We're going back to the arrest data. We can use the R functions *var()* to get the **sample** *variance* and *sd()* to get the **sample** *standard deviation*. The numbers we figured were the **population** numbers. The difference in the formulas is that for the *variance*, the population version divides by the number of observations *n* and the sample version divides by *n-1*. We'll discuss the theoretical difference in detail this week, but for now the difference is this: In most cases we are only working with a sample of data and we are using it to estimate the full "population" or "universe" of data. The slight difference in formula is to account for this.  
+
+For now, let's start by looking at the Arrest Data *sample variance* and *sample standard deviation.*
+
+
+To get **sample variance** use the R function **var().**
+
+
+```{r}
+
+#loading arrests_data built into R
+#create an object called arrests_data
+#assign the 2 and 3 columns [2:3] from the 
+#USArrests dataset 
+arrests_data <- USArrests[2:3]
+
+#create an object called urban_pop_variance
+#and assign the value created by applying the 
+#var() function to the UrbanPop variable from the 
+#arrests_data dataframe
+urban_pop_variance <- var(arrests_data$UrbanPop)
+cat('Urban Pop Percent Variance')
+#print urban_pop_variance to the screen
+urban_pop_variance
+
+#create an object called urban_pop_variance
+#and assign the value created by applying the 
+#var() function to the Assault variable from the 
+#arrests_data dataframe
+assaults_variance <- var(arrests_data$Assault)
+cat('Assaults Variance')
+
+#print assaults_variance to the screen
+assaults_variance
+
+#print the mean of Assault variable from
+#arrests_data to the screen
+mean(arrests_data$Assault)
+
+```
+
+
+
+To get **sample standard deviation** either take the **square root of sample variance** or use the R function **sd()**.
+
+```{r}
+#the cat('') command will print to the screen
+cat('Standard deviations')
+#create object urban_pop_sd1 and assign the 
+#value of sd(arrests_data$UrbanPop)
+#sd() is the R function for sample standard deviation
+urban_pop_sd1 <- sd(arrests_data$UrbanPop)
+urban_pop_sd1
+
+#Do the same thing by taking the square root of the variance
+#instead of using sd()
+urban_pop_sd2 <- sqrt(var(arrests_data$UrbanPop))
+urban_pop_sd2
+
+```
+
+
+To get **population variance** multiply the R function var() times (n-1)/n:  var(x) * (n-1)/n
+
+```{r}
+
+#Converting sample variance to population variance
+#Create object urban_pop_popvar and assign the 
+#math operation multiplying the sample variance times
+#(n - 1)/n where n = 50
+urban_pop_popvar <- var(arrests_data$UrbanPop) * (50-1)/50
+cat('Urban Pop population variance:')
+
+#print the result
+urban_pop_popvar
+
+#same for Assault variable
+assaults_popvar <- var(arrests_data$Assault) *(50-1)/50
+cat('Assaults population variance:')
+assaults_popvar
+
+```
+
+
+To get **population standard deviation**, the only option is to compute the population variance and takes its square root: **sqrt(populationvariance)** *You can't get it by multiplying the R function at least easily.*
+
+```{r}
+
+#take the square root of the population variance
+#to get the population standard deviation
+sqrt(urban_pop_popvar)
+sqrt(assaults_popvar)
+
+```
+
+
+
+
+
