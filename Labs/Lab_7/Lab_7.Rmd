@@ -1,0 +1,181 @@
+---
+title: 'Lab 7'
+author: 'POLS 3316, Fall 2023, University of Houston, Instructor: Tom Hanna'
+output:
+  html_document:
+    df_print: paged
+---
+## Part 1 - Loading data
+
+This data came from Data World:
+
+[https://data.world/datasets/open-data](https://data.world/datasets/open-data)
+
+If you haven't found a data set and want to use **fictional data** as long as it has at least two appropriate variables - **go for it!**
+
+### Game of Thrones Screen Times
+
+*Dataset compiled by Aendrew Rininsland
+Author of "Learning D3.js Data Visualization" from Packt Publishing, journo-coder at Financial Times
+http://æ.ninja/
+
+
+First, I spent about 20 minutes figuring out how to load the JSON data, mostly because I hadn't done that before:
+
+```{r}
+library(here) #This library helps with finding the 
+#data file on the local computer
+#install.packages("rjson") #install on first use
+#library("rjson") #load the libary to import the json data type
+
+#install.packages("jsonlite")
+library(jsonlite)
+gotdatajson <- fromJSON(here("data","GoT-screentimes.json")) 
+# Note the rjson file package also allows reading this #file type directly from a website
+
+```
+
+The author also provided CSV data and that took about 20 seconds:
+
+```{r}
+
+gotdatacsv <- read.csv(here("data","GOT_screentimes.csv"))
+
+```
+Exploring the data:
+
+```{r}
+head(gotdatacsv)
+
+```
+
+```{r}
+names(gotdatacsv)
+```
+Use the indexes to print one variable (column 1)
+```{r}
+gotdatacsv[1]
+```
+
+Use variable names to do the same thing:
+
+```{r}
+gotdatacsv$portrayed_by_name
+```
+
+Run "summary" on a character variable
+
+```{r}
+summary(gotdatacsv$name)
+```
+
+Summary on a numeric variable:
+
+```{r}
+
+summary(gotdatacsv$screentime)
+
+```
+
+
+Correlation (tomorrow's topic)
+
+```{r}
+
+#get correlation of episodes and screentime
+#cor(gotdatacsv$episodes,gotdatacsv$screentime)
+
+```
+
+It turns out that the "numbers" in screen time were entered as *character* type instead of *float* type. To fix this:
+
+
+```{r}
+#create a new numeric variable from the character variable
+gotdatacsv$screentime_numeric <- as.numeric(gotdatacsv$screentime)
+gotdatacsv$episodes_numeric <- as.numeric(gotdatacsv$episodes)
+
+#run correlation with the new variable
+cor(gotdatacsv$episodes_numeric,gotdatacsv$screentime_numeric)
+
+```
+Because there are NAs in the data, it can't compute the correlation. (Sometimes this will give an NA and sometimes it will just give an error.)
+
+```{r}
+
+#Using pairwise complete observations to eliminate NA instances
+cor(gotdatacsv$episodes_numeric,gotdatacsv$screentime_numeric, use = "pairwise.complete.obs")
+
+```
+
+I want to plot the screentime to see the distribution
+
+```{r}
+
+#plot the screentime
+plot(gotdatacsv$screentime_numeric)
+
+```
+
+This isn't really surprising ecause you can't go below 0, minor characters approach zero, and major characters drop like flies. This is actually a "survival function" distribution. 
+
+Plotting episodes vs screen time:
+
+```{r}
+
+plot(gotdatacsv$episodes_numeric,gotdatacsv$screentime_numeric, main = "Game of Thrones Episodes vs Screen Time", xlab = "Episodes", ylab = "Screen Time")
+```
+
+
+
+
+## Part 2 - Frequency distributions
+
+We're going to use some sample data on measurements of body dimensions from  247 men and 260 women, mostly healthy young adults. 
+
+```{r}
+#Loading data from URL
+load(url("http://www.openintro.org/stat/data/bdims.RData"))
+
+#look at the variables etc
+head(bdims)
+names(bdims)
+```
+
+Unfortunately the publisher deleted the codebook, but we only need the obvious variables: *age* [22], weight in kg *wgt* [23], height in cm *hgt* [24], and sex [1 is male, 0 is female]. 
+
+For comparison and practice purposes, we're going to subset this into two data frames - one for males (mdims) and one for females (fdims). We use the *relational operator* == to tell R that we want sex to equal 1 for the male set and 0 for the female set:
+
+
+```{r}
+#create dataframe mdims as subset of bdims where the bdims variable sex is equal to 1
+mdims <- subset(bdims, bdims$sex == 1)
+
+#create dataframe fdims as subset of bdims where the bdims variable sex is equal to 0
+fdims <- subset(bdims, bdims$sex == 0)
+
+```
+
+
+
+We'll plot a histogram of men's height and women's height to compare the distributions:
+
+```{r, figures-side, fig.show="hold", out.width="50%", echo=FALSE}
+#creates the histograms as objects in memory
+p1 <- hist(mdims$hgt)
+p2 <- hist(fdims$hgt)
+
+#preparing to plot with the same scale from 5 less than the minimum female #height to 5 greater than the male maximum
+mylimit <- c(min(fdims$hgt),max(mdims$hgt)) + c(-5,5)
+
+plot(p1, col = "red", xlim = mylimit)
+plot(p2, col = "blue", xlim = mylimit)
+
+```
+
+### Plot histograms of screen times and episodes from the Game of Thrones Data. (You don't need to do the xlim scaling trick since their scales are completely different) When you are done, knit your file. 
+
+```{r, figures-sideb, fig.show="hold", out.width="50%", echo=FALSE}
+
+```
+

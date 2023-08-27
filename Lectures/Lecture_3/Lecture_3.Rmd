@@ -1,0 +1,221 @@
+---
+title: 'Lecture 4 (POLS 3316: Statistics for Political Science, Fall 2023)'
+author: "Tom Hanna"
+output:
+  html_document:
+    df_print: paged
+---
+
+```{r include=FALSE}
+library(tidyverse)
+```
+
+## Descriptive Statistics
+
+### Why do we use descriptive statistics?
+
+- Explore the data
+- See patterns in the data
+- Communicate about the data
+
+### What are the most basic things we need to know?
+
+- What is the scope of the data (time, geography, cases)?
+- What are the variables?
+- What is the unit of observation?
+
+**Example**
+
+"This data set provides information on the fate of passengers on the fatal maiden voyage of the ocean liner ‘Titanic’, summarized according to economic status (class), sex, age and survival."
+
+```{r}
+
+titanic_data <- as.data.frame(Titanic)
+
+head(titanic_data)
+
+```
+This data is formatted the way we typically like to use data:
+
+- units of observation: rows
+- variables: columns
+
+**BEWARE! Not all data is formatted this way!** Sometimes you have to think "is this a variable or a unit of observation?"
+
+For example data is often presented with variables as rows and units of observation as columns. That's the easy case.
+
+Sometimes, we get data in a mixed format called *wide format*. For example, the following data on Scandinavian temperatures:
+
+```{r}
+# From https://sejdemyr.github.io/r-tutorials/basics/wide-and-long/
+# created by SIMON EJDEMYR
+
+# Create long dataset
+country_long <- data.frame(
+    expand.grid(country = c("Sweden", "Denmark", "Norway"), year = 1994:1996),
+    avgtemp = round(runif(9, 3, 12), 0)
+    )
+
+# Create wide dataset
+country_wide <- data.frame(
+    country = c("Sweden", "Denmark", "Norway"),
+    avgtemp.1994 = country_long$avgtemp[1:3],
+    avgtemp.1995 = country_long$avgtemp[4:6],
+    avgtemp.1996 = country_long$avgtemp[7:9])
+country_wide 
+
+```
+
+It looks like the unit of observation is country and the variable is a combination of year and temperature. 
+
+If we look at it in the long format we are used to, it's a little clearer:
+
+```{r}
+
+country_long
+
+```
+
+
+The variable is average temperature. 
+
+The unit of observation is actually not country - it's country-year. Sweden-1994 is one observation, Sweden-1995 is a different observation, and Sweden-1996 is a different observation all with different temperature values. 
+
+
+### Measures of Central Tendency
+
+Measures of central tendency help us:
+
+- reveal patterns
+- find the typical measurement
+- find the center
+
+**A few numbers that can summarize the center of measurement**
+
+- Mean
+
+- Median
+
+- Mode
+
+### Mean
+
+- Symbol: $\bar{x}$
+- Not the middle value
+- Not the most common
+- The center of mass - the sum above equals the sum below
+- Formula is $\bar{x} = \frac{\sum X_i}{n}$
+- Read that: The mean of X equals the sum of the observations (i) of X divided by the number (n) of observations. 
+
+Examples:
+
+A. What is the mean of 1,5,7,9,10,12,18
+
+```{r}
+
+A <- c(1,5,7,9,10,12,18)
+
+answer_a1 <- (sum(A)/7)
+
+answer_a2 <- mean(A)
+
+answer_a1
+answer_a2
+
+```
+
+B. What is the mean of 10,20,25,30,35,40,45,50,55
+
+```{r}
+B <- c(10,20,30,35,40,45,50,55,25)
+
+mean_b1 <- (sum(B)/9)
+
+mean_b2 <- mean(B)
+
+mean_b1
+mean_b2
+```
+
+### Median
+
+ - Midpoint
+ - Half observations are greater, half are lower
+ - Just count
+ - Even observations - midpoint between middle two
+ 
+ Examples:
+ 
+ A - 1,5,7,9,10,12,18
+
+```{r}
+median(A)
+
+```
+ B - 10,20,25,30,35,40,45,50,55
+```{r}
+median(B)
+```
+
+In both of our examples, the mean and median were close but not the same. That isn't always the case. 
+
+### Mode
+
+- Most common value
+- Just count
+
+Examples:
+
+C. 1,2,3,4,4,5,6,7
+
+Answer: 
+
+D. 10,20,30,30,40,40,40,50,50,60,70
+
+Answer:
+
+### Advantages and disadvantages
+
+- Median isn't affected by outliers
+
+- Mean gives the broader picture because it includes the outliers.
+
+- Mode is the only option for categorical variables. *We will discuss types of variables a bit when talk about your project data and more later in the semester when we talk about hypothesis testing.*
+
+### Skewed distribution - when mean and median are different
+
+**The three numbers are often different for the same sample or population.**
+
+Example:
+
+![Negatively skewed, Normal, and Positively Skewed distributions](skewed-curves.png)
+
+
+### Discussion: Your Project Data Set
+
+Discussion: Project data set
+
+1. Keep it simple 
+	a. Fewer variables and fewer observations are better
+	b. You don't need to solve the problem in this class 
+	c. Try to avoid time series - or be aware of the issues
+2. Types of variables
+        a. Continuous Numeric - look for numbers with decimal places
+        b. Binary - avoid
+        c. Categorical - Nominal avoid
+        d. Categorical - Ordinal - avoid
+        e. Numeric discrete - avoid
+3. Sources if you don't have something in mind
+        a. Internal R datasets - https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/00Index.html
+        b. The Dataverse - https://dataverse.org/
+        c. Example https://www.sciencedirect.com/science/article/pii/S2665963821000762
+        c. State and federal databases
+        Example: https://cris.dot.state.tx.us/public/Query/app/home
+        d. Kaggle - https://www.kaggle.com/datasets
+                
+
+### Break time! Lab in 10 Minutes!
+
+
+
+
