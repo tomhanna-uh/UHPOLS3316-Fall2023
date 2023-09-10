@@ -1,7 +1,9 @@
 ---
 title: "Problem Set 1R"
 author: "POLS 3316 - Due September 20"
-format: html
+format: 
+        html:
+                self-contained: true
 ---
 
 ## Overview
