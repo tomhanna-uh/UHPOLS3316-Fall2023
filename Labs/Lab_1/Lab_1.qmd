@@ -10,13 +10,13 @@ format:
 
 This data is actually built into R in a package called "cars," but we want to practice loading it from a file. (Later, we'll practice loading data from the "iris" R package directly.) While loading and examining this simple data set, we'll look at some basic R concepts like *objects*, *data types*, *variables*, *observations*, *commands*, and *functions*. We will also briefly discuss good *work flow*, which is often considered an advanced topic but actually makes life simpler if you observe it from the start. Finally, we'll look at some summary statistics and graphical representations or plots.
 
-## Loading data: two methods
+## Loading data: two good  methods
 
 We'll use two methods. 
 
                 + Bad method: Click on the file
                 + Okay method: *base R* method, you can use with just the minimum R installation. 
-                + Better method:
+                + Better method: Projects in R Studio / Posit
                 
 ## Bad method: Point and click
 
