@@ -1,0 +1,361 @@
+---
+title: 'Lecture 4: Measures of Dispersion'
+date: today
+author: "POLS3316, Instructor: Tom Hanna, Fall 2023, University of Houston"
+format: 
+        revealjs:
+                self-contained: true
+                transition: convex
+                theme: [moon, custom.css]
+                logo: logo.png
+                footer: "GOVT2306, Fall 2023, Instructor: Tom Hanna"
+---
+
+## Measures of Dispersion (Variation or Spread)
+
+- Sample data from the USArrests data in R, specifically the data on arrests for assault and percent urban population. 
+- State level data
+- 50 observations
+- In this code, I specify that I only want columns 2 and 3 with [2:3]
+
+```{r echo=TRUE}
+#Create an object named arrests data
+#assign with the left assignment operator
+#built in R dataset USArrests columns 2 and 3 [2:3]
+arrests_data <- USArrests[2:3]
+     
+```
+
+## Look at the data
+
+First, we'll get acquainted with our data by looking at the *head* of the dataframe and two *measures of central tendency* that we talked about yesterday, the *mean* and *median*. 
+
+```{r echo=TRUE}
+
+#get the first 6 rows of the data
+head(arrests_data)
+
+```
+## Find the Center (Mean)
+
+- Finding the mean is the first step
+- We need to know the center to find the spread around the center
+- mean is part of the formula for *variance*
+
+```{r echo=TRUE}
+#get the mean for both variables and store the means in objects
+mean_assault_arrests <- mean(arrests_data$Assault)
+mean_urban_population <- mean(arrests_data$UrbanPop)
+
+#print the means to the screen
+mean_assault_arrests
+mean_urban_population
+```
+
+## Find the Center (Median)
+
+
+- Why? We want to know if the data is skewed
+
+
+```{r echo=TRUE}
+
+#get the medians and store as objects
+median_assault_arrests <- median(arrests_data$Assault)
+median_urban_population <- median(arrests_data$UrbanPop)
+
+#return the values to the screen
+cat('Median Assault Arrests')
+median_assault_arrests
+
+cat('Median Urban Population')
+median_urban_population
+
+```
+## Skewed distribution - when mean and median are different
+
+**The three numbers are often different for the same sample or population.**
+
+Example:
+
+![Negatively skewed, Normal, and Positively Skewed distributions](skewed-curves.png)
+
+## Scattered around the mean
+
+- Measures of dispersion typically look at how the data is scattered around the mean. 
+
+- Let's look at that visually. 
+
+- First the mean of *Assault*
+
+- Then the mean of *Urban Population*
+
+## Scattered around the mean: Assault Arrests
+
+
+```{r echo=TRUE}
+
+plot(arrests_data$UrbanPop,arrests_data$Assault)
+abline(h = mean_assault_arrests)
+
+```
+## Scattered around the mean: Urban Population
+
+```{r echo=TRUE}
+
+plot(arrests_data$UrbanPop,arrests_data$Assault, ylim = c(0,350))
+abline(h = mean_assault_arrests)
+
+```
+
+## Creating a measure of dispersion: distance to mean
+
+-  So, we could define a measure of dispersion or variation that is the total length of the colored lines. 
+- Our formula in English would be "the sum of the differences between each observation and the mean"
+
+
+
+## Problem with sum of distances
+
+The problem is that because of the definition of mean, the positive lines will cancel out the negative and the dispersion or variation would always be zero!
+
+## Simple Data Example
+
+Suppose we had a very simple data set with only two observations - 5 and 15. The mean is 10. One is 5 above the mean and one is 5 below the mean.
+
+## Code for Example
+
+```{r echo=TRUE}
+
+simple_data <- c(5,15) #creating simple data
+
+point1 <- simple_data[1] #The 1st data point  called from simple_data
+
+cat('Point 1') #outputs the text Point 1
+point1
+point2 <- simple_data[2] #2nd data point
+cat('Point 2') #Outputs the text "Point 2"
+point2 #outputs the content of object named point2
+cat(sep = "\n") #Outputs the separator (sep = ) line break or enter (\n)
+simple_mean <- mean(simple_data) #the mean
+cat('The mean') #Outputs the text "The mean"
+simple_mean #outputs the contents of object simple_mean
+
+```
+
+## Results from Example 
+
+```{r echo=FALSE}
+
+simple_data <- c(5,15)
+
+#The two data points called from simple_data
+point1 <- simple_data[1]
+#outputs the text Point 1
+cat('Point 1')
+point1
+point2 <- simple_data[2]
+
+#Outputs the text Point 2
+cat('Point 2')
+point2
+
+#Outputs the separator (sep = ) line break or enter (\n)
+cat(sep = "\n")
+
+#the mean
+simple_mean <- mean(simple_data)
+
+#Outputs the text The mean
+cat('The mean')
+simple_mean 
+
+```
+
+## Distance from mean code
+
+So, the distance from the mean is:
+
+```{r echo=TRUE}
+
+point1_dist <- simple_data[1] - simple_mean #math using objects to create new object
+
+cat('Distance 1')
+point1_dist
+
+point2_dist <- simple_data[2] - simple_mean
+
+cat('Distance 2')
+point2_dist
+
+```
+
+
+## Distance from mean results
+
+
+```{r}
+
+point1_dist <- simple_data[1] - simple_mean 
+
+cat('Distance 1')
+point1_dist
+
+point2_dist <- simple_data[2] - simple_mean
+
+cat('Distance 2')
+point2_dist
+
+```
+
+## Distance from Mean Total 
+
+So, we want our new measure *total_variation* to equal the sum of the distances:
+
+```{r echo=TRUE}
+total_variation <- point1_dist + point2_dist #math problem on two objects to create third object
+
+cat('The variation is:')
+total_variation
+```
+## Math to the rescure!
+
+
+**Math comes to the rescue!**
+
+- What is something we can do that turns a negative number into a positive number every time and leaves a positive number as a positive? 
+- It's also important that any effect it has on the actual size of the numbers is consistent between positive and negative numbers. 
+
+
+
+## Math to the rescure! Code
+
+- We can square the distances
+
+```{r echo=TRUE}
+
+squared_1 <- point1_dist^2 #create new object by squaring the distance for point 1
+squared_1
+
+squared_2 <- point2_dist^2 #create new object squared point 2
+squared_2
+
+```
+
+## Results
+
+ - Squaring 5 turned it into 25 
+ - Squaring -5, which is the same size but negative, also turned it into 25. 
+ - So, now we can add them to get a measure of *total_squared_variation*.
+
+```{r}
+
+total_squared_variation <- squared_1 + squared_2 #math operation
+
+cat('Total squared variation is:')
+total_squared_variation
+
+```
+## Are we done?
+
+- Suppose we had 1000 observations
+- Mean still 10
+- Each still 5 points away on average
+- What would our total variation be?
+
+Given that the actual average distances is exactly the same for both groups, does that make sense? Is it useful?
+
+## Solution: Average Squared Difference - Variance
+
+- We want the average of the distances or
+- Aaverage of the squared differences. 
+
+- So our measure of *variance* is in the simplest form:
+
+```{r echo=TRUE}
+simple_variance <- (squared_1 + squared_2)/2 #math operation
+
+cat('The variance:')
+simple_variance
+
+#This is the population variance
+#R actually computes the sample variance
+#To convert the two we can multiply times (n-1)/n
+#In this case, n = 2
+
+simple_variance_check <- var(simple_data) * (2-1)/2
+cat('Checking with R')
+simple_variance_check
+```
+
+## Solution: Average Squared Difference - Variance
+
+- We want the average of the distances or
+- Aaverage of the squared differences. 
+
+- So our measure of *variance* is in the simplest form:
+
+```{r echo=FALSE}
+simple_variance <- (squared_1 + squared_2)/2 #math operation
+
+cat('The variance:')
+simple_variance
+
+#This is the population variance
+#R actually computes the sample variance
+#To convert the two we can multiply times (n-1)/n
+#In this case, n = 2
+
+simple_variance_check <- var(simple_data) * (2-1)/2
+cat('Checking with R')
+simple_variance_check
+```
+
+
+## Squares inflate the results
+
+
+- Squares inflate the numbers relative to the size of the mean. 
+- 25 is 2.5 times the mean. 
+- But the distances aren't really that big
+- Average distance is still 5
+
+## Solution: Square root of the variance
+
+- To partially account for this we can take the square root of the variance 
+- That gives us our next measure
+
+## Standard deviation
+
+- *standard deviation* is the square root of the variance
+
+```{r echo=TRUE}
+
+simple_standard_deviation <- sqrt(simple_variance) #take the square root
+
+cat('Standard deviation is:') #print to screen
+simple_standard_deviation #print to screen
+
+simple_sd_check <- sqrt(simple_variance_check) #take the square root
+cat('Checking with R:')
+simple_sd_check
+
+```
+
+## Standard deviation
+
+- *standard deviation* is the square root of the variance
+
+```{r echo=FALSE}
+
+simple_standard_deviation <- sqrt(simple_variance)
+
+cat('Standard deviation is:')
+simple_standard_deviation
+
+simple_sd_check <- sqrt(simple_variance_check)
+cat('Checking with R:')
+simple_sd_check
+
+```
+
