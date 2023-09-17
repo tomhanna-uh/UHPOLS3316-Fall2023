@@ -13,20 +13,18 @@ output:
 + Lab and lecture material combined
         + More on Standard Deviation and Variance
         + Percentiles, Deciles, Quartiles, Ranges
-+ Skipping Matrices and arrays (today) and lists (tomorrow) 
-        *These won't be testable and aren't needed for the work we're doing. I'll give you references on them and put together notebooks like the labs that you can use on your own later.*
-+ Quiz today
-+ Work session in R Studio today
-+ *Note on today's code: I'm using "echo=False" to make some of the knitted output a little easier to read. This means that to read the code behind the results, you have to go to the .Rmd file. We'll be switchin back and forth in class.*
+<!-- + Skipping Matrices and arrays (today) and lists (tomorrow)  -->
+<!--         *These won't be testable and aren't needed for the work we're doing. I'll give you references on them and put together notebooks like the labs that you can use on your own later.* -->
 
-$$\\[4in]$$
-$$\\[1in]$$
+<!-- + Work session in R Studio today -->
+<!-- + *Note on today's code: I'm using "echo=False" to make some of the knitted output a little easier to read. This means that to read the code behind the results, you have to go to the .Rmd file. We'll be switchin back and forth in class.* -->
+
 
 ### Measures of Dispersion Continued
 
-Yesterday we covered *variance* in detail and I told you that *standard deviation* is the square root of variance. Why do we care?
+Last week we covered *variance* in detail and I told you that *standard deviation* is the square root of variance. Why do we care?
 
-#### Example
+## Example
 
 + Two companies with the same *mean* salary - **$70,000**.
 
@@ -44,7 +42,7 @@ Assumptions:
 
 Anything you want
 
-$$\\[3in]$$
+
 
 ```{r, figures-side, fig.show="hold", out.width="50%", echo=FALSE}
 
