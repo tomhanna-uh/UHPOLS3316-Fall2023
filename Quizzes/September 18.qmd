@@ -1,0 +1,38 @@
+---
+title: "September 18"
+date: "Last compiled on `r format(Sys.time(), '%d %B, %Y, %H : %M : %S')`"
+output:
+  html_document:
+    df_print: paged
+---
+
+### When you are finished *knit*/*render* your R Studio document or turn in a written copy on paper but show your work in order..
+
+#### You may compute your answers using a calculator, pen and paper, or R. 
+
+#### For the next problems use these as your data:
+
+**-1,-5,7,21,15,-3,10,11,14,8**
+
+1. What is the sum of these?
+2. What is the mean?
+3. What is the variance?
+4. What is the standard deviation?
+
+#### For the next problems use these as your data:
+
+**1,2,2,3,3,3,4,4,4,4,4,5,5,5,6,6,7**
+
+5. What is the mode of these?
+6. What is the median?
+7. What is the sum of these?
+8. How many observations are there?
+9. What is the mean?
+
+#### For the next problem use these as your data:
+
+**5,10,15,20**
+
+10. What is the median of the data?
+
+11. What is the name of the President of the University of Houston? (first, last, spelling does not count)
