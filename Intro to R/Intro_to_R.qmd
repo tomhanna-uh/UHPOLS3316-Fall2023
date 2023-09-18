@@ -478,7 +478,7 @@ regression_model <- lm(dist ~ speed, data = cars_data)
 summary(regression_model)
 
 ```
-Using the Estimate for the intercept and the Estimate for the speed *coefficient*:
+Using the Estimate for the *Intercept* and the Estimate for the speed *coefficient*:
 
 y = $\alpha$ + $\beta * X$ + $\epsilon$
 
