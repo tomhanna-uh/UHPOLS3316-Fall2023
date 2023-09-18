@@ -14,11 +14,18 @@ format:
 
 ## Plan for today
 
-+ Lab and lecture material combined
++ Lecture, Discussion, a little bit of code
+        + A short overview of scalars, vectors, matrices
+        + Some practice computing the measures so far
         + More on Standard Deviation and Variance
         + Percentiles, Deciles, Quartiles, Ranges
 <!-- + Skipping Matrices and arrays (today) and lists (tomorrow)  -->
 <!--         *These won't be testable and aren't needed for the work we're doing. I'll give you references on them and put together notebooks like the labs that you can use on your own later.* -->
+
++ Data sets for those who needed help (and others)
+
+                - I'll post several to Canvas with topics
+                - Pick one and use it
 
 
 <!-- + *Note on today's code: I'm using "echo=False" to make some of the knitted output a little easier to read. This means that to read the code behind the results, you have to go to the .Rmd file. We'll be switchin back and forth in class.* -->
