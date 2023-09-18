@@ -33,6 +33,15 @@ Discussion: Project data set
 
 
                 
+```{r echo=FALSE}
+
+x <- 1
+y <- 2
+z <- x + y
+cat(z)
+
+
+```
 
 
 
