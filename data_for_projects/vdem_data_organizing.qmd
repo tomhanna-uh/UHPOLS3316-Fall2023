@@ -1,0 +1,150 @@
+---
+title: "VDem data subsetting"
+author: "Tom Hanna"
+format: 
+        html:
+                self-contained: true
+---
+
+## Loading VDem data
+
+The first two commented lines (lines that start with #) are for installing the VDem data. To use that data on your own computer, delete the leading # and run the lines. Do not delete the second hashtag in the middle of the line. The material beyond that is still a comment. 
+
+```{r echo=TRUE}
+
+#install.packages("devtools") #uncomment and run one time
+#devtools::install_github("vdeminstitute/vdemdata") #uncomment and run one time
+
+library(vdemdata) #load vdem library
+
+vdem_data <- vdem #load vdem data into an object called vdem_data for local use
+
+
+```
+
+## search topics: Civil society
+
+This is an example of the code to find variables on a given keyword
+
+```{r echo=TRUE}
+
+# The next line creates an object called civ_soc_vars and uses a 
+# command from the VDem package to find all VDem variabes related to
+# Civil Society and assign them to the object as a data frame.
+# 
+civ_soc_vars <- find_var("Civil Society") 
+
+# This returns columns 4 through 9 of the dataf rame to the screen 
+# when the file is rendered.
+# 
+civ_soc_vars[(4:9)]
+
+
+```
+
+## search topics: conflict
+
+```{r}
+
+#The next two lines do the same thing for variables with
+#keyword conflict
+
+conflict_vars <- find_var("conflict")
+conflict_vars[(4:9)]
+
+```
+
+
+## Search topics: income
+
+```{r}
+
+gdp_vars <- find_var("gdp")
+gdp_vars[(4:9)]
+
+```
+
+
+
+## Search topics: development
+
+```{r}
+
+development_vars  <- find_var("development")
+development_vars[(4:9)]
+
+```
+## Search topics: immigration
+
+```{r}
+
+immigration_vars <- find_var("immigration")
+immigration_vars[(4:9)]
+
+```
+
+
+
+
+## Search topics: democracy
+
+```{r}
+
+democracy_vars <- find_var("democracy")
+democracy_vars[(4:9)]
+
+
+```
+
+## Search topics: property rights
+
+```{r}
+
+property_vars <- find_var("property")
+property_vars[(4:9)]
+
+
+```
+
+
+
+## Search topics: repression
+
+```{r}
+
+repression_vars <- find_var("repression")
+repression_vars[(4:9)]
+
+
+```
+
+## Search topics: democracy
+
+```{r}
+
+democracy_vars <- find_var("democracy")
+democracy_vars[(4:9)]
+
+
+```
+
+
+## Search topics: ideology
+
+```{r}
+
+ideology_vars <- find_var("ideology")
+ideology_vars[(4:9)]
+
+
+```
+
+
+## Search topics: opposition
+
+```{r}
+
+opposition_vars <- find_var("opposition")
+opposition_vars[(4:9)]
+
+```
