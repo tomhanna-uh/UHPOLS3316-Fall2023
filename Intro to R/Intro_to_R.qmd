@@ -107,6 +107,17 @@ With the working directory set, we're ready to actually load the data. The next 
 
 Last, *read.csv* is an R *command* that tells R to read the file we specify. 
 
+## Note
+
+The following slide will not work for you until you:
+
+
+1 - Uncomment the lines of code
+
+2 - Edit the working directory to match your computer
+
+3 - This is why the other method is better!
+
 ## Loading the data
 
 This code chunk will load the data
@@ -115,8 +126,8 @@ This code chunk will load the data
 #
 #
 
-setwd("~/3 - R Studio Projects/pols3316-summer2022") #because of #the way R Notebooks work, I have to repeat this command in this #"chunk"
-cars_data <- read.csv("./data/cars.csv") 
+# setwd("~/3 - R Studio Projects/pols3316-summer2022") #because of #the way R Notebooks work, I have to repeat this command in this #"chunk"
+# cars_data <- read.csv("./data/cars.csv") 
 
 #
 #
