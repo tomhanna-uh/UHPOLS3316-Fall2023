@@ -51,15 +51,15 @@ We'll use two methods.
 ## R Code Chunk
 
 + This is our first "R Code Chunk"
-+ This chunk clears the *Global Environment* and sets the *Working Directory*
++ This code chunk creates a new value in the Global Environment (shown top right) and returns it to the screen
 
 ```{r echo=TRUE}
 #This is a comment
 #Comments can go on their own line, or after a line of actual code
 
-rm(list = ls()) #this clears the Global Environment
+x <- 15 #sets value of x equal to 15
 
-setwd("~/3 - R Studio Projects/pols3316-summer2022") #This sets the working directory
+x #prints X to the screen or document
 
 
 
