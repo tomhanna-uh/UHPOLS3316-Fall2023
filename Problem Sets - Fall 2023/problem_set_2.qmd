@@ -1,0 +1,213 @@
+---
+title: "Problem Set 2: POLS 3316 - Due October 6"
+author: "Author name"
+format: 
+        html:
+                self-contained: true
+---
+
+## Problem Set 2
+
+## Instructions and Reminders
+
+- Remember to "render" or "knit" your final work. It is a good idea to export a copy to your local computer if using Posit Cloud. If using R Studio, you will find the finished HTML or PDF file in the same folder as your working file (this file). 
+
+- Edit the code at the top to replace Author Name with your First and Last name. That code section is called the YAML.
+- Rename your file to include your own name
+- *Code is not required, unless it is convenient for you to calculate answers. You can type answers directly.*
+- If you do your work by hand, please show the steps: for example, if finding the mean and the sum is 25 and the number of observations is 5, you would answer something like:
+
+         mean   = sum / number of observations
+                =  25 / 5
+                = 5
+
+## Question 1
+
+In R, if I want to assign the series of values (75,32,14,18,21) to a vector or to perform a function such as *mean()* on it, I would enclose the numbers in parentheses with something in front of the opening parenthesis. Would this look like: 
+
+        - a. function(75,32,14,18,21)
+        - b. makethis(75,32,14,18,21)
+        - c. c(75,32,14,18,21)
+        - d. wrap(75,32,14,18,21)
+        
+Answer: 
+
+## Question Two
+        
+A __________ is a matrix of dimension 1 x 1. (It contains a single value and is represented by a geometric point, so may also be considered to have a dimension of zero (0)). 
+
+Answer: 
+
+## Question Three
+
+In R, if I have a vector x = c(10,20,30,40) and a scalar z = (10), what would the following code produce:
+
+        x * z
+        
+        - a. 1000
+        - b. 250
+        - c. 100,200,300,400
+        - d. 20,30,40,50
+        - e. size mismatch error
+        
+Answer:
+        
+## Question Four
+
+The ___________ measures the average squared distance of the data points from the mean. The _________ is the square root of this.
+
+First blank:
+
+Second blank:
+
+## Question Five through Fourteen Instructions and Data
+
+**Please compute these using a calculator or math functions in R and using the population statistic method used in class (divide by n). You may use the sum() fucntion to find sums and you are **strongly encouraged** to create objects to represent each step in the calculation as in part I of Problem Set I. In other words, you are encouraged to:
+
+1. Make a vector containing the data points, (You can choose all object names yourself.)
+2. Create an object to hold the sum and assign the result of sum() with the vector from number 1
+3. Create an object named *n* containing the number of observations
+4. Create an object for the mean containing the sum object divided by *n*
+5. Continue by creating objects for the steps in finding the variance
+6. Create an object for the variance and perform the operation to create the value with the ojbects from step 5 and *n*
+7. Find the standard deviation by taking sqrt() of the object from step 6
+2. You may refer to the answers from Problem Set 1 and use that code freely
+
+Remember that using the built-in *var()* and *sd()* functions will give slightly different sample statistics. If you use the R functions, you will need to convert them to population statistics or your answer will be wrong.
+
+For problems 5 through 9, use these data points: 
+
+(0.95,-8.31,-0.41,7.22,8.33,13.79,-2.88)
+
+For problems 10 through 14 use these data points: 
+
+(-10,-5,18,1,5)
+
+## Question 5
+
+5. Find the sum
+
+```{r}
+
+```
+
+Answer:
+
+## Question 6
+
+How many observations are there? 
+
+Answer:
+
+It would be useful to create an object named n in this code box and store the answer to this problem in that object:
+
+```{r}
+
+
+
+```
+
+## Question 7
+
+What is the mean?
+
+```{r}
+
+
+
+```
+
+Answer:
+
+## Question 8
+
+What is the variance?
+
+```{r}
+
+
+```
+
+Answer:
+
+## Question 9
+
+What is the standard deviation?
+
+```{r}
+
+```
+
+
+Answer:
+
+
+## Data Questions 10 to 14
+
+For problems 10 through 14 use these data points:
+
+(-10,-5,18,1,5)
+
+## Question 10
+
+Find the sum
+
+```{r}
+
+```
+
+
+Answer:
+
+## Question 11
+
+How many observations are there?
+
+Answer:
+
+```{r}
+
+```
+
+##Question 12
+
+What is the mean?
+
+```{r}
+
+```
+
+Answer: 
+
+## Question 13
+
+What is the median? (Note: If you do not use R code, remember to put them in order first! )
+
+```{r}
+
+```
+
+Answer:
+
+
+## Question 14
+
+What is the variance?
+
+```{r}
+
+```
+
+Answer: 
+
+
+## Question 15 (Bonus)
+
+What is the standard deviation?
+
+```{r}
+
+```
+
+Answer: 
+

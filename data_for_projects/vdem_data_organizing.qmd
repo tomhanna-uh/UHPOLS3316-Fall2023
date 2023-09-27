@@ -203,7 +203,7 @@ This data contains the same Civil Society measures as the previous one and five 
 
 ```{r}
 
-csdem_data <- vdem_2018[c("country_name","country_text_id","country_id","v2xcs_ccsi","v2x_gencs","v2x_delibdem","v2x_egaldem","v2x_libdem","v2x_partipdem","v2x_polyarchy")]
+csdem_data <- vdem_2018[c("country_name","country_text_id","country_id","v2xcs_ccsi","v2x_gencs","v2x_delibdem","v2x_egaldem","v2x_libdem","v2x_partipdem","v2x_polyarchy","")]
 
 library(here)
 write.csv(csdem_data,here("data_for_projects","csdem_data.csv"))
@@ -224,7 +224,18 @@ write.csv(demproperty_data,here("data_for_projects","demproperty_data.csv"))
 
 ```
 
+## Demonstration Data Set
 
+```{r}
+
+demonstration_data <- vdem_2018[c("country_name","country_text_id","country_id","v2x_delibdem","v2x_egaldem","v2x_libdem","v2x_partipdem","v2x_polyarchy","v2xcl_prpty","v2clprptyw","v2clprptym","v2exl_legitideol","v2exl_legitlead","v2clacjstm","v2clacjstw")]
+
+library(here)
+write.csv(demonstration_data,here("data_for_projects","demonstration_data.csv"))
+
+
+
+```
 
 ## References
 
