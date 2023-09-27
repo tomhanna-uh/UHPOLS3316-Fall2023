@@ -22,7 +22,6 @@ output:
 + Important terms: *union*, *intersection*, *mutually exclusive*, *empty set*, *complement*, *event*
 + Probability rules: 0 to 1. P(Something) = 1. 
 
-$$\\[4in]$$
 
 ### Non-mutually exclusive sets
 
@@ -137,11 +136,11 @@ What happens if we do the same thing above but do it 1,000 times and plot the co
 
 ```{r, figures-side, fig.show="hold", out.width="50%"}
 
-rand.binom<- rbinom(100000,1,.5)
-hist(rand.binom, breaks = 200, freq = TRUE, main = "Histogram of binomial distribution, p = .5, 1 trial, 100,000 draws", xlab = 'x', col = "red")
+rand.binom3<- rbinom(100000,100,.5)
+hist(rand.binom3, breaks = 200, freq = TRUE, main = "Histogram of binomial distribution, p = .5, 1 trial, 100,000 draws", xlab = 'x', col = "red")
 
-rand.binom2<- rbinom(100000,1000,.5)
-hist(rand.binom2, breaks = 200, freq = TRUE, main = "Histogram of binomial distribution, p = .5, 1000 trials, 100,000 draws", xlab = 'x', col = "red")
+rand.binom4<- rbinom(100000,1000,.5)
+hist(rand.binom4, breaks = 200, freq = TRUE, main = "Histogram of binomial distribution, p = .5, 1000 trials, 100,000 draws", xlab = 'x', col = "red")
 
 ```
 ### Poisson distribution
