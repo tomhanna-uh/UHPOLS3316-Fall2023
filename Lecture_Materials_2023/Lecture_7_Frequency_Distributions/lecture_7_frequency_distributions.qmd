@@ -1,0 +1,475 @@
+---
+title: |
+    | Probabilities and Frequency Distributions 
+    | POLS 3316: Statistics for Political Scientists)
+date: today
+author: "Tom Hanna"
+format: 
+        revealjs:
+                self-contained: true
+                transition: convex
+                theme: [moon, custom.css]
+                logo: logo.png
+                footer: "GOVT2306, Fall 2023, Instructor: Tom Hanna"
+---
+
+## Agenda and Announcements
+
+- Video using statistics so far with demonstration data set
+- Problem Set 2: Practice with means, medians, modes, variance, standard deviations, sets, probabilities
+- Quiz focus: variance, standard deviation, sets, probabilities
+
+## Recap
+
+- P(A) = $\frac{Favorable Outcomes}{All Possible Outcomes}$ (where "favorable" means outcomes where A occurs)
+- P(A) is the proportion we expect if we repeat the process a large number of times
+- Proportion of *elements* or *subsets* to the *sample space*
+- Important terms: *union*, *intersection*, *mutually exclusive*, *empty set*, *complement*, *event*, *disjoint*
+- Probability rules: 0 to 1. P(Something) = 1. etc.
+- Ended with an example of probability of non-mutually exclusive sets
+
+## Non-mutually exclusive sets
+
+- Mutually exclusive sets: No elements in common
+- Non-mutually exclusive sets: Sets with elements in common
+
+## Non-mutually exclusive sets
+
+- The probability for the union of *mutually exclusive sets* was the sum of their probabilities: 
+- P(A $\cup$ B) =  P(A) + P(B)
+
+
+## Non-mutually exclusive sets
+
+- The probability for the union of *mutually exclusive sets* was the sum of their probabilities: P(A $\cup$ B) =  P(A) + P(B)
+- With non-mutually exclusive sets this results in double counting of the shared elements, so... what can happen?
+
+## Non-mutually exclusive sets
+
+- The probability for the union of *mutually exclusive sets* was the sum of their probabilities: P(A $\cup$ B) =  P(A) + P(B)
+- With non-mutually exclusive sets this results in double counting of the shared elements, so... what can happen?
+
+- S = {1,2,3,4,5,6,7,8,9,10}
+- A = {1,2,3,4,5,6}
+- B = {5,6,7,8,9,10}
+
+
+
+## Non-mutually exclusive sets
+
+- The probability for the union of *mutually exclusive sets* was the sum of their probabilities: P(A $\cup$ B) =  P(A) + P(B)
+- With non-mutually exclusive sets this results in double counting of the shared elements, so... 
+
+- It could lead to P > 1
+
+## Another example
+
+- S = {C,D,E,F,G,H,W,Z} (8 possibilities)
+- A = {C,D,E,W,Z} (5 favorable)
+- B = {D,E,F,G,H} (5 favorable)
++ P(A) = 5/8  and P(B) = 5/8
++ P(A $\cup$ B) = 10/8 violates the rule P = 0 to 1
++ {D,E} got counted twice
++ {D,E} is W $\cap$ Z
+
+## Solution
+
++ So for non-exclusive pairs, our formula is:
+
+**P(A $\cup$ B) = P(A) + P(B) - P(A $\cap$ B)**
+
+
+
+<p style="font-size: x-large">*Note that this actually works for mutually exclusive sets too because for mutually exclusive sets, the intersection is the empty set and has P = 0*</p>
+
+
+## Independence
+
+- For now, problems will assume independence unless explicitly specified * 
+- Non-independent (conditional) events are covered by Bayes Rule
+- You don't have to worry about Bayes Rule for now except to understand that it exists and applies to non-independent events aka conditional events
+- Independent events are unrelated
+- If learning the probability of one event (A) doesn't affect the probability of the other event (B), they are independent
+- Example: If I draw a number from a hat, then flip a coin the outcome of the draw doesn't affect the outcome of the coin flip.
+- P(A $\cap$ B) = P(A)P(B) for independent events
+- The probability rules for non-independent events, called *conditional probability*, are different
+
+
+
+## Independence
+
+- For now, problems will assume *independence* unless explicitly specified 
+
+
+
+## Independence
+
+- For now, problems will assume independence unless explicitly specified 
+- Non-independent (*conditional*) events are covered by *Bayes Rule*
+
+
+
+## Independence
+
+- For now, problems will assume *independence* unless explicitly specified 
+- Non-independent (*conditional*) events are covered by *Bayes Rule*
+- You don't have to worry about Bayes Rule for now except to understand that it exists and applies to non-independent events aka conditional events 
+
+
+
+## Independence
+
+- For now, problems will assume *independence* unless explicitly specified 
+- Non-independent (*conditional*) events are covered by *Bayes Rule*
+- You don't have to worry about Bayes Rule for now except to understand that it exists and applies to non-independent events aka conditional events
+- Independent events are *unrelated*
+
+
+
+
+## Independence
+
+- For now, problems will assume *independence* unless explicitly specified 
+- Non-independent (*conditional*) events are covered by *Bayes Rule*
+- You don't have to worry about Bayes Rule for now except to understand that it exists and applies to non-independent events aka conditional events
+- Independent events are *unrelated*
+- If learning the probability of one event (A) doesn't affect the probability of the other event (B), they are independent
+
+
+
+
+## Independence (Continued)
+
+- Independent events are *unrelated*
+- If learning the probability of one event (A) doesn't affect the probability of the other event (B), they are independent
+- Example: If I draw a number from a hat, then flip a coin the outcome of the draw doesn't affect the outcome of the coin flip.
+
+
+
+## Independence
+
+- For independent events
+
+P(A $\cap$ B) = P(A)P(B) for independent events
+
+
+## Independence
+
+P(A $\cap$ B) = P(A)P(B) for independent events
+
+- Example: If I draw a number from a hat with the numbers 1 to 5, then flip a coin the outcome of the draw doesn't affect the outcome of the coin flip.
+
+- H = {1,2,3,4,5}
+- C = {head,tail}
+
+- What is P(1 $\cap$ tail)?
+
+## Possible Test Question
+
+- What if on a short answer test question, I ask: "Event A and Event B are not independent. How would you determine the conditional probability of event A given event B?" What would you answer?
+
+## Why does the hat draw-coin flip example work?
+
+If we create a set of all possible O it looks like this:
+
+- O = {1+head,2+head,3+head,4+head,5+head,1+tail,2+tail,3+tail,4+tail,5+tail}
+
+
+## Why does the formula work?
+
+If we create a set of all possible O it looks like this:
+
+- O = {1+head,2+head,3+head,4+head,5+head,1+tail,2+tail,3+tail,4+tail,5+tail}
+- (1 $\cap$ tail) or {1+tail} is one event
+
+
+## Why does the formula work?
+
+If we create a set of all possible O it looks like this:
+
+- O = {1+head,2+head,3+head,4+head,5+head,1+tail,2+tail,3+tail,4+tail,5+tail}
+- (1 $\cap$ tail) or {1+tail} is one event
+- P(1 $\cap$ tail) = 1 favorable / 10 possible
+
+## Back to the test question
+
+Answers: 
+
+- I would apply Bayes Rule. 
+- **OR** 
+- I would construct a sample space and determine the probabilities with set theory. *(Note: This is what Bayes Rule actually does.)*  
+
+## Why do we use data?
+
+- Purpose: analyzing data for causal inference (to begin to make statements about cause and effect - inferring causes)
+- Complex and uncertain data requires that we make...
+
+## Assumptions about the data
+
+- Because the world is complex, to make sense of unknowns we make assumptions about data
+- The assumptions are useful approximations even when not preceisely true
+- We still need to check that the real data does not seriously violate the assumptions
+
+
+
+## Data Assumptions: Random, Independent, and Identically Distributed
+
+- Randomness and independence matter as assumptions about data
+- Specifically, these are assumptions about the *Data Generating Process* or DGP
+- The Data Generating Process: the way the world produces the data
+
+## The Data Generating Process
+
+- The source of the data matters - the DGP matters
+- Previously stated: Data comes from a random world
+- So the DGP is random
+
+## Independence and Distribution
+
+- Events in the data are *independent and identically distributed* - the IID assumption
+
+## Independence and Distribution
+
+- Events in the data are *independent and identically distributed* - the IID assumption
+- Independence is statistical independence - the outcome of one event does not affect our belief about the probability of another event
+
+- The hat draw does not affect the coin toss
+- X does not affect Y 
+
+<p style="font-size: x-large">If X does affect Y, we may begin to infer some direct or indirect causal relationship in some direction somewhere possibly through one or more additional variables, but not necessarily that X causes Y. This is commonly shortened to the *not quite accurate* summary "correlation does not imply causation."</p>
+
+
+## Independence and Distribution
+
+- Events in the data are *independent and identically distributed* - the IID assumption
+- Independence is statistical independence - the outcome of one event does not affect our belief about the probability of another event
+- Identically distributed: drawn from the same *probability distribution* 
+
+So...
+
+## Introduction to distributions
+
+- R has functions for at least 20 distributions
+- The most important is the *normal distribution*
+- This is because of the *central limit theorem*
+- We will look at these in the most detail: *normal*, *binomial*, *uniform*, *poisson* 
+
+## Distribution examples
+
+- The following are *histograms* 
+- They represent the *frequency* or simply the number count of observations for each value
+- For example, if the value 4 shows 500, it means there that 4 came up 500 times in the data
+- The graphs were produced by generating random numbers based on the particular distribution with an R function
+
+
+## Uniform distribution
+
+**All outcomes are equally likely**
+
+
+## Uniform distribution
+
+**All outcomes are equally likely**
+
+```{r}
+rand.unif <- runif(100000, min = 0, max = 10)
+hist(rand.unif, breaks = 20, freq = TRUE, main = "uniform distribution of 100,000 random draws", xlab = 'x', col = "red")
+```
+
+## Uniform distribution: with code
+
+**All outcomes are equally likely**
+
+```{r echo=TRUE}
+rand.unif <- runif(100000, min = 0, max = 10)
+hist(rand.unif, breaks = 20, freq = TRUE, main = "uniform distribution of 100,000 random draws", xlab = 'x', col = "red")
+```
+
+## Normal Distribution
+
++ *symmetrical around its mean with most values near the central peak*
++ width is a function of the *standard deviation*
++ Other names: *Gaussian distribution*, *bell curve*
+
+
+## Normal Distribution
+
+```{r}
+rand.norm<- rnorm(100000)
+hist(rand.norm, breaks = 200, freq = TRUE, main = "normal distribution, sd = 1, 100,000 random draws", xlab = 'x', col = "red")
+
+```
+
+
+## Normal Distribution: with code
+
+```{r echo=TRUE}
+rand.norm<- rnorm(100000)
+hist(rand.norm, breaks = 200, freq = TRUE, main = "normal distribution, sd = 1, 100,000 random draws", xlab = 'x', col = "red")
+
+```
+
+## Binomial Distribution
+
+- binary 
+- success/failure
+- yes/no
+- distribution for a number of Bernoulli trials
+
+
+## Binomial example
+
+- n = 1 makes this a Bernoulli distribution
+
+```{r}
+
+rand.binom<- rbinom(100000,1,.5)
+hist(rand.binom, breaks = 200, freq = TRUE, main = "binomial distribution, p = .5, 1 trial, 100,000 draws", xlab = 'x', col = "red")
+
+```
+
+## Binomial example: with code
+
+- n = 1 makes this a Bernoulli distribution
+
+```{r echo=TRUE}
+
+rand.binom<- rbinom(100000,1,.5)
+hist(rand.binom, breaks = 200, freq = TRUE, main = "binomial distribution, p = .5, 1 trial, 100,000 draws", xlab = 'x', col = "red")
+
+```
+
+## Binomial example: with code
+
+- trials = 25
+
+```{r echo=TRUE}
+
+rand.binom2 <- rbinom(100000,25,.5)
+hist(rand.binom2, breaks = 200, freq = TRUE, main = "binomial distribution, p = .5, 25 trials, 100,000 draws", xlab = 'x', col = "red")
+
+```
+
+
+## Preview of the Central Limit Theorem
+
+What happens if we do the same thing above but do it 1,000 times and plot the counts?
+
+
+
+## Preview of the Central Limit Theorem
+
+
+```{r, figures-side, fig.show="hold", out.width="50%"}
+
+rand.binom3<- rbinom(100000,100,.5)
+hist(rand.binom3, breaks = 200, freq = TRUE, main = "Histogram of binomial distribution, p = .5, 100 trial1, 100,000 draws", xlab = 'x', col = "red")
+
+rand.binom4<- rbinom(100000,1000,.5)
+hist(rand.binom4, breaks = 200, freq = TRUE, main = "Histogram of binomial distribution, p = .5, 1000 trials, 100,000 draws", xlab = 'x', col = "red")
+
+```
+
+## Preview of the Central Limit Theorem: code
+
+
+```{r echo=TRUE}
+
+rand.binom3<- rbinom(100000,1000,.5)
+hist(rand.binom3, breaks = 200, freq = TRUE, main = "Histogram of binomial distribution, p = .5, 1000 trials, 100,000 draws", xlab = 'x', col = "red")
+
+```
+
+## Poisson distribution
+
++ *Count* of number of events in a fixed time/space
++ *Known*constant mean rate (We know how often they occur on average)
++ *Independent* of time since last event 
+
+
+## Poisson distribution
+
+```{r}
+
+rand.poiss<- rpois(100000,1)
+hist(rand.poiss, breaks = 200, freq = TRUE, main = "poisson distribution, lambda = 1, 100,000 draws", xlab = 'x', col = "red")
+
+```
+
+## Poisson distribution: with code
+
+```{r echo=TRUE}
+
+rand.poiss<- rpois(100000,1)
+hist(rand.poiss, breaks = 200, freq = TRUE, main = "poisson distribution, lambda = 1, 100,000 draws", xlab = 'x', col = "red")
+
+```
+
+## Why we can't use standard OLS regression for other DGP
+
+- We base the likelihood of something being significant on the proximity to the mean
+- As things get further from the mean in a normal distribution, they become less likely
+
+
+## Why we can't use standard OLS regression for other DGP
+
+```{r}
+
+# Set a seed for reproducibility
+set.seed(123)
+
+# Generate data for a normal distribution
+mean_normal <- 5  # Mean of the normal distribution
+sd_normal <- 1    # Standard deviation of the normal distribution
+normal_data <- rnorm(1000, mean = mean_normal, sd = sd_normal)
+
+# Create a histogram for the normal distribution
+hist(normal_data, probability = TRUE, main = "Normal Distribution",
+     xlab = "Value", ylab = "Density", col = "lightblue")
+
+# Overlay a density plot for the normal distribution
+lines(density(normal_data), col = "red", lwd = 2)
+
+``` 
+
+
+## Why we can't use standard OLS regression for other DGP
+
+```{r}
+
+# Set a seed for reproducibility
+set.seed(123)
+
+# Generate data for a Poisson distribution
+poisson_data <- rpois(1000, lambda = 3)  # Adjust the lambda parameter as needed
+
+# Generate data for a normal distribution with 
+normal_data <- rnorm(100000, mean = 6, sd = 1)
+
+# Create a histogram for the Poisson distribution
+hist(poisson_data, probability = TRUE, main = "Poisson vs. Normal Distribution", 
+     xlab = "Value", ylab = "Density", ylim = c(0, 0.4), col = "lightblue")
+
+# Overlay a density plot for the normal distribution
+lines(density(normal_data), col = "red", lwd = 2)
+legend("topright", legend = c("Poisson", "Normal"), col = c("lightblue", "red"), lty = 1, lwd = 2)
+
+```
+
+## Authorship and License
+
+- Author: Tom Hanna
+
+- Website: <a href="https://tom-hanna.org/">tomhanna.me</a>
+
+- License: This work is licensed under a <a href= "http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.</>
+
+<a href= "http://creativecommons.org/licenses/by-nc-sa/4.0/">![Creative Commons License](creative_commons_license.png)</a>
+
+
+
+
+
+
+
+
