@@ -1,0 +1,216 @@
+---
+title: |
+    | Prob. & Freq. Distributions 
+    | Variable Types, Correlation, Covariance
+    | POLS 3316: Statistics for Political Scientists
+date: today
+author: "Tom Hanna"
+format: 
+        revealjs:
+                self-contained: true
+                transition: convex
+                theme: [moon, custom.css]
+                logo: logo.png
+                footer: "GOVT2306, Fall 2023, Instructor: Tom Hanna"
+---
+
+## Agenda
+
+- Last things before hypothesis testing
+
+        - Finish probability - m
+        - Finish frequency distribution - m
+        - Types of variables - a
+        - Correlations, covariance - t
+
+- practice stats problems by hand
+
+<p style="font-size: x-large">m = basis of methods of testing; a = assumptions about methods; t = what we are testing</p>
+
+
+## Announcements and reminders
+
+- Problem Set 2 (exam practice): Due October 10 
+- Exam in this classroom October 11
+
+        - Calculator (no phones)
+        - Pencils/pens
+        - 1 page single sided of notes
+        - blank scratch paper
+        - Formula sheet will be printed on the test
+        
+# Probabilities and Frequence Distributions Conclusion
+
+## Other probability topics
+
+Pre-quiz Question 14: I flip a fair coin ten times, the probability that coin comes up heads exactly five times is:
+
+
+## Simpler example
+
+- Exactly 2 tails out of 3 flips:
+
+- Question: In general, using sets how would we start? 
+
+
+## Simpler example
+
+- Exactly 2 tails out of 3 flips:
+
+- Question: In general, using sets how would we start? 
+
+- Answer: define the sample space
+
+- Question: What is the sample space for this problem?
+
+## Simple example: Sample space
+
+- The sample space is:
+
+S = {TTT , TTH , THT , THH , HTT , HTH , HHT , HHH} 
+
+What is our total *possible outcomes* or the number of elements in the samples space? 
+
+## Simple example: Sample space
+
+- The sample space is:
+
+S = {TTT , TTH , THT , THH , HTT , HTH , HHT , HHH} 
+
+What is our total *possible outcomes* or the number of elements in the samples space? 8 <p style="font-size: x-large">(Note that with 3 trials of two possible outcomes this is $2^3$)</p>
+
+- What is our next general step?
+
+
+## Simple example: Sample space
+
+- The sample space is:
+
+S = {TTT , TTH , THT , THH , HTT , HTH , HHT , HHH} 
+
+What is our total *possible outcomes* or the number of elements in the samples space? 8 <p style="font-size: x-large">(Note that with 3 trials of two possible outcomes this is $2^3$)</p>
+
+- Question: What is our next general step?
+
+- Answer: Define the event space
+
+
+## Simple example: Event space
+
+- The event space is possible ways that we can get *exactly* two tails
+- In probability, this is our *favorable outcomes*
+- What is our event space?
+
+## Simple example: Event space
+
+- What is our event space?  
+- s = {TTH,THT,HTT} 
+- Question: What is our *favorable outcomes* or number of elements in the event space?
+
+## Simple example: Event space
+
+- What is our event space?  
+- s = {TTH,THT,HTT} 
+- Question: What is our *favorable outcomes* or number of elements in the event space? 
+- Answer: 3
+- Question: So what is the probability?
+
+## Simple example: Probability
+
+- P(A) = $\frac{favorable_A}{all \; possible \; outcomes_A}$
+
+- P(s) = $\frac{favorable_S}{all \; possible \; outcomes_S}$
+- favorable_S is the event space *s*
+- P(s) = 
+
+
+## Simple example: Probability
+
+- P(A) = $\frac{favorable_A}{all \; possible \; outcomes_A}$
+
+- P(s) = $\frac{favorable_S}{all \; possible \; outcomes_S}$
+- favorable_S is the event space *s*
+- P(s) = $\frac{3}{8}$
+
+## Slightly more complicated example
+
+- If we wanted **at least two tails**
+- The sample space is unchanged with 8 elements
+- Q: What is the event space, $s_b$
+
+## Slightly more complicated example
+
+- If we wanted **at least two tails**
+- The sample space is unchanged with 8 elements
+- Q; What is the event space, $s_b$
+- A: $s_b$ = {TTT,TTH,THT,HTT}
+- Q: What is the total elements? 
+- Q: What is the probability?
+
+## Slightly more complicated example
+
+- If we wanted **at least two tails**
+- The sample space is unchanged with 8 elements
+- Q; What is the event space, $s_b$
+- A: $s_b$ = {TTT,TTH,THT,HTT}
+- Q: What is the total elements? 4
+- Q: What is the probability? $\frac{4}{8}$
+
+## Bigger numbers
+ 
+- **For bigger numbers this is too cumbersome to do by hand**
+- But conceptually this is how we derive probabilities
+- Thinking in terms of sample and event spaces can be useful in understanding how to solve problems and in understanding probabilities we are given. 
+- We have rules for *combinations* and *permutations*
+- If you master these rules you will get a better GRE score than me
+
+## Combinations and permutations
+
+- Permutations: Order matters
+- With repetition - number possible: $n^r$
+- Without repetition - Number possible: $\frac{n!}{(n − r)!}$
+
+- Combinations: Order doesn't matter
+- Number possible: $\binom{n}{r}$  = $\frac{n!}{r!(n − r)!}$ 
+
+## Question 14: Combinations
+
+Question 14: I flip a fair coin ten times, the probability that coin comes up heads exactly five times is:
+
+There are 10 flips, each with two possible outcomes. which means there are $2^{10}$ possible outcomes. The number of favorable possibilities is the *combinations* that can result in 5 heads, found with the combinations formula 
+
+- $\binom{n}{r}$ or $\binom{10}{5}$
+- or $\frac{n!}{r!(n − r)!}$ 
+
+## Question 14
+
+- **That yields this cumbersome formula:**
+
+$\frac{10!}{(5!)^2 * 2^{10}}$
+
+- This can be rewritten as this:
+
+$\frac{10*9*8*7*6*5*4*3*2*1}{(5*4*3*2*1)*(5*4*3*2*1)*2^{10}}$
+
+- which simplifies to 
+
+$\frac{10*9*8*7*6}{(5*4*3*2*1)*2^{10}}$
+
+
+## Authorship and License
+
+- Author: Tom Hanna
+
+- Website: <a href="https://tom-hanna.org/">tomhanna.me</a>
+
+- License: This work is licensed under a <a href= "http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.</>
+
+<a href= "http://creativecommons.org/licenses/by-nc-sa/4.0/">![Creative Commons License](creative_commons_license.png)</a>
+
+
+
+
+
+
+
+
