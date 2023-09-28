@@ -37,12 +37,12 @@ Exactly 2 tails out of 3 flips:
 
 S = {TTT,TTH,THT,THH,HTT,HTH,HHT,HHH} - 8 possibilities
 Possible ways it we can get exactly two tails
-A = {TTH,THT,HTT} - 3 favorable
-P(A) = 3/8
+$s_a$s = {TTH,THT,HTT} - 3 favorable
+P($s_a$) = 3/8
 
 If we wanted **at least two tails**:
-B = {TTT,TTH,THT,HTT}
-P(B) = 4/8 = 1/2
+$s_b$ = {TTT,TTH,THT,HTT}
+P($s_b$) = 4/8 = 1/2
 
 **For bigger numbers this is too cumbersome to do by hand**
 
@@ -115,6 +115,8 @@ $$\\[4in]$$
         
 
 $$\\[4in]$$
+
+
 ### Correlations
 
 + What is it?
