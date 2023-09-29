@@ -59,7 +59,7 @@ Quarto - https://quarto.org/
 
 ```{r}
 #Hint: use the assignment operator <- to assign the value
-#use the c binding method - c() - to create the sequence
+#use the c function - c() - to create the sequence
 
 my_vector <- c(1,2,3,4,5)
 
