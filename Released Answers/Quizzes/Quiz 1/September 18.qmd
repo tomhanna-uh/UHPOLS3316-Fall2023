@@ -1,0 +1,146 @@
+---
+title: "September 18"
+date: today
+format: 
+        html:
+                self-contained: true
+---
+
+
+### When you are finished *knit*/*render* your R Studio document or turn in a written copy on paper but show your work in order..
+
+#### You may compute your answers using a calculator, pen and paper, or R. 
+
+#### For the next problems use these as your data:
+
+**-1,-5,7,21,15,-3,10,11,14,8**
+
+1. What is the sum of these?
+
+```{r}
+
+quiz_vector <- c(-1,-5,7,21,15,-3,10,11,14,8) #put them in a vector
+quiz_sum <- sum(quiz_vector) #sum the vector
+quiz_sum #print the sum object from the last line to the screen/document
+
+```
+
+
+2. What is the mean?
+
+```{r}
+
+quiz_mean <- mean(quiz_vector) #find the mean with the r function and assign it to an object named quiz_mean
+quiz_mean #print the mean object from the last line to the screen/document
+
+```
+
+
+3. What is the variance?
+
+```{r}
+
+quiz_var <- var(quiz_vector) #find the sample variance with the r function and assign it to an object named quiz_var
+
+quiz_var #print the object created in the last line of code to the screen or document
+
+
+```
+
+
+
+4. What is the standard deviation?
+
+```{r}
+quiz_sd <- sd(quiz_vector) #find the sample standard deviation with the r function and assign it to an object named quiz_sd
+quiz_sd #print the object from the last line to the screen/document
+
+
+```
+
+
+#### For the next problems use these as your data:
+
+**1,2,2,3,3,3,4,4,4,4,4,5,5,5,6,6,7**
+
+5. What is the mode of these?
+
+Just count: 4 has the most observations so it is the mode.
+
+6. What is the median?
+
+```{r}
+
+quiz_vector2 <- c(1,2,2,3,3,3,4,4,4,4,4,5,5,5,6,6,7) # put the series of numbers in a vector object named quiz_vector2
+
+quiz_median2 <- median(quiz_vector2) #find the median with the r function and assign it to object named quiz_median2
+
+quiz_median2 #print quiz_median2 to the screen
+
+
+
+```
+
+
+
+7. What is the sum of these?
+
+```{r}
+
+quiz_sum2 <- sum(quiz_vector2) #sum quiz_vector2 and assign the result to an object named quiz_sum2
+
+quiz_sum2 #print quiz_sum2 to the screen/document
+
+
+```
+
+
+8. How many observations are there?
+
+```{r}
+
+#length() counts the number of observation but stores it in a non-numeric format. as.numeric() converts it to a numeric format that can be used in later math operations. The assignment operator assigns the result to the object quiz_n2 
+
+
+quiz_n2 <- as.numeric(length(quiz_vector2)) 
+
+quiz_n2 # returns the result to the screen/document
+
+
+```
+
+
+
+9. What is the mean?
+
+```{r}
+
+quiz_mean2 <- quiz_sum2/quiz_n2 #find the mean by dividing the sum of the observations by the number of observations
+
+quiz_mean2 # return the result to the screen/document
+
+
+```
+
+
+#### For the next problem use these as your data:
+
+**5,10,15,20**
+
+10. What is the median of the data?
+
+```{r}
+
+median_q10 <- median(c(5,10,15,20)) # find the median and assign to an object using the r function
+median_q10 #return the result to the screen
+
+median_altq10 <- (10+15)/2 #find the median by and assign it to object median_altq10
+
+median_altq10 #return the result the screen
+
+```
+
+
+11. What is the name of the President of the University of Houston? (first, last, spelling does not count) 
+
+Dr. Renu Khator, Professor of Political Science, President of the University of Houston and Chancellor of the University of Houston System  (I didn't ask for all those titles but you should know she is actually appointed as a professor in our department.)
