@@ -336,6 +336,32 @@ We need to know types of variables because they affect how we should treat the d
 - Simple statistics treating categorical variables as continuous or discrete numerical values yield false results
 - Discrete values may be misinterpreted
 
+## Population and Sample
+
+- Population is the full set
+- All possible data
+- The entire group of interest
+
+        - the population of country under study
+        - the set of nation states
+        - the set of Members of Congress
+        
+- S{}
+
+## Population and Sample
+
+- Sample is the subset that we actually observe
+- Population is S{}, sample is s{}
+- S is always less than s
+
+## Population and Sample formulas
+
+For many formulas:
+
+- Population statistics are divided by *n*
+- Sample statistics are divided by *n - 1*
+- This is to correct for the bias created by not observing the entire population
+- The larger *n* is, the less difference the *-1* makes
 
 
 ## Correlation and Covariance
