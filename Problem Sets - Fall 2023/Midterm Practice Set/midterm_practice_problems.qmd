@@ -1,41 +1,46 @@
 ---
 title: "Midterm Practice Problems"
-format: html
-editor: visual
+author: "Your Name"
+format: 
+        html:
+                self-contained: true
 ---
 
+**If completing in R Studio, please edit the part of the libe beginning "author:" information above that is inside the quotation marks to reflect your name. Do not change anything else in the area marked by the --- on top and bottom.**
 
-**Please edit the part of the author: information above that is inside the quotation marks to reflect your name. Do not change anything else in the area marked by the --- on top and bottom. **
+**If completing on paper, please print your name on the paper.**
 
 **This bonus problem set is worth 20% of a normal problem set**
 
-**You can complete these any way you like, but be sure you complete the type of statistic asked for and consider what will help you most in practicing for the midterm. Since you will not have R available for the midterm, you may not want to use R.**
+**You can complete these any way you like, but be sure you complete the type of statistic asked for (population versus sample) and consider what will help you most in practicing for the midterm. Since you will not have R available for the midterm, you may not want to use R.**
+
+**The difference between population and sample statistics is the difference between dividing by "n" or dividing by "n-1"**
 
 For these questions use the following data sequence of numbers:
 
 21.68727, 21.36817, 21.93509, 19.40038, 18.39717, 15.49597, 25.37059, 19.39648, 19.43999, 14.77839, 20.89514, 16.25224, 19.27104, 20.55040, 17.86700
 
-1. How many observations are there?
+1.  How many observations are there?
 
-2. What is the sum of the numbers?
+2.  What is the sum of the numbers?
 
-3. What is the mean of the numbers?
+3.  What is the mean of the numbers?
 
-4. What is the median of the numbers?
+4.  What is the median of the numbers?
 
-5. What is the **population variance** of the numbers? (divide by *n*)
+5.  What is the **population variance** of the numbers? (divide by *n*)
 
-6. What is the **sample variance** of the numbers? (divide by *n-1*)
+6.  What is the **sample variance** of the numbers? (divide by *n-1*)
 
-7. What is the **population standard deviation** of the numbers?
+7.  What is the **population standard deviation** of the numbers?
 
-8. What is the **sample standard deviation* of the numbers?
+8.  What is the \*\*sample standard deviation\* of the numbers?
 
 Complete the same questions using these numbers:
 
 59.44320,55.73531,47.49488,67.98193,45.69111,54.39180,53.77792, 46.15730,58.2188,47.07120,39.92231,49.07843
 
-9. How many observations are there?
+9.  How many observations are there?
 
 10. What is the sum of the numbers?
 
@@ -49,4 +54,4 @@ Complete the same questions using these numbers:
 
 15. What is the **population standard deviation** of the numbers?
 
-16. What is the **sample standard deviation* of the numbers?
+16. What is the \*\*sample standard deviation\* of the numbers?
