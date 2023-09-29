@@ -16,6 +16,7 @@ format:
 
 ## Agenda
 
+- This is October 4th and 9th lecture
 - Last things before hypothesis testing
 
         - Finish probability - m
@@ -196,8 +197,221 @@ $\frac{10*9*8*7*6*5*4*3*2*1}{(5*4*3*2*1)*(5*4*3*2*1)*2^{10}}$
 
 $\frac{10*9*8*7*6}{(5*4*3*2*1)*2^{10}}$
 
+## Potential Test Questions
 
-## Authorship and License
+ **If you see a test question on this, I would expect you to be able to:**
+ 
+- Identify if there is a combination vs permutation
+- Identify if it is with or without repetition
+- Solving a *permutation* question may be bonus material
+- Complete a very simple example using sets, i.e. exactly 2 tails out of 3 flips.
+
+        - For this I might ask for a numeric answer, to pick the correct sample space from a list, to pick the correct event space from a list, or some other stage of the problem.
+        
+ - Set up the problem without completing it. For example see next slide:
+ 
+## Set up without completing examples
+ 
+- Narrative: The answer to this problem would be figured by dividing the combination 10 choose 5 by the number of possible outcomes, which is 2 to the tenth power
+- Formula: $\frac{\binom{n}{r}}{2^{10}}$ 
+- Narrative: The favorable outcomes are a combination choosing 5 from 10 and the possible outcomes are $2^10$
+- Narrative: I would use a combination to find the favorable outcomes and use 2^10 as the total possible outcomes
+
+## If you intend to take the GRE
+
+- These are a substantial number of GRE quantitative section questions and they can be both tricky and time consuming if you don't know them well. 
+
+- [https://www.mathsisfun.com/combinatorics/combinations-permutations.html](https://www.mathsisfun.com/combinatorics/combinations-permutations.html)
+
+- [https://statisticsbyjim.com/probability/permutations-probabilities/](https://statisticsbyjim.com/probability/permutations-probabilities/)
+
+- [https://www.khanacademy.org/math/precalculus/x9e81a4f98389efdf:prob-comb/x9e81a4f98389efdf:prob-combinatorics-precalc/e/probability_with_perm_comb](https://www.khanacademy.org/math/precalculus/x9e81a4f98389efdf:prob-comb/x9e81a4f98389efdf:prob-combinatorics-precalc/e/probability_with_perm_comb)
+
+## Types of variables
+
+- We need to know types of variables because they affect how we should treat the data. 
+- The techniques for this class are only completely valid for one type: continuous.
+
+
+## Types of variables
+
+- Continuous - numbers with decimal places
+- Discrete - whole numbers or integers
+- Categorical - numbers just represent categories
+
+        - Ordinal - ordered highest to lowest
+        - Nominal - no particular order
+        
+- Binary - choice of two alternatives such as war/peace
+- Count variables
+
+## Continuous variable: examples
+
+- temperature
+- amount of rain in a city
+- height in inches $^t$
+- age $^t$
+- **nations' GDP**
+- **household income**
+- population 
+
+<p style="font-size: medium">$^t$ Technically only if we measure to fairly small fractions, but see the slide following the next.</p>
+
+## Discrete variable: examples
+
+- number of days with a high above 90 degrees
+- number of days of rain in a city
+- height in feet
+- age in decades
+- **GDP by billions**
+- **income by ranges of $5,000**
+- **district magnitude**
+
+## Discrete v. Continuous
+
+- The distinction between discrete and continuous is a matter of judgment. At the smallest level, called the Planck scale in physics, every physical measurement is discrete.
+- It is the size of the measurement vs the size of the gaps that matter
+
+        - measuring by centimer if we are measuring 5 centimeters is discrete
+        - measuring by centimer if we are measuring 1000 km is continuous
+        
+<p style="font-size: large">Planck scale: $10x10^{−35}$ m, $5x10^-{44}$ seconds</p>
+
+## Categorical: Nominal
+
+1. Numbers that represent categories in no particular order.
+2. We can't do math on the numbers because the numbers really just represent names. 
+
+- color
+- **ethnicity**
+- **religion**
+- **country of origin**
+- **zip code**
+- **form of government**
+
+## Categorical: Ordinal
+
+1. Order matters.
+2. We still can't use math because the numbers don't represent ratios, just order
+
+## Categorical: Ordinal
+
+- hot, warm, cool, cold
+- Movie ratins (G, PG, PG-13, R, NC-17)
+- **Education level**
+- **Likert scales**
+- **Regime type**
+
+        - Closed Authocracy
+        - Electoral Autocracy
+        - Electoral Democracy
+        - Liberal Democracy
+        
+## What do we do with categorical variables?
+
+- As independent variables, R can handle them by treating them as *factors*
+- As dependent variables, we have to use more advanced Maximum Likelihood Estimate (MLE) techniques
+
+## Binary variables
+
+- **yes/no** as in a survey answer
+- **war/peace**
+- **democracy/non-democracy**
+- **proportional/majoritarian**
+- **freedom/slavery**
+
+
+## Count variables (Poisson variables)
+
+- Number of days of rain in a city in a year
+- Number of text messages per hour
+- Number of militarized interstate disputes per country per year
+- Number of men kicked to death by horses per Prussian cavalry unit per year (Ladislaus Bortkiewicz, 1898)
+
+## Types of variables
+
+We need to know types of variables because they affect how we should treat the data. :
+
+- Different types have different distributions
+- Simple statistics treating categorical variables as continuous or discrete numerical values yield false results
+- Discrete values may be misinterpreted
+
+
+
+## Correlation and Covariance
+
+- Related measures
+- Do not worry about computing them for the test
+- You should understand what they measure
+
+
+## Correlation
+
++ What is correlation?
+
+- The strength of association between two variables
+
+
+## Correlation of 1
+
+- 1 is perfect positive correlation
+
+        - It doesn't mean you just multiply times 1 and get the other
+        - The relationship can be complex (not a line)
+        - It just means there is no variation at all in the relationship
+        
+##  Correlation of 0    
+        
+- 0 is perfectly uncorrelated
+- There is zero relationship between the variables
+
+## Negative correlation
+
+- -1 is a perfect negative correlation
+- It is still a perfect correlation
+- Indicates that when one increases the other decreases in perfect relationship
+- Like a correlation of 1, it can be complex
+
+## Computing correlations
+
+- Many ways to figure correlation
+- Probably the most common is Pearson's Correlation Coefficient
+- Pearson's correlation is the default method when using the *cor()* function in R
+
+## Computing correlations
+
+- The formula for Pearson's correlation is:
+
+![Pearson's Correlation Formula](pearson.jpg)
+
+
+
+## Covariance 
+
+- What is covariance?
+- A measure of the joint variability of two random variables
+- Measures the direction of the relationship
+- Correlation measures strength of the relationship
+
+## Covariance  Formula
+
+- The formual for covariance is:
+
+![Covariance formula](covariance_formula.jpg)
+
+
+## Finding correlation from covariance
+
+- Cor(x,y) = $\frac{Cov(x,y)}{\sigma_x,\sigma_y}$
+
+- $\sigma_x$ is standard deviation of x
+- $\sigma_y$ is standard deviation of y
+
+
+
+## Authorship, License, Credits
+
+Covariance formula from: <a href = "https://www.educba.com/covariance-formula/">EDUCBA</a>
 
 - Author: Tom Hanna
 
