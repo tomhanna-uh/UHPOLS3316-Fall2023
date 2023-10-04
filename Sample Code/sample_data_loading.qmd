@@ -1,0 +1,19 @@
+---
+title: "Sample data loading"
+format: revealjs
+editor: visual
+---
+
+## Sample data loading
+
+```{r echo=TRUE}
+
+library(here)
+
+mcd <- read.csv(here("data","character-deaths.csv"))
+
+mcd2 <- read.csv("data/character-deaths.csv")
+
+
+
+```

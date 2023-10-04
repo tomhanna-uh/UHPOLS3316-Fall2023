@@ -1,0 +1,27 @@
+---
+title: "Problem Set 3 Numbers"
+format: 
+        html:
+                self-contained: true
+---
+
+Produce number sets for problem set 3
+
+```{r}
+set.seed(1234)
+set1 <- rnorm(8,0,1)
+set1 <- as.numeric(format(round(set1, 3), nsmall = 3))
+set1
+
+set2 <- rnorm(9,125,.5)
+set2 <- as.numeric(format(round(set2, 2), nsmall = 2))
+set2
+
+set3 <- rnorm(12,75,5)
+set3 <- as.numeric(format(round(set3,0), nsmall = 0))
+set3
+
+
+
+```
+

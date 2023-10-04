@@ -1,0 +1,50 @@
+---
+title: "Project Data"
+output: html_document
+date: "2023-08-28"
+---
+
+## Discussion: Your Project Data Set
+
+Discussion: Project data set
+
+        1. Keep it simple 
+        
+                a. Fewer variables and fewer observations are better
+                b. You don't need to solve the problem in this class 
+                c. Try to avoid time series - or be aware of the issues
+
+	
+        2. Types of variables
+        
+                a. Look for: Numbers with decimal places (Continuous variables)
+                b. Avoid: binary (0/1, yes/no, on/off)
+                c. Avoid: Words - Categorical Variables
+                d. Avoid: Ordered numbers (1st, 2nd, 3rd) - Ordinal Variables
+                + e. Avoid: Numbers without decimal places (Discrete variables)
+
+        3. Sources if you don't have something in mind
+
+                a. Internal R datasets - https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/00Index.html
+                b. The Dataverse - https://dataverse.org/ , Example https://www.sciencedirect.com/science/article/pii/S2665963821000762
+                c. State and federal databases, Example: https://cris.dot.state.tx.us/public/Query/app/home
+                d. Kaggle - https://www.kaggle.com/datasets
+                
+
+
+                
+```{r echo=FALSE}
+
+x <- 1
+y <- 2
+z <- x + y
+cat(z)
+
+
+```
+
+
+
+
+
+
