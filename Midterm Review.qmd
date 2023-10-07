@@ -1,0 +1,109 @@
+---
+title: |
+    | Midterm Review and Study Guide
+    | Format, Content, Question Types
+    | POLS 3316: Statistics for Political Scientists
+date: today
+author: "Tom Hanna"
+format: 
+        revealjs:
+                self-contained: true
+                transition: convex
+                theme: [moon, custom.css]
+                logo: logo.png
+                footer: "GOVT2306, Fall 2023, Instructor: Tom Hanna"
+---
+
+## Format 
+
+- Full class period to complete
+- 55 points available, 50 is a perfect score
+- No designated extra credit questions, just 5 extra points
+- 48 questions, 2 are worth 2 points each
+- 5 points for fully completed worksheet for section 1
+- Formulas and worksheet provided - know how to use them
+- You will get a week to do corrections for half credit
+- Take corrections seriously - final is comprehensive
+
+## What you need and what you don't
+
+- 1 page of notes allowed, handwritten one side only
+- Pencils or pens
+- Calculator
+- As much blank scratch paper as you want
+- Only device allowed is a calculator
+- No phones, no computers, no tablets or other devices except a calculator
+
+
+## Question Types
+
+- Section 1 
+
+                - full worksheet from data to both types of standard deviation (sample and population)
+                - 8 questions partial credit possible
+                - 5 points for worksheet completion (Full credit just for completion as long as it is not just random numbers)
+                
+- About 20-25 questions involve calculations including Section 1
+- 10-15 multiple choice
+- 20-25 fill in the blank/short answer
+
+
+## Content
+
+- R and R Studio - 3 questions
+- Measures of Central Tendency
+- Measures of Dispersion
+- Sets & Probability
+- Frequency Distributions - 68-95-99 Rule
+- Concepts
+
+                - Variable types
+                - Law of Large Numbers
+                - Central Limit Theorem
+                - Correlation
+                - Covariance 
+
+## R and R Studio
+
+- No coding
+- Two fill in the blank, 1 multiple choice
+- One concept - fill in the blank, single word, important for understanding everything in the R environment
+- One operator - fill in the blank, single character, important for selecting variables
+- One function - multiple choice, important function for handling alphanumeric data type aka character data
+
+## Sets
+
+- Be able to define a set, a sample space, and an event
+- Be able to draw a sample space and event space
+- Be able to use set operations to calculate probabilities
+- Use a set step by step to derive a probability (6 questions)
+
+
+## Probability
+
+- Be able to calculate probabilities
+- Favorable/Unfavorable Outcomes
+- Understand the notation - P(A), P(A|B), P(A $\cup$ B), P(A $\cap$ B)
+- Be able to work backwards from the formulas using simple algebra
+
+## Non-probability Calculations
+
+- Be able to use the worksheet and/or formulas
+- Be able to calculate the mean, median, mode, variance, standard deviation, and range 
+- Be able to calculate the standard deviation if given the variance
+- Be able to calculate the variance if given the standard deviation
+- Be able to calculate one part of the worksheet if given the other relevant parts
+- Identify minimum, maximum, range
+
+## Hints
+
+- Be able to identify and ignore extra information
+- It may be useful to refer to the formulas page when doing the multiple choice even when it is not a calculation question
+- Find the statistic that is asked for, don't worry about whether it is the right one
+
+## Hints 2
+
+- Know that Bayes Rule applies to conditional probabilities - 1 point
+- Be able to plug the probabilities into Bayes Rule if given to you (formula provided) - 1 point
+- Apply sets if needed even informally (I don't care what your brackets look like)
+
