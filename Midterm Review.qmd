@@ -34,6 +34,19 @@ format:
 - Only device allowed is a calculator
 - No phones, no computers, no tablets or other devices except a calculator
 
+## How to prepare
+
+- Do Problem Set 3 and the Midterm Practice Extra Credit
+- Practice the worksheet with random numbers and check it against R,  Excel, online stats calculator, etc. 
+- Finish the earlier problem sets or redo the ones you had trouble with 
+- Look through these slides for things you don't understand
+
+
+## For checking your practice problems
+
+https://www.calculatorsoup.com/calculators/statistics/statistics.php - can select *sample* or *population* to check both
+
+
 
 ## Question Types
 
