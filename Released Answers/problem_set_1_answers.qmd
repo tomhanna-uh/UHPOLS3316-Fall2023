@@ -1,0 +1,305 @@
+---
+title: "Problem Set 1R"
+author: "POLS 3316 - Due September 20"
+format: 
+        html:
+                self-contained: true
+---
+
+## Overview
+
+I have left some instructions from R Studio in place. You will get similar instructions anytime you use the File menu to create a new Quarto Document, Quarto Presentation, R Markdown, or R Notebook. You will **not** get anything but a blank document if you create an R Script.
+
+If I fail to remove any references to Blackboard, please read them as "Canvas."
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+## Running Code
+
+When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+```{r}
+1 + 1
+```
+
+You can add options to executable code like this
+
+```{r}
+#| echo: false
+2 * 2
+```
+
+The `echo: false` option disables the printing of code (only output is displayed).
+
+## Part 1 - Complete before leaving class Wednesday
+
+**Run code in R Studio or R Studio Cloud. Download the finished HTML or PDF file and upload to Canvas by the September 20 for full credit**
+
+**The areas with \`\`\` followed by {r} and ending with \`\`\` are code chunks. The Run dropdown arrow in the upper right of this box give you options for running the code. Run *Current Chunk* runs just the piece you are working on. After you have finished, you can *Run all* then save the result. Where you see Preview (above just left of center) there is a dropdown arrow. If you select "Render", including "Render to HTML" or "Render to PDF", you can produce a copy that can be downloaded and submitted in Canvas.**
+
+**IF all else fails, screenshot your work, make a note of anything you did to resolve any errors, and submit that in Canvas.**
+
+**You do not need to do anything fancy, but For more help with RMarkdown and Quarto here are some resources:**
+
+*R Markdown is a language based on R and a general language called Markdown. Quarto is a system for publishing documents and presentations written using R Markdown. Both are included in R Studio/Posit*
+
+Cheatsheet - https://rmarkdown.rstudio.com/lesson-15.HTML
+
+Code Chunks - https://rmarkdown.rstudio.com/lesson-3.html
+
+R Markdown Cookbook - https://bookdown.org/yihui/rmarkdown-cookbook/
+
+Quarto - https://quarto.org/
+
+1.  
+
+    a.  (bonus) Create a vector named *my_vector* containing the sequence (1,2,3,4,5). Find the sum using the vector.
+
+```{r}
+#Hint: use the assignment operator <- to assign the value
+#use the c function - c() - to create the sequence
+
+my_vector <- c(1,2,3,4,5)
+
+
+```
+
+1.  Write the code to create an object named *object_sum* whose value is the sum of the sequence of numbers (1,2,3,4,5) from problem 1 and then return the value of that object to the console. (*Hint: you'll use the assignment operator to assign an operation on the right side to object_sum on the left side. Hint2: You can type in a math operation or you can use your code from question 1. Hint 3: I have already written the code to return the value, all you have to do is uncomment it.*)
+
+```{r}
+
+
+object_sum <- sum(my_vector)
+object_sum
+
+```
+
+2.  What is the sum of the sequence of numbers (1,2,3,4,5)? (You can type the answer.)
+
+Answer: 15
+
+3.  How many observations (n) are in the sequence (1,2,3,4,5)? (Note: If you did question 1, you can look next to my_vector in the upper right Environment window and see that R has counted for you. You will see \[1:n\], where n is the number of observations.)
+
+```{r}
+
+n <- as.numeric(length(my_vector))
+n
+
+
+```
+
+
+
+
+4.  Write the code to create a new object named *object_mean* whose value is the mean of the above values using *object_sum* and the number of observations *object_n*? (Hint: You'll use the assignment operator with the *object_mean* on the left side and a math operation using the other objects on the right side.)
+
+```{r}
+
+object_mean <- object_sum / n
+object_mean
+
+```
+
+5.  Get help with the *mean()* function in R in the next code chunk. If you need help for problem 6, you can type the same thing in the Console (bottom left):
+
+```{r}
+#To get help with a function, you can use ?
+#For some non-base functions, you may need to use ??
+
+?mean
+
+
+```
+
+6.  Now write the code to find the mean of the above values using the *mean()* function in R? (*Hint: If you did the bonus question, 1a it will save you time here*)
+
+```{r}
+
+mean_check <- mean(my_vector)
+mean_check
+
+```
+
+7.  Write the code to find the sample [ERROR: This should have said population variance because that is the way we did it in class. Either is acceptable and I gave both answers.] variance of the above observations using the objects you created (*object_n, object_mean, object_sum*) and the sequence of values? (*Hint: Creating an object with the sample variance will help with question 8 but remember to return the object's value if you do.*)
+
+```{r}
+
+my_pop_variance <- sum((my_vector - object_mean)^2)/n
+
+cat('population variance')
+my_pop_variance
+
+
+
+my_sample_variance <- sum((my_vector - object_mean)^2)/(n-1)
+
+cat('sample variance')
+my_sample_variance
+
+
+```
+
+8.  Write code to find the standard deviation?
+
+**There are two simple ways to do this:**
+
+```{r}
+
+my_population_sd <- sqrt(my_pop_variance)
+
+cat('population standard deviation')
+my_population_sd
+
+my_sample_sd <- sqrt(my_sample_variance)
+
+cat('sample standard deviation')
+my_sample_sd
+
+```
+
+9.  What is the median of sequence of values from question 1.
+
+**with 5 numbers, just counting to the middle number is easy and you can do that to check. It's also an acceptable answer. Here is the R code:**
+
+```{r}
+
+my_median <- median(my_vector)
+
+cat('median')
+my_median
+
+```
+
+10. What is the mode of 0, 1, 1, 2, 3, 5, 8, 13, 21, 34.
+
+Answer: 2
+
+11. What is your favorite food? Pizza. While this is the only rational,  correct answer except maybe tacos, you get full points for answering with your own irrational cravings. 
+
+12. What is your Github username? tomhanna-uh [Note: This is public so there is no concern with revealing it.]
+
+13. What is the name of your project data set? demonstration_data.csv
+
+14. What is the source of your project data set? The Varieties of Democracy [VDem] Project version 13. 
+
+15. What would you like to learn from the data set in one or two sentences? (How to use data/R studio/statistics is an acceptable answer.) 
+
+Answer: I am interested in exploring this particular bit of data just to see what correlation is there. This is purely exploratory. I am mostly using this as a demonstration for all of you to follow along.
+
+16. (optional) How many variables does your data have that you will use? How many observations does your data have? There are 12 in the data set I created. I have not decided which ones I will use. 
+
+17. (Optional) Does your data have observations across multiple time periods with separate observations for each time period? No. I subsetted the data for a single year. This is the same procedure and source as the Mini Datasets I uploaded to Canvas and which any of you may use.
+
+### Part 2
+
+*For the remaining problems, you can use math operations or R functions. You can use the methods above (creating objects, etc.) or you can just run the functions on the raw numbers. You may also work out the problems by hand, showing your work*
+
+18. What is the sum of the sequence (5,10,15,20,25,30,35,40)
+
+```{r}
+
+second_vector <- c(5,10,15,20,25,30,35,40)
+
+sum_second_vector <- sum(c(second_vector))
+sum_second_vector
+
+
+
+
+```
+
+19. How many observations (n) are in the sequence in question 18?
+
+```{r}
+
+n_2 <- as.numeric(length(second_vector))
+n_2
+
+
+```
+
+
+
+
+Answer:
+
+20. What is the mean of the sequence in question 18?
+
+```{r}
+
+mean_second_vector <- mean(second_vector)
+mean_second_vector
+
+
+
+```
+
+21. What is the sample variance of the sequence in question 18?
+
+```{r}
+
+sample_variance_second_vector <- var(second_vector)
+sample_variance_second_vector
+
+```
+
+22. What is the sample standard deviation of the sequence in question 18?
+
+```{r}
+
+sample_standard_deviation_second_vector <- sd(second_vector)
+sample_standard_deviation_second_vector
+
+```
+
+23. What is the median of the sequence in question 18?
+
+```{r}
+
+median_second_vector <- median(second_vector)
+median_second_vector
+
+
+```
+
+25. What is the sum of the sequence (3,7,5,5,6,7,7,9)
+
+```{r}
+
+third_vector <- c(3,7,5,5,6,7,7,9)
+
+sum_third_vector <- sum(third_vector)
+sum_third_vector
+
+
+
+```
+
+26. What is the mode of the sequence?
+
+Answer: 5
+
+27. How many observations (n) are in the sequence?
+
+```{r}
+third_n <- as.numeric(length(third_vector))
+third_n
+
+
+
+```
+
+
+
+
+28. What is the mean of the sequence?
+
+```{r}
+
+mean_third_vector <- mean(third_vector)
+mean_third_vector
+
+
+```
