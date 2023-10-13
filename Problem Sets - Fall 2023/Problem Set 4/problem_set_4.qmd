@@ -1,0 +1,61 @@
+---
+title: "Problem Set 4"
+format: 
+        html:
+                self-contained: true
+---
+
+**For these questions, use your project data set that you have chosen for the Project assignment or any test data set other than those used in class lectures or labs.**
+
+**This will be the first part of your semester project.**
+
+<!-- **If you choose, you may also simulate a data set with at least 100 observations of at least two variables. If you do this, give the variables descriptive column names.** -->
+
+1. What is the source of your data set? (Where did you get it?)
+
+Answer: 
+
+2. How did the source obtain the data? (Survey, experiment, observation/collection)
+
+Answer:
+
+3. What are your two main variables of interest (x and y)? *If you are considering cause and effect, x is the cause and y is the effect*
+
+Answer:
+
+4. How many observations are there? *You can use length() to count number or you can use View() to look at the data and look for the number of rows. You can also use as.numeric(length()) to create an object with the number of observations, n, for later use.* 
+
+**For both your x and y variables:**
+
+5. What is the median?
+
+Answer for x:
+
+Answer for y:
+
+6. What is the mean?
+
+Answer for x:
+
+Answer for y:
+
+7. What are the sample variance and sample standard deviation?
+
+Answer for x:
+
+Answer for y:
+
+8. What are the minimum and maximum?
+
+x minimum:                   x maximum:
+y maximum:                   y maximum:
+
+9. What are the first and third quartiles?
+
+x first quartile:            x third quartile:
+y first quartile:            y third quartile:
+
+10. Plot a histogram of the x variable.
+
+11. Plot a histogram of the y variable.
+
