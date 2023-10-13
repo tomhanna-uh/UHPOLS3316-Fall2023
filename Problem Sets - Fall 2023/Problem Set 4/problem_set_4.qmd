@@ -9,6 +9,8 @@ format:
 
 **This will be the first part of your semester project.**
 
+**If you choose not to use Quarto or R Markdown, your results need to be similarly formatted to the output of a rendered Quarto or knitted R Markdown document. Readability and format matter.**
+
 <!-- **If you choose, you may also simulate a data set with at least 100 observations of at least two variables. If you do this, give the variables descriptive column names.** -->
 
 1. What is the source of your data set? (Where did you get it?)
@@ -23,36 +25,48 @@ Answer:
 
 Answer:
 
-4. How many observations are there? *You can use length() to count number or you can use View() to look at the data and look for the number of rows. You can also use as.numeric(length()) to create an object with the number of observations, n, for later use.* 
+4. How many observations (n) are there? *You can use length() to count number or you can use View() to look at the data and look for the number of rows. You can also use as.numeric(length()) to create an object with the number of observations, n, for later use.* 
 
 **For both your x and y variables:**
 
+n for x:
+
+n for y:
+
 5. What is the median?
 
-Answer for x:
+median of x:
 
-Answer for y:
+median of y:
 
 6. What is the mean?
 
-Answer for x:
+mean of x:
 
-Answer for y:
+mean of y:
 
 7. What are the sample variance and sample standard deviation?
 
-Answer for x:
+*Note: We will use sample variance for project data because in most cases your data sets are only a sample not the full population.*
 
-Answer for y:
+sample variance of x:
+
+sample standard deviation of x:
+
+sample variance of y:
+
+sample standard deviation of y:
 
 8. What are the minimum and maximum?
 
-x minimum:                   x maximum:
-y maximum:                   y maximum:
+x minimum:                      x maximum:
+
+y maximum:                      y maximum:
 
 9. What are the first and third quartiles?
 
 x first quartile:            x third quartile:
+
 y first quartile:            y third quartile:
 
 10. Plot a histogram of the x variable.
