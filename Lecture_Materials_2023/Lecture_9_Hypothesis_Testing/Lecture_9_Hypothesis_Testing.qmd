@@ -1,0 +1,337 @@
+---
+title: |
+    | Hypothesis Testing
+    | POLS 3316: Statistics for Political Scientists
+date: today
+author: "Tom Hanna"
+format: 
+        revealjs:
+                self-contained: true
+                transition: convex
+                theme: [moon, custom.css]
+                logo: logo.png
+                footer: "GOVT2306, Fall 2023, Instructor: Tom Hanna"
+---
+
+# Hypothesis testing
+
+## What is a hypothesis
+
+A falsifiable statement about what we believe will happen based on the theory we are trying to test.
+
+## Falsifiability
+
+- We start from the assumption that our theory is wrong
+
+## Falsifiable
+
+- We start from the assumption that our theory is wrong
+- We assume there is no relationship
+
+
+
+## Falsifiable
+
+- We start from the assumption that our theory is wrong
+- We assume there is no relationship
+- Our hypothesis is called the 
+
+**alternative hypothesis** or **H1**
+
+## Falsifiable
+
+- We start from the assumption that our theory is wrong
+- Our hypothesis is called the 
+
+**alternative hypothesis** or **H1**
+
+- because it is the alternative to our assumption of no relationship
+
+
+## Falsifiable
+
+- We start from the assumption that our theory is wrong
+- Our hypothesis is called the:
+
+**alternative hypothesis** or **H1**
+
+- because it is the alternative to our assumption of no relationship. This is the:
+
+
+**null hypothesis** or **H0**
+
+
+
+
+
+## Testing the null hypothesis
+
+- Statistical tests show the degree of certainty that we can reject the null hypothesis
+
+## Testing the null hypothesis
+
+- Statistical tests show the degree of certainty that we can reject the null hypothesis
+- They show the likelihood that the alternative hypothesis is due to random chance
+
+## Testing the null hypothesis
+
+- Statistical tests show the degree of certainty that we can reject the null hypothesis
+- They show the probability that the alternative hypothesis is due to random chance
+- When the probability, *p*, is below our pre-determined threshold, we reject the null hypothesis 
+
+
+
+## Testing the null hypothesis
+
+- Statistical tests show the degree of certainty that we can reject the null hypothesis
+- They show the probability that the alternative hypothesis is due to random chance
+- When the probability, *p*, is below our pre-determined threshold, we reject the null hypothesis 
+- **If we reject the null hypothesis, the alternative hypothesis is true, right?**
+
+
+## Testing the null hypothesis
+
+- Statistical tests show the degree of certainty that we can reject the null hypothesis
+- **If we reject the null hypothesis, the alternative hypothesis is true, right?**
+
+
+**NO!!!!**
+
+
+
+## Rejecting the null hypothesis
+
+If we reject the null we infer that the alternative hypothesis is approximately true within the probability we have chosen. 
+
+## How do we get there?
+
+**How do we get from a sample with a correlation to talking about testing a hypothesis for a population?**
+
+## How do we get there?
+
+**How do we get from a sample with a correlation to talking about testing a hypothesis for a population?**
+
+- Probability distributions
+- Tying our data to the probability distributions
+- Tying sample statistics to population parameters
+
+## Probability distributions
+
+*68-95-99.7 Rule*
+
+
+
+## Probability distributions
+
+*68-95-99.7 Rule*
+
+                + Allows us to estimate probability based on distance from the mean
+
+## Probability distributions
+
+*68-95-99.7 Rule*
+
+                + Allows us to estimate probability based on distance from the mean
+                + Applies to normal distribution
+                
+## Probability distributions
+
+The *68-95-99.7 Rule*
+
+                + Allows us to estimate probability based on distance from the mean
+                + Applies to normal distribution
+                + Basis for the actual decision rules
+                
+## The 68-95-99.7 Rule
+
+![68-95-99.7 rule](68-95-997.png)
+
+[Source:https://towardsdatascience.com/understanding-the-68-95-99-7-rule-for-a-normal-distribution-b7b7cbf760c2](https://towardsdatascience.com/understanding-the-68-95-99-7-rule-for-a-normal-distribution-b7b7cbf760c2)
+
+                
+
+## Populations and Samples
+            
+                + Population - The entire group we want to draw conclusions about
+
+## Populations and Samples
+            
+                + Population - The entire group we want to draw conclusions about
+                + Sample - The subset of the population that we draw data from
+                
+## Populations and Samples
+
+                + Population - The entire group we want to draw conclusions about
+                + Sample - The subset of the population that we draw data from
+                + The sample is a random subset of the population
+
+## Populations and Samples
+
+                + Population - The entire group we want to draw conclusions about
+                + Sample - The subset of the population that we draw data from
+                + The sample is a random subset of the population
+                + A good sample is representative of the population
+                
+## Populations and Samples
+
+                + Population - The entire group we want to draw conclusions about
+                + Sample - The subset of the population that we draw data from
+                + The sample is a random subset of the population
+                + A good sample is representative of the population
+
+
+## Getting from sample statistic to population estimate
+                
+Two tools tie sample statistics to estimates of the true population parameters: *standard error* and *z-score* 
+
+
+## Getting from sample statistic to population estimate
+                
+Two tools tie sample statistics to estimates of the true population parameters: *standard error* and *z-score* 
+
+                + The standard error is a special case of the standard deviation
+                
+## Getting from sample statistic to population estimate
+                
+Two tools tie sample statistics to estimates of the true population parameters: *standard error* and *z-score* 
+
+                + The standard error is a special case of the standard deviation
+                + The z-score is a fairly simple math problem involving subtracting two numbers and dividing by the standard error
+                
+## Getting from sample statistic to population estimate
+
+Two tools tie sample statistics to estimates of the true population parameters: *standard error* and *z-score* 
+
+                + The standard error is a special case of the standard deviation
+                + The z-score is a fairly simple problem involving subtracting two numbers and dividing by the standard error
+                + Bonus: the z-score is one of our hypotheses test values for large sample sizes
+        
+## Getting from sample statistic to population estimate
+                
+Two tools tie sample statistics to estimates of the true population parameters: *standard error* and *z-score* 
+
+                + The standard error is a special case of the standard deviation
+                + The z-score is a fairly simple problem involving subtracting two numbers and dividing by the standard error
+                + Bonus: the z-score is one of our hypotheses test values for large sample sizes
+                + Extra bonus: the cutoff point for the z-score in a hypothesis test is really easy to remember
+
+## Two important rules
+
+Two rules to tie the sample to probability distributions and population estimates:  
+
+                + **The Central Limit Theorem** 
+                + **The Law of Large Numbers**
+                
+
+## Central Limit Theorem 
+
+- **For a large number of trials, the means of the trials approach a normal distribution regardless of the underlying distribution of the data**
+
+
+## Central Limit Theorem 
+
+- **For a large number of trials, the means of the trials approach a normal distribution regardless of the underlying distribution of the data**
+- This means that for a sufficient number of trials, we can apply the normal distribution to the sample means.
+
+
+
+## Central Limit Theorem 
+
+- **For a large number of trials, the means of the trials approach a normal distribution regardless of the underlying distribution of the data**
+- This means that for a sufficient number of trials, we can apply the normal distribution to the sample means.
+- This allows us to apply the 68-95-99.7 rule!
+              
+
+## Law of Large Numbers
+
+- **Averages from independent, identically distributed samples converge to the population means that they are estimating.**
+
+## Law of Large Numbers
+
+- **Averages from independent, identically distributed samples converge to the population means that they are estimating.**
+- In its strongest form, the law states that this "almost surely" happens. 
+
+
+## Law of Large Numbers
+
+- **Averages from independent, identically distributed samples converge to the population means that they are estimating.**
+- In its strongest form, the law states that this "almost surely" happens. 
+- This means that for a sufficiently large sample size, we can assume with a degree of certainty that our sample statistics accurately represent the population parameters!
+
+
+
+
+
+## Law of Large Numbers simulation using coin flips
+
+                
+```{r, echo=FALSE}
+set.seed(276)
+options(scipen=999)
+
+single_flip <- rbinom(1,1,.5)
+two_flips <- rbinom(2,1,.5)
+ten_flips <- rbinom(10,1,.5)
+twentyfive_flips <- rbinom(25,1,.5)
+fifty_flips <- rbinom(50,1,.5)
+seventyfive_flips <- rbinom(75,1,.5)
+hundred_flips <- rbinom(100,1,.5)
+thous_flips <- rbinom(1000,1,.5)
+twothou_flips <- rbinom(2000,1,.5)
+tenthous_flips <- rbinom(10000,1,.5)
+twfithou_flips <- rbinom(25000,1,.5)
+threethou_flips <- rbinom(3000,1,.5)
+
+
+a <- mean(single_flip)
+g <- mean(two_flips)
+h <- mean(ten_flips)
+j <- mean(twentyfive_flips)
+b <- mean(fifty_flips)
+i <- mean(hundred_flips)
+c <- mean(thous_flips)
+e <- mean(twothou_flips)
+d <- mean(tenthous_flips)
+f <- mean(seventyfive_flips)
+k <- mean(threethou_flips)
+
+means <- c(a,g,h,j,b,i,c,e,d,f,k)
+
+number_flipped <- c(1,2,10,25,50,100,1000,2000,10000,75,3000)
+
+df <- data.frame(means,number_flipped)
+
+plot(df$number_flipped,df$means, ylim = c(0,1))
+abline(h = 0.5, col = "blue")
+
+
+cat("The mean of a single flipped coin is", a, "\n")
+cat("The mean of two flips is", g, "\n")
+cat("The mean of ten flips is", h, "\n")
+cat("The mean of twentyfive flips is", j, "\n")
+cat("The mean of twenty five thousand flips is", k, "\n")
+
+```
+
+    
+## What's this tell us about sample size?
+
+- The CLT begins to apply at a sample size around 30
+- The sample size we need is determined by a number of things including the degree of certainty we are looking for
+                
+- Want to do some polling? This is where margin of error comes from: 
+                
+![margin of error](margin-of-error.png)
+
+## Authorship, License, Credits
+
+- [Stephen Moore](https://rpubs.com/stephenmoore56/301283) code used to simulate the Law of Large Numbers
+
+- Author: Tom Hanna
+
+- Website: <a href="https://tom-hanna.org/">tomhanna.me</a>
+
+- License: This work is licensed under a <a href= "http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.</>
+
+<a href= "http://creativecommons.org/licenses/by-nc-sa/4.0/">![Creative Commons License](creative_commons_license.png)</a>
+

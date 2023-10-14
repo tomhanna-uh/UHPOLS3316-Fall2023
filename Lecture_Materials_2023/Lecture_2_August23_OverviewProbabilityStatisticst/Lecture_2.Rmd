@@ -184,7 +184,7 @@ The answer is that **because each roll of the dice is independent of all others*
 
 13. I flip a fair coin one time, what is the probability that the coin comes up heads?
 
-That's one posssibility out of two or 1/2.
+That's one possibility out of two or 1/2.
 
 14. I flip a fair coin ten times, the probability that the coin comes up heads exactly five times is (~ means approximately). 
 

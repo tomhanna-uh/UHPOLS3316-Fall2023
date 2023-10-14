@@ -69,7 +69,7 @@ x first quartile:            x third quartile:
 
 y first quartile:            y third quartile:
 
-10. Plot a histogram of the x variable.
+10. Plot a histogram of the x variable. (2 points)
 
-11. Plot a histogram of the y variable.
+11. Plot a histogram of the y variable. (2 points)
 
