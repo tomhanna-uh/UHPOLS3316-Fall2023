@@ -240,7 +240,113 @@ Two rules to tie the sample to probability distributions and population estimate
 - **For a large number of trials, the means of the trials approach a normal distribution regardless of the underlying distribution of the data**
 - This means that for a sufficient number of trials, we can apply the normal distribution to the sample means.
 - This allows us to apply the 68-95-99.7 rule!
-              
+
+
+
+## Central Limit Theorem
+
+- Also tells us that:
+- The mean of the sampling distribution will be equal to the mean of the population distribution:
+- $\bar{x} = \mu$
+- The standard deviation of the sampling distribution will be equal to the standard deviation of the population distribution divided by the sample size:
+- $s = \frac{\sigma}{\sqrt{n}}$
+
+
+## Central Limit Theorem Simulation with Uniform Distribution Data
+
+
+```{r, echo=FALSE}
+set.seed(276)
+options(scipen=999)
+
+#create random variable with sample size of 1000 that is uniformly distributed
+data <- runif(n=1000, min=1, max=10)
+
+# plot a histogram of the data
+hist(data, breaks = 20, col = "blue", main = "Uniform Distribution", xlab = "Population Data")
+
+# add a vertical line at the mean
+abline(v=mean(data), col="red", lwd=3)
+
+
+```
+
+
+## Central Limit Theorem Simulation with Uniform Distribution Data
+
+```{r, echo=FALSE}
+
+# create a vector to store the sample means
+sample_means <- c()
+
+# create a for loop to take 1000 samples of size 5 and store the sample means
+for (i in 1:1000) {
+  sample_means[i] <- mean(sample(data, size=5))
+}
+
+# plot a histogram of the sample means labeled as sample size 5
+hist(sample_means, breaks = 20, col = "blue", main = "Sample Means", xlab = "Sample Size 5, 1000 draws")
+
+# add a vertical line at the mean
+
+abline(v=mean(sample_means), col="red", lwd=3)
+
+
+
+```
+
+## Central Limit Theorem Simulation with Uniform Distribution Data
+
+```{r}
+
+# create a vector to store the sample means
+
+sample_means <- c()
+
+# create a for loop to take 1000 samples of size 30 and store the sample means
+
+for (i in 1:1000) {
+  sample_means[i] <- mean(sample(data, size=30))
+}
+
+#plot a histogram of the sample means
+
+hist(sample_means, breaks = 20, col = "blue", main = "Sample Means", xlab = "Sample size 30, 1000 draws")
+
+# add a vertical line at the mean
+
+abline(v=mean(sample_means), col="red", lwd=3)
+
+
+```
+
+
+## Central Limit Theorem Simulation with Uniform Distribution Data
+
+```{r}
+
+# create a vector to store the sample means
+
+sample_means <- c()
+
+# create a for loop to take 1000 samples of size 100 and store the sample means
+
+for (i in 1:1000) {
+  sample_means[i] <- mean(sample(data, size=100))
+}
+
+# plot a histogram of the sample means
+
+hist(sample_means, breaks = 20, col = "blue", main = "Sample Means", xlab = "Sample size 100, 1000 draws")
+
+# add a vertical line at the mean
+
+abline(v=mean(sample_means), col="red", lwd=3)
+
+
+```
+
+          
 
 ## Law of Large Numbers
 
