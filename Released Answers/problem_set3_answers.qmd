@@ -1,0 +1,503 @@
+---
+title: "Problem Set 3 Answers"
+author: "Tom Hanna"
+format: 
+        html:
+                self-contained: true
+---
+
+## Problem 1
+
+#### Data: -1.207, 0.277, 1.084, -2.346, 0.429, 0.506, -0.575, -0.547
+
+```{r}
+# Create an object named problem1_data that contains the data
+# use the assignment operator to assign the data to the object
+# use the c function to combine the data into a vector
+problem1_data <- c(-1.207, 0.277, 1.084, -2.346, 0.429, 0.506, -0.575, -0.547)
+
+```
+
+#### Sum and number of observations
+
+```{r}
+
+# use the sum function to calculate the sum of the object created in #the last step - problem1_data
+problem1_sum <- sum(problem1_data) 
+
+# use the cat function to print the sum of the data
+# "\n" is a special character that creates a new line
+cat("The sum of the data is", sum(problem1_data), "\n")
+
+# use the length function to calculate the number of observations
+# use the as.numeric function to convert the number of observations
+# from an alphanumeric or character data type to a numeric data type
+problem1_n <- as.numeric(length(problem1_data))
+
+# use the cat function to print the number of observations n
+cat("The number of observations is", problem1_n, "\n")
+
+
+p1n1 <- problem1_n - 1
+
+# use the cat function to print the number of observations minus 1
+# (n-1)
+cat("The number of observations minus 1 is", p1n1, "\n")
+
+cat("We need n -1 to calculate the sample variance because we need to divide by n - 1 to get an unbiased estimate of the population variance. \n")
+
+
+```
+#### Calculate the mean
+
+```{r}
+# divide the sum of the data by the number of observations
+# assign the result to an object named problem1_mean
+# use the assignment operator to assign the result to the object
+
+# 
+# 
+problem1_mean <- round(problem1_sum/problem1_n, 3)
+
+# use the cat function to print the mean of the data
+# use the round function to round the mean to 3 decimal places for printing
+# 
+cat("The mean of the data is", round(problem1_mean, digits = 3), "\n")
+
+# Check my work using the mean function
+
+problem1_mean_check <- mean(problem1_data)
+
+# use the cat function to print the mean of the data computed with the #mean function
+cat("The mean of the data computed with the mean function is", round(problem1_mean_check, digits = 3), "\n")
+
+
+```
+
+#### Calculate the sample variance
+
+```{r}
+# create an object named problem1_squared_diff
+# use the assignment operator to assign the result to the object of
+# subtracting the mean from each observation and squaring the result
+
+problem1_squared_diff <- (problem1_data - problem1_mean)^2
+
+# create an object named problem1_sum_squared_diff
+# use the assignment operator to assign the result of
+# summing the squared differences
+
+problem1_sum_squared_diff <- sum(problem1_squared_diff)
+
+# create an object named problem1_sample_variance
+# use the assignment operator to assign the result of
+# dividing problem1_sum_squared_diff by p1n1 the number of observations #minus 1 
+# to get the sample variance
+
+problem1_sample_variance <- problem1_sum_squared_diff/(p1n1)
+
+# use the cat function to print the sample variance
+# use the round function to round the sample variance to 3 decimal
+# places for printing
+
+cat("The sample variance is", round(problem1_sample_variance, digits = 3), "\n")
+
+
+
+# Check my work using the var function
+# create an object named problem1_sample_variance_check
+# use the assignment operator to assign the result of
+# using the var function to calculate the sample variance
+
+problem1_sample_variance_check <- var(problem1_data)
+
+# use the cat function to print the sample variance computed with the #var function
+# use the round function to round the sample variance to 3 decimal
+
+cat("The sample variance computed with the var function is", round(problem1_sample_variance_check, digits = 3), "\n")
+
+
+```
+
+#### Sample standard deviation
+
+```{r}
+
+# create an object named problem1_sample_standard_deviation
+# use the assignment operator to assign the result of
+# taking the square root of problem1_sample_variance
+# to get the sample standard deviation
+
+problem1_sample_standard_deviation <- sqrt(problem1_sample_variance)
+
+# use the cat function to print the sample standard deviation
+# use the round function to round the sample standard deviation to 3 #decimal places for printing
+
+cat("The sample standard deviation is", round(problem1_sample_standard_deviation, digits = 3), "\n")
+
+# Check my work using the sd function
+# create an object named problem1_sample_standard_deviation_check
+# use the assignment operator to assign the result of
+# using the sd function to calculate the sample standard deviation
+
+problem1_sample_standard_deviation_check <- sd(problem1_data)
+
+# use the cat function to print the sample standard deviation computed #with the sd function
+# use the round function to round the sample standard deviation to 3 #decimal places for printing
+
+cat("The sample standard deviation computed with the sd function is", round(problem1_sample_standard_deviation_check, digits = 3), "\n")
+
+```
+
+#### Population variance
+
+```{r}
+# Create an object named problem1_population_variance
+# use the assignment operator to assign the result of
+# dividing problem1_sum_squared_diff by problem1_n
+# to get the population variance
+
+problem1_population_variance <- problem1_sum_squared_diff/problem1_n
+
+# use the cat function to print the population variance
+# use the round function to round the population variance to 3 decimal #places for printing
+
+cat("The population variance is", round(problem1_population_variance, digits = 3), "\n")
+
+# Check my work using the var function
+# create an object named problem1_population_variance_check
+# use the assignment operator to assign the result of
+# using the var function to calculate the population variance
+# multiply the result by p1n1/problem1_n
+
+problem1_population_variance_check <- var(problem1_data) * p1n1/problem1_n
+
+# use the cat function to print the population variance computed with #the var function
+# use the round function to round the population variance to 3 decimal #places for printing
+
+cat("The population variance computed with the var function is", round(problem1_population_variance_check, digits = 3), "\n")
+
+
+```
+
+#### Population standard deviation
+
+```{r}
+# create an object named problem1_population_standard_deviation
+# use the assignment operator to assign the result of
+# taking the square root of problem1_population_variance
+
+problem1_population_standard_deviation <- sqrt(problem1_population_variance)
+
+# use the cat function to print the population standard deviation
+# use the round function to round the population standard deviation to
+# 3 decimal places for printing
+# 
+
+cat("The population standard deviation is", round(problem1_population_standard_deviation, digits = 3), "\n")
+
+# Check my work using the sd function
+# create an object named problem1_population_standard_deviation_check
+# use the assignment operator to assign the result of
+# using the sd function to calculate the population standard deviation
+# multiply the result by p1n1/problem1_n
+
+problem1_population_standard_deviation_check <- sd(problem1_data) * p1n1/problem1_n
+
+# use the cat function to print the population standard deviation
+# use the round function to round the population standard deviation to
+
+cat("The population standard deviation computed with the sd function is", round(problem1_population_standard_deviation_check, digits = 3), "\n")
+
+
+
+```
+
+For the remaining two problems I will not comment the code as extensively as I did for the first problem.  I will comment the code where I think it is necessary.
+
+## Problem 2
+
+#### Data: 124.72, 124.55, 124.76, 124.50, 124.61, 125.03, 125.48, 124.94, 124.74
+
+```{r}
+# create an object named problem2_data
+# 
+
+problem2_data <- c(124.72, 124.55, 124.76, 124.50, 124.61, 125.03, 125.48, 124.94, 124.74)
+```
+
+#### Sum of the observations
+
+```{r}
+# create an object named problem2_sum
+
+problem2_sum <- sum(problem2_data)
+
+# print the sum of the observations
+
+cat("The sum of the observations is", problem2_sum, "\n")
+
+
+```
+
+#### Sample size - Number of observations
+
+
+```{r}
+# create an object named problem2_n
+# use as.numeric to convert the length of problem2_data to a numeric
+problem2_n <- as.numeric(length(problem2_data))
+
+# create an object named p2n1 for n - 1
+
+p2n1 <- problem2_n - 1
+
+```
+
+#### Find the sample mean
+
+```{r}
+# create an object named problem2_sample_mean
+# 
+
+problem2_sample_mean <- problem2_sum/problem2_n
+```
+
+#### Find the sample variance
+
+```{r}
+# create an object named problem2_sum_squared_diff
+
+problem2_sum_squared_diff <- sum((problem2_data - problem2_sample_mean)^2)
+
+# create an object named problem2_sample_variance
+
+problem2_sample_variance <- problem2_sum_squared_diff/(p2n1)
+
+# print the sample variance
+# 
+
+cat("The sample variance is", round(problem2_sample_variance, digits = 3), "\n")
+
+# Check my work using the var function
+
+problem2_sample_variance_check <- var(problem2_data)
+
+# use the cat function to print the sample variance computed with the #var function
+cat("The sample variance computed with the var function is", round(problem2_sample_variance_check, digits = 3), "\n")
+
+
+```
+
+### Sample standard deviation
+
+```{r}
+# create an object named problem2_sample_standard_deviation
+
+problem2_sample_standard_deviation <- sqrt(problem2_sample_variance)
+
+# use the cat function to print the sample standard deviation
+
+cat("The sample standard deviation is", round(problem2_sample_standard_deviation, digits = 3), "\n")
+
+# Check my work using the sd function
+
+problem2_sample_standard_deviation_check <- sd(problem2_data)
+
+# use the cat function to print the sample standard deviation computed #with the sd function
+
+cat("The sample standard deviation computed with the sd function is", round(problem2_sample_standard_deviation_check, digits = 3), "\n")
+
+
+```
+
+#### Population variance
+
+
+```{r}
+
+# create an object named problem2_population_variance
+ 
+problem2_population_variance <- problem2_sum_squared_diff/problem2_n
+
+# use the cat function to print the population variance
+cat("The population variance is", round(problem2_population_variance, digits = 3), "\n")
+
+# Check my work using the var function multiplied by p2n1/problem2_n
+
+problem2_population_variance_check <- var(problem2_data) * p2n1/problem2_n
+
+# use the cat function to print the population variance computed with #the var function
+
+cat("The population variance computed with the var function is", round(problem2_population_variance_check, digits = 3), "\n")
+
+
+```
+
+#### Population standard deviation
+
+```{r}
+
+# create an object named problem2_population_standard_deviation
+
+problem2_population_standard_deviation <- sqrt(problem2_population_variance)
+
+# use the cat function to print the population standard deviation
+
+cat("The population standard deviation is", round(problem2_population_standard_deviation, digits = 3), "\n")
+
+# Check my work using the sd function multiplied by p2n1/problem2_n
+
+problem2_population_standard_deviation_check <- sd(problem2_data) * p2n1/problem2_n
+
+# use the cat function to print the population standard deviation
+
+cat("The population standard deviation computed with the sd function is", round(problem2_population_standard_deviation_check, digits = 3), "\n")
+
+
+```
+
+## Problem 3
+
+#### Data: 70, 71, 87, 76, 73, 73, 77, 72, 68, 78, 70, 75
+
+```{r}
+# create an object named problem3_data
+
+problem3_data <- c(70, 71, 87, 76, 73, 73, 77, 72, 68, 78, 70, 75)
+
+```
+
+#### Sum of the observations
+
+```{r}
+# create an object named problem3_sum
+
+problem3_sum <- sum(problem3_data)
+
+# print the sum of the observations
+
+cat("The sum of the observations is", problem3_sum, "\n")
+
+
+```
+
+#### Sample size - Number of observations
+
+```{r}
+# create an object named problem3_n
+
+problem3_n <- as.numeric(length(problem3_data))
+
+# create an object named p3n1 for n - 1
+
+p3n1 <- problem3_n - 1
+
+```
+
+#### Find the sample mean
+
+```{r}
+# create an object named problem3_sample_mean
+
+problem3_sample_mean <- problem3_sum/problem3_n
+
+# use the cat function to print the sample mean
+
+cat("The sample mean is", round(problem3_sample_mean, digits = 3), "\n")
+
+
+```
+
+#### Find the sample variance
+
+```{r}
+# create an object named problem3_sum_squared_diff
+
+problem3_sum_squared_diff <- sum((problem3_data - problem3_sample_mean)^2)
+
+# create an object named problem3_sample_variance
+
+problem3_sample_variance <- problem3_sum_squared_diff/(p3n1)
+
+# print the sample variance
+
+cat("The sample variance is", round(problem3_sample_variance, digits = 3), "\n")
+
+# Check my work using the var function
+
+problem3_sample_variance_check <- var(problem3_data)
+
+# use the cat function to print the sample variance computed with the #var function
+
+cat("The sample variance computed with the var function is", round(problem3_sample_variance_check, digits = 3), "\n")
+
+```
+
+#### Sample standard deviation
+
+```{r}
+# create an object named problem3_sample_standard_deviation
+
+problem3_sample_standard_deviation <- sqrt(problem3_sample_variance)
+
+# use the cat function to print the sample standard deviation
+
+cat("The sample standard deviation is", round(problem3_sample_standard_deviation, digits = 3), "\n")
+
+# Check my work using the sd function
+
+problem3_sample_standard_deviation_check <- sd(problem3_data)
+
+# use the cat function to print the sample standard deviation computed #with the sd function
+
+cat("The sample standard deviation computed with the sd function is", round(problem3_sample_standard_deviation_check, digits = 3), "\n")
+
+
+```
+
+#### Population variance
+
+```{r}
+
+# create an object named problem3_population_variance
+
+problem3_population_variance <- problem3_sum_squared_diff/problem3_n
+
+# use the cat function to print the population variance
+
+cat("The population variance is", round(problem3_population_variance, digits = 3), "\n")
+
+# Check my work using the var function multiplied by p3n1/problem3_n
+
+problem3_population_variance_check <- var(problem3_data) * p3n1/problem3_n
+
+# use the cat function to print the population variance computed with #the var function
+
+cat("The population variance computed with the var function is", round(problem3_population_variance_check, digits = 3), "\n")
+
+```
+
+#### Population standard deviation
+
+```{r}
+
+# create an object named problem3_population_standard_deviation
+
+problem3_population_standard_deviation <- sqrt(problem3_population_variance)
+
+# use the cat function to print the population standard deviation
+
+cat("The population standard deviation is", round(problem3_population_standard_deviation, digits = 3), "\n")
+
+# Check my work using the sd function multiplied by p3n1/problem3_n
+
+problem3_population_standard_deviation_check <- sd(problem3_data) * p3n1/problem3_n
+
+# use the cat function to print the population standard deviation
+
+cat("The population standard deviation computed with the sd function is", round(problem3_population_standard_deviation_check, digits = 3), "\n")
+
+```
+
+

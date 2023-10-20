@@ -1,0 +1,358 @@
+---
+title: |
+    | Hypothesis Testing Part 2
+    | POLS 3316: Statistics for Political Scientists
+date: today
+author: "Tom Hanna"
+format: 
+        revealjs:
+                self-contained: true
+                transition: convex
+                theme: [moon, custom.css]
+                logo: logo.png
+                footer: "GOVT2306, Fall 2023, Instructor: Tom Hanna"
+---
+
+
+##Today
+
+- What is hypothesis testing? 
+
+        - Principles of hypothesis testing
+        - The Standard Error
+        - The first test: Z-scores
+
+
+
+
+## Part 1: Hypothesis Testing
+
+- Last week:
+        
+- The *68-95-99.7 Rule: normal distribution probability shorthand
+- Tying samples and populations
+- The Central Limit Theorem: get to normal distribution
+- The Law of Large Numbers: further tie sample to population
+- Two new, related statistics: standard error and Z-score
+- The goal was **Hypothesis Testing**
+                
+
+## **So what is hypothesis testing?**
+
+- We have a theory and we want to see if it's valid
+- We formulate hypotheses (pl.) that would be true if the theory was valid
+- We try to disprove or *falsify* them
+- How? By statistically testing data
+                
+                
+              
+## Review: The Null and Alternative Hypotheses
+                                
+- The Alternative Hypothesis: This is actually the hypothesis that agrees with our theory. Why?
+- The default assumption is that our theory is that there is no effect: The Null Hypothesis
+- We can't prove our hypothesis, but we can get sufficient evidence to **reject the null hypothesis**
+- How? Data and Statistics
+                
+                
+## How do we reject of confirm the null hypothesis?
+
+
+## How do we reject of confirm the null hypothesis?
+
+- Conduct experiments or make observations to gather data
+
+[You know nothing](https://www.youtube.com/watch?v=Pkyy57iMaB0)
+
+## How do we reject of confirm the null hypothesis?
+
+- Conduct experiments or make observations to gather data
+
+[You know nothing](https://www.youtube.com/watch?v=Pkyy57iMaB0)
+
+[John Snow and the Ghost Map](https://www.youtube.com/watch?v=3P8shnNEXb4&t=18s)
+
+## How do we reject of confirm the null hypothesis?
+
+- Conduct experiments or make observations to gather data
+- Compare the results to expectations of random chance
+
+
+## How do we reject of confirm the null hypothesis?
+
+- Conduct experiments or make observations to gather data
+- Compare the results to expectations of random chance
+- Match random chance: Retain the null hypothesis, reject the alternative hypothesis
+
+
+## How do we reject of confirm the null hypothesis?
+
+- Conduct experiments or make observations to gather data
+- Compare the results to expectations of random chance
+- Match random chance: Retain the null hypothesis, reject the alternative hypothesis
+- Do not match random chance: Reject the null hypothesis - evidence in favor alternative hypothesis
+
+
+## How do we reject of confirm the null hypothesis?
+
+- Conduct experiments or make observations to gather data
+- Compare the results to expectations of random chance
+- Match random chance: Retain the null hypothesis, reject the alternative hypothesis
+- Do not match random chance: Reject the null hypothesis - evidence in favor alternative hypothesis
+- How do we do compare to random chance? Tests based on probability and statistics
+                
+## Test statistics
+
+- Z-score
+- t-test
+- Chi-square
+- ANOVA
+- Many others
+
+ 
+## The Z-score
+
+- Based on the standard normal distribution
+- Application of the 69-95-99.7 rule
+
+![68-95-99.7 rule](68-95-997.png)
+
+## The Z-score
+
+- Based on the standard normal distribution
+- Based on the 69-95-99.7 rule
+- Measures how many **standard errors** a value is from the mean
+
+## The Z-score
+
+- Based on the standard normal distribution
+- Based on the 69-95-99.7 rule
+- Measures how many **standard errors** a value is from the mean
+
+Fast forward preview: The **standard error** is a special **standard deviation** the standard deviation of the sampling distribution of the mean.
+
+
+
+ 
+## The Z-score
+
+- Based on the standard normal distribution
+- Based on the 69-95-99.7 rule
+- Measures how many **standard errors** a value is from the mean
+- Can be used to test:
+
+        - hypotheses about the mean of a population
+        - hypotheses about the difference between two means (two groups with identical distributions)
+        - hypotheses about the difference between a mean and a value
+        - hypotheses about the difference between two proportions
+
+
+
+## Standard error: Tying samples to populations
+
+- Terms
+  
+     - statistics - sample
+     - parameter - population
+   
+-  We want to use the *sample* mean/median/etc to *estimate* the *population* version of the same measurement
+
+## Standard error: Tying samples to populations
+
+- Quantifies the range around population value (parameter) for the sample value (the statistic)
+
+
+
+## Standard error: Tying samples to populations
+
+- Quantifies the range around population value (parameter) for the sample value (the statistic)
+- Usually the **mean** but you can figure a standard error for other statistics like the median
+
+
+## Standard error: Tying samples to populations
+
+- Quantifies the range around population value (parameter) for the sample value (the statistic)
+- Usually the **mean** but you can figure a standard error for other statistics like the median
+- Distance from the mean is a measure of...
+
+## Standard error: Tying samples to populations
+
+- Quantifies the range around population value (parameter) for the sample value (the statistic)
+- Usually the **mean** but you can figure a standard error for other statistics like the median
+- Distance from the mean is a measure of...
+
+<p style="color:red;text-align:center;font-size: 60px;">**Dispersion**</p>
+
+## Standard error: Tying samples to populations
+
+- Quantifies the range around population value (parameter) for the sample value (the statistic)
+- Usually the **mean** but you can figure a standard error for other statistics like the median
+- Distance from the mean is a measure of...Dispersion
+- If we want to measure **disperstion** in units equal to the mean, we want to measure dispersion with?
+
+
+## Measure dispersion
+
+- If we want to measure **disperstion** in units equal to the mean, we want to measure dispersion with?
+
+<p style="color:red;text-align:center;font-size: 120px;">**Standard deviation**</p>
+
+
+## The Standard Error of the Mean
+
+- Standard deviation measures dispersion relative to the mean
+
+
+
+## The Standard Error of the Mean
+
+- Standard deviation measures dispersion relative to the mean
+- Standard error measures dispersion between the sample mean and the population mean
+
+
+## The Standard Error of the Mean
+
+- Standard deviation measures dispersion relative to the mean
+- Standard error measures dispersion between the sample mean and the population mean
+- Standard error of the mean is the sample standard deviation divided by the square root of the sample size:
+  
+<p style="color:red;text-align:center;font-size: 60px;">$\frac{s}{\sqrt{n}}$</p>  
+
+
+## Stanard Error
+
+- Standard Error **is** the standard deviation of the *sample means*.
+    
+        - If we do 1000 trials of random, indendepent, identically distributed variables (random IID variables) from any distribution
+        - The means of each trial are the sample means
+        - Central Limit Theorem tells us that the distribution of the sample means will converge to a normal distribution 
+        - If we made a vector of the means of the 10000 trials flipping a coin 20 times and plotted a histogram, it would look like this:
+    
+## Stanard Error
+
+```{r, echo=FALSE}
+
+v1 <- rbinom(10000,20, prob = .5)
+hist(v1, main = "Histogram of 10000 trials of 20 coin flips", xlab = "Number of heads", ylab = "Frequency")
+
+
+```
+
+
+## Standard Error
+
+- Theoretically, if we do an experiment with 500 subjects, it's one trial with one sample mean. When we start doing hypothesis tests,
+- Practically, we can't do 10000 trials of 500 subjects each. We can only do one trial with 500 subjects, or...
+- We use observational data with 500 observations
+- We don't need 500 data points, next week I'll show you why 30 is sufficient in many cases
+
+## Z-Score: Concept
+
+- Number of standard errors from the mean 
+
+
+## Z-Score: Concept
+
+- Number of standard errors from the mean 
+- Probability that actual population parameter is approximately equal to sample statistic
+
+## Z-Score: Concept 
+
+- Number of standard errors from the mean 
+- Probability that actual population parameter is approximately equal to sample statistic
+
+
+- If we know the sample mean, $\bar{x}$, is 50
+- standard error, $\sigma$, is 1
+- We want to locate the population mean, $\mu$
+
+## Z-Score: Concept
+
+**68-95-99.7 Rule**
+
+- 99.7% probability that the true population mean is between $\bar{x} \pm 3 * SE$ or 50 $\pm$ 3 * SE 
+- If SE is 1..
+
+## Z-Score: Concept
+
+**68-95-99.7 Rule**
+
+- 99.7% probability that the true population mean is between $\bar{x} \pm 3 * SE$ or 50 $\pm$ 3 * SE 
+- If SE is 1..
+- 99.7% probability that the true population mean is between 47 and 53. 
+
+## Confidence Interval: Concept
+
+**68-95-99.7 Rule**
+
+- 99.7% probability that the true population mean is between $\bar{x} \pm 3 * SE$ or 50 $\pm$ 3 * SE 
+
+**Confidence Interval** 
+
+- The 99.7% *Confidence Interval* of the sample mean with a sample mean of 50 and standard error of 1 is 47 to 53. 
+
+
+## Z-Score: Formula
+
+- **The Z-score gives us a formula which we can compare to standard tables of probabilities**
+
+## Z-Score: Formula
+
+- **The Z-score gives us a formula which we can compare to standard tables of probabilities**
+- <p style="color:red;text-align:center;font-size: 120px;">$z = \frac{x - \mu}{\sigma}$</p>  
+ 
+
+
+## Z-Score: Confidence Interval
+
+
+
+- *The Confidence Interval with the Z-Score is sample mean $\pm$ the Margin of Error which we get from (just for illustration at this point)*:
+  
+  ![Margin of Error formula](margin-of-error.jpg)
+  
+## Why Z-score instead of 68-95-99 Rule?
+
+-  68-95-99.7 approximates 2 standard deviations for 95%
+- Actual value of 2 sd is 95.45%
+- Precise Z-value for 95% is 1.96
+- Z-score of 2 is still a good mental shortcut for 95% (better than 95%)
+- Journal articles publish outcomes with standard errors underneath
+
+## Z-scores journal articles
+
+```{r, echo=FALSE}
+
+data1 <- cars
+model <- lm(dist ~ speed, data = data1)
+library(stargazer)
+stargazer(model, type = "text")
+
+
+```
+
+## More on Z-Scores and Standard Errors
+
+More on Z-scores and Standard Errors
+
+[https://www.statisticshowto.com/probability-and-statistics/z-score/](https://www.statisticshowto.com/probability-and-statistics/z-score/)
+
+[https://www.statisticshowto.com/probability-and-statistics/statistics-definitions/what-is-the-standard-error-of-a-sample/](https://www.statisticshowto.com/probability-and-statistics/statistics-definitions/what-is-the-standard-error-of-a-sample/)
+
+[https://www.investopedia.com/ask/answers/042415/what-difference-between-standard-error-means-and-standard-deviation.asp](https://www.investopedia.com/ask/answers/042415/what-difference-between-standard-error-means-and-standard-deviation.asp)
+
+[https://www.investopedia.com/ask/answers/021115/what-difference-between-standard-deviation-and-z-score.asp](https://www.investopedia.com/ask/answers/021115/what-difference-between-standard-deviation-and-z-score.asp)
+
+
+
+
+## Authorship, License, Credits
+
+- Author: Tom Hanna
+
+- Website: <a href="https://tom-hanna.org/">tomhanna.me</a>
+
+- License: This work is licensed under a <a href= "http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.</>
+
+<a href= "http://creativecommons.org/licenses/by-nc-sa/4.0/">![Creative Commons License](creative_commons_license.png)</a>
+
+
