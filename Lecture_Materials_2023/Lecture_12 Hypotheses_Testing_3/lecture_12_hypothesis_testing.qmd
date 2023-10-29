@@ -218,6 +218,16 @@ Is the sample mean height shorter than the population mean height?
 - A two-tailed test is non-directional
 - For example, is the sample mean *different* from the population mean?
 
+## What probability are we looking for?
+
+- Our required confidence level is 95%
+- Our required significance level is 5%
+- We are looking for a probabiliyt of 5% or less
+- Also called a p-value of 0.05 or less
+- Also called an $\alpha$ (alpha) of 0.05 or less
+
+<p style="color:red;text-align:center;font-size: 60px;"> p < .05 </p>
+
 ## What is our Standard Error?
 
 - <p style="color:red;text-align:center;font-size: 60px;"> SE = $\frac{\sigma}{\sqrt{n}}$</p>  
@@ -246,7 +256,10 @@ Is the sample mean height shorter than the population mean height?
 
 ## So what does a hypothesis test tell us?
 
-- Z < 1.96
+Critical z-Values for a 95% confidence interval:
+
+- Z < 1.96 (or Z > -1.96) for a two-tailed
+- Z < 1.65 (or Z > 1.65) for a one-tailed test
 
 
 ## So what does a hypothesis test tell us?
