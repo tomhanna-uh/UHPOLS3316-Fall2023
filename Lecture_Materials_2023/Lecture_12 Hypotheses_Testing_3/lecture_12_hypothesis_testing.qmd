@@ -186,7 +186,63 @@ These are easy compared to the big issue...
 That's aspirational
 
 
-## So what does a hypothesis test tell us?
+## Standard Errors, Z-Scores, and Z-Tables
+
+- Standard error: Standard deviation of the sampling distribution of the mean
+
+<p style="color:red;text-align:center;font-size: 60px;"> SE = $\frac{\sigma}{\sqrt{n}}$</p>  
+
+
+- Z-score: number of standard errors from the mean
+
+<p style="color:red;text-align:center;font-size: 60px;">$Z = \frac{\bar{x}-\mu}{SE}$ or Z = $\frac{\bar{x} - \my}{\sigma_{\bar{x}}}$ </p>
+
+
+## Z-Tables
+
+![Z-table](word-image2.png)
+
+## Example:
+
+- Mean height of UH students is 5'10"
+- Standard deviation of height is 3"
+- Sample of 100 students
+- Mean height of sample is 5'9"
+
+Is the sample mean height shorter than the population mean height?
+
+## Is this a one-tailed or two-tailed test?
+
+- A one-tailed test is directional
+- For example, is the sample mean *greater* than the population mean?
+- A two-tailed test is non-directional
+- For example, is the sample mean *different* from the population mean?
+
+## What is our Standard Error?
+
+- <p style="color:red;text-align:center;font-size: 60px;"> SE = $\frac{\sigma}{\sqrt{n}}$</p>  
+
+## What is our Standard Error?
+
+- <p style="color:red;text-align:center;font-size: 60px;"> SE = $\frac{\sigma}{\sqrt{n}}$</p>  
+
+- <p style="color:red;text-align:center;font-size: 60px;">  $\frac{3}{\sqrt{100}} = 0.3$</p>
+
+## What is our Z-score?
+
+- <p style="color:red;text-align:center;font-size: 60px;">$Z = \frac{\bar{x}-\mu}{SE}$ or Z = $\frac{\bar{x} - \my}{\sigma_{\bar{x}}}$ </p>
+
+## What is our Z-score?
+
+- <p style="color:red;text-align:center;font-size: 60px;">$Z = \frac{\bar{x}-\mu}{SE}$ or Z = $\frac{\bar{x} - \my}{\sigma_{\bar{x}}}$ </p>
+
+- <p style="color:red;text-align:center;font-size: 60px;">$Z = \frac{5'9"-5'10"}{0.3} = -3.33$</p>
+
+
+## Z-Table 
+
+<embed src="Z-distribution.pdf" type="application/pdf" width="1200" height="600">
+
 
 ## So what does a hypothesis test tell us?
 
@@ -322,10 +378,21 @@ That's aspirational
 
 ![Bayes Rule](bayes.png)
 
-$$\\[6in]$$
 
-# This way madness lies 
-# Everything after here is draft notes for your reading. Beware of typos, etc.
+## What does this tell us?
+
+- We need to be precise about what we mean by a cause
+- We need to understand what statistics can tell us about causation and what it can't
+
+        - Correlation does not *prove* causation 
+        - but correlation can *help establish* causation
+
+        - We need to understand the limits of data and statistics
+        - We also need to understand the capabilities of data and statistics
+
+
+
+## Everything after here is draft notes for your reading. Beware of typos, etc.
 
 Some of the things in these notes are from courses I took, some are from assorted books, some are from these two sources which are at least somewhat readable and free:
 
@@ -334,48 +401,55 @@ Some of the things in these notes are from courses I took, some are from assorte
 
 [https://egap.org/resource/10-things-to-know-about-causal-inference/](https://egap.org/resource/10-things-to-know-about-causal-inference/)
 
-+ We need to understand what statistics can tell us about causation
-+ Correlation doesn't prove causation but that doesn't mean statistics can't help
-+ We need to be precise about what we mean by a cause
-+ We need to understand the limits of data and statistics
-+ We need to understand the capabilities of data and statistics
 
-$$\\[5in]$$
+## 1 - Correlation $\notequal$ causation. 
 
-### What do we know about causation?
+- Correlation does *imply* a relationship 
+- Relationship may involve some cause and effect somewhere
+- The relationship could go either direction
+- The relationship could involve other variables
+- Lack of correlation doesn't necessarily mean anything - correlation is linear and causal effects are not always linear
 
-1. Correlation $\notequal$ causation. 
+## 2 - A cause is a claim about something that did not happen
 
-                + Correlation does imply a relationship that may involve some cause and effect somewhere.
-                + The relationship could go either direction
-                + The relationship could involve other variables
-                + Lack of correlation doesn't necessarily mean anything -- correlation is linear and causal effects aren't always linear
+- If we say X caused Y, we mean: *If X did not happen, Y would not happen, everything else being held the same.*
 
-
-2. A cause is a claim about something that didn't happen.
-
-                + If we say X caused Y, we mean: *If X didn't happen, Y would not happen, everything else being held the same.*
+If we say X caused Y, we mean: *If X didn't happen, Y would not happen, everything else being held the same.*
+                
                 
 3. **The Fundamental Problem of Causal Inference**
 
-                + Our proposed cause, which did happen, is the factual
-                + The thing that didn't happen is called the *counterfactual*
-                + We can't actually observe the thing that didn't happen
-                + The inability to observe the counterfactual is the fundamental problem of causal inference
-                + Experiments are a potential way around this
+- Our proposed cause, which did happen, is the factual
+- The thing that didn't happen is called the *counterfactual*
+- We can't actually observe the thing that didn't happen
+- The inability to observe the counterfactual is the fundamental problem of causal inference
+- Experiments are a potential way around this
 
-4. Causes have to involve a possible manipulation of circumstances so that the counterfactual occurred
+## 4. Causes have to involve a possible manipulation of circumstances so that the counterfactual occurred
 
-5. Statistics looks for average causal effects, not single data points or individual effects. The average effects may conflict with anecdotal evidence. This is partially because...
+## 5. Statistics looks for average causal effects
+
+Statistics are about average causal effects, not single data points or individual effects. The average effects may conflict with anecdotal evidence. This is partially because...
                 
-6. There can be multiple causes. (Causes are non-rival.)
+## 6. There can be multiple causes. 
 
-7. Causes can be necessary, sufficient, neither, or both and still be causes. 
+The technical phrase here is: *Causes are non-rival.*
 
-8. It's a lot easier to measure effects than to find causes.
+## 7. Causes can be...
+
+- necessary
+- sufficient
+- neither
+-or both 
+
+**and still be causes**
+
+## 8. Measuring effects is easy
+
+It's a lot easier to measure effects than to find causes.
 
 
-### What can statistics do for us?
+## What can statistics do for us?
 
 + The Null Hypothesis and counterfactuals
 
@@ -386,8 +460,18 @@ $$\\[5in]$$
                 + When we reject the null, we can determine that "the evidence is consistent with the alternative hypothesis" and the theory
                 
 
-                
+## Authorship, License, Credits
 
+- Author: Tom Hanna
 
+- Website: <a href="https://tom-hanna.org/">tomhanna.me</a>
+
+- License: This work is licensed under a <a href= "http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.</>
+
+<a href= "http://creativecommons.org/licenses/by-nc-sa/4.0/">![Creative Commons License](creative_commons_license.png)</a>
+
+Z-Table image from: https://byjus.com/maths/z-score-table/
+
+Other images referenced in previous lectures
 
 
