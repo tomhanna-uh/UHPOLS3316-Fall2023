@@ -10,7 +10,7 @@ format:
                 transition: convex
                 theme: [moon, custom.css]
                 logo: logo.png
-                footer: "GOVT2306, Fall 2023, Instructor: Tom Hanna"
+                footer: "POLS3316, Fall 2023, Instructor: Tom Hanna"
 ---
 
 ## Where we were 
