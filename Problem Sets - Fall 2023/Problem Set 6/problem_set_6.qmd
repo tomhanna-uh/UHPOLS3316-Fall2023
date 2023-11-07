@@ -1,0 +1,168 @@
+---
+title: |
+    | Problem Set 4
+    | Statistical Tests
+    | POLS3316: Statistics for Political Scientists
+    | Due November 15, 2023 at 11:59pm
+author: "Your Name"
+format: 
+        html:
+                self-contained: true
+---
+
+
+## Use this work file if working in R
+
+It is recommended to use this .qmd file to complete your work if working in R. Simply edit your name in the second line. 
+
+## General instructions
+
+`#` indicates that the line is a comment and does not need to be edited.
+
+The significance level for all tests is .05 unless otherwise specified.
+
+Type only code in the code chunks. Do not type answers as comments in the code chunks.
+
+Type answers in the text chunks.
+
+You can get help with the functions using the ? command in the Console (lower left)
+
+To complete Bonus Problem 7, you will need to install a package and load a library. Instructions are given. You will not be able to get help for the z.test using the ? until the package is installed.
+
+## Problem 1: Chi-square
+
+Complete a Chi-square test of independence on the following data using the R function `chisq.test()`.
+
+| | 1 | 2 | 
+| --- | --- | --- |
+| A | 10 | 20 |
+| B | 15 | 25 |
+
+```{r}
+# Your code here
+
+
+```
+X-squared:
+
+p-value:
+
+Is the test significant? Why or why not?
+
+
+## Problem 2: Chi-square
+
+Complete a Chi-square test of independence on the following data using the R function `chisq.test()`.
+
+| | 1 | 2 | 3 | 4 | 
+| --- | --- | --- | --- | --- |
+| A | 10 | 20 | 30 | 40 |
+| B | 15 | 25 | 35 | 45 |
+| C | 20 | 30 | 40 | 50 |
+
+```{r}
+# Your code here
+
+```
+
+Chi-squared:
+
+p-value:
+
+Is the test significant? Why or why not?
+
+
+## Problem 3: t-test
+
+Complete a paired sample t-test on the following data using the R function `t.test()`. Complete a two-tailed test.
+
+| | Before | After |            
+| --- | --- | --- |
+| A | 10 | 20 |
+| B | 15 | 25 |
+| C | 20 | 30 |
+| D | 25 | 35 |
+| E | 30 | 40 |
+| F | 35 | 45 |
+
+
+
+```{r}
+
+# Your code here
+
+
+```
+
+t-score:
+
+p-value:
+
+Is the test significant? Why or why not?
+
+## Problem 5: t-test
+
+Complete a one-sample t-test on the following data using the R function `t.test()`. Complete a two-tailed test.
+
+| | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| A | 10 | 20 | 30 | 40 | 50 | 60 | 70 | 80 | 90 | 100 |
+
+```{r}
+# your code here
+
+```
+
+t-score:
+
+p-value:
+
+Is the test significant? Why or why not?
+
+## Problem 6: Bonus
+
+Complete a one-way ANOVA on the following data using the R function `aov()`. Complete a two-tailed test.
+
+| | 1 | 2 | 3 | 4 |
+| --- | --- | --- | --- | --- |
+| A | 10 | 20 | 30 | 40 |
+| B | 15 | 25 | 35 | 45 |
+| C | 20 | 30 | 40 | 50 |
+
+```{r}
+# your code here
+
+```
+
+Is the test significant? Why or why not?
+
+
+## Problem 7: Bonus
+
+Complete a z-test on the following data using the R function `z.test()`. Complete a two-tailed test.
+
+| | obs 1 | obs 2 | obs 3 | obs 4 | obs 5 | obs 6                
+| --- | --- | --- | --- | --- | --- | --- |
+| A | 10 | 20 | 30 | 40 | 50 | 60 |
+| B | 15 | 25 | 35 | 45 | 55 | 65 |              
+
+
+```{r}
+# To run a z.test, you will need to install the BSDA package and load the library
+
+# To do this, remove the # from the following two lines of code and run them
+
+#install.packages("BSDA")
+#library(BSDA)
+
+
+# Your code here
+
+
+```
+z-score here:
+
+p-value here:
+
+Is the test significant? Why or why not?
+

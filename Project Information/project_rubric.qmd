@@ -1,0 +1,76 @@
+---
+title: |
+    | Project Rubric
+    | POLS3316: Statistics for Political Scientists
+    | Due December 13, 2023 at 11:59pm
+format: 
+        html:
+                self-contained: true
+                theme: [moon]
+                css: [custom.css]
+---
+
+
+## Summary
+
+- Twenty points total. 
+
+        - Ten points for written section. 
+        - Ten points for plots/graphs and tables. 
+        - 0.9 credit for work not using R, R-Studio
+        - 1.1 credit for work done in R Studio with publication to Github
+        - Work done in R Studio should be substantially done using methods learned in class for purposes of generating descriptive statistics and regressions analysis.
+        - Additional packages such as ggplot2, sJplot, and others may be used for graphics.
+        - If the basic work is done, you may use other visualization tools such as Tableau dashboards for up to 2 points of extra credit.
+        
+- Citations and Academic Honesty
+        
+        - No outside research is required but any that is used must be cited. 
+        - The dataset must be properly cited. 
+        - Citations should be in Chicago / APSA style.
+        - You may use generative AI to assist with issues you have in writing your paper or code, but the overall work must be your own.
+        - Any generative AI use must be cited including but not limited to ChatGPT, Bard, Grammerly, and Copilot and the specific parts written by AI noted as if they were written by a human author. 
+        - ![How to cite generative AI in Chicago/APSA style](https://libguides.mcmaster.ca/cite-gen-ai/chicago)
+        - In addition to citation, a paragraph describing the use of the generative AI must be included.
+        - Your work must be substantially your own. 
+        
+- For the written descriptions and explanations of statistics, you will see samples and even
+templates as we work on each part. 
+
+- For the plots/graphs and tables, you should be able to adapt material from problem sets to the data you are using and the variable names in your data. 
+
+## Written section
+
+- Ten points total. 
+
+        - One point for clarity of writing. 
+        - You may have more paragraphs and may include other interesting information if it contributes to a more well written product. 
+        
+- You should address these points and in general this order of progression is best. 
+
+        - First paragraph: Introduction - Introduce your topic. If you have a formal or informal research question, you can start with it. (Note: you are not expected to answer the research question this semester.) 
+        - Explain why the topic is important or interesting in one or two sentences. Describe what you hope to learn from the data. Did any other reading influence your thinking or interest (cite appropriately)? (1 / 2 point)
+        - Second paragraph: The dataset - Describe the dataset. What is its source? What data does it contain generally? What is the unit of observation? How was the data derived (experiment, survey, observational data, etc.)? (2 points)
+        - Third paragraph: The variables - Describe each variable of interest. Two variables is a minimum, with two to three being ideal. If you have more than 4, only describe the four most important. For each variable include: type of variable, mean and median, standard deviation, a statement about the distribution, and any other information you think is especially relevant or interesting. (2 points)
+        - Fourth paragraph: The relationship between variables - Describe the relationship between the variables you think are the most likely explanatory and dependent (x and y) variables. What is their correlation? Their covariance? (2 points)
+        - Fifth paragraph: Regression results - Describe the OLS regression results. What is the intercept? What is the coefficient for each explanatory variable? Interpret this coefficient in terms of a change in Y. Is the coefficient significant and at what level? Is the total model significant and how much does it explain? (2 points)
+        - Sixth paragraph: Conclusion - Summarize what was interesting, compelling, surprising, etc. What new questions were raised? If you did more with this topic what new data would help? (1 / 2 point)
+        
+
+## Plots and tables:
+
+- Ten points total. 
+
+        - Summary statistics for each variable in an organized table - 2 points
+        - Table of OLS regression results (or other approaved models) - 2 points
+        - Histograms of each variable - 2 points
+        - Scatter plots of x and y variables - 2 points
+        - Line plot of regression - 2 points
+        - If approved, non-continuous variables and non-OLS visualizations may be presented in other ways. 
+
+        
+## Submission
+
+- Complete using non-R tools and submit PDF plus proof of work in Canvas - 0.9 credit
+- Complete using Posit Cloud or R Studio and submit PDF and code in Canvas - 1 credit
+- Complete using Posit Cloud or R Studio, publish to your public Github repository and submit link in Canvas - 1.1 credit

@@ -1,0 +1,167 @@
+---
+title: |
+    | Student's t-test
+    | POLS 3316: Statistics for Political Scientists
+date: today
+author: "Tom Hanna"
+format: 
+        revealjs:
+                self-contained: true
+                transition: convex
+                theme: [moon, custom.css]
+                logo: logo.png
+                footer: "POLS3316, Fall 2023, Instructor: Tom Hanna"
+---
+
+## Hypothesis tests
+
+**$X^2$ and t-test are simple enough to work out with a calculator, so a small data version of each will be on the final**
+
+- For $X^2$, I may give an intermediate step such as the column and row totals (marginal frequencies) and expected values and let you solve from there.
+- I might also give you the t-score and ask you to find the p-value from a table.
+- There will be at least one question where you work through one of these tests from start to finish.
+
+## Chi-Square review
+
+- $X^2$ (Chi-squared) test
+- For categorical variables
+- aka as cross-tabs because of the format
+- worked through a $X^2$ test problem together 
+- This is on Problem Sets 5/6 and final 
+                
+                
+## Today
+
+- Concepts of Z-score (review), Student's t-test, and ANOVA
+- Where each one is appropriate
+- Brief discussion of the formulas for all three
+- We will work through a paired sample t-test together as our second example of hypothesis testing
+- Paired t-test is on Problem Set 5/6 and final 
+                
+
+## Hypothesis test uses
+ 
+- $X^2$ (Chi squared): Categorical variables with counts
+- Student's t-test: compares the means of two groups
+- z-score: continuous, normally distributed variables
+- ANOVA (Analysis of Variance)
+- Lots of others!
+
+## Hypothesis test uses
+ 
+- $X^2$ (Chi squared): Categorical variables with counts
+
+- $X^2$ test of goodness of fit - tells whether the sample data is representative of the population
+
+- $X^2$ test of indendependence (we dit this) - tells us if two categorical variables are related or not
+                
+
+## Student's t-test: compares the means of two groups 
+
+Such as the sugar content of barley malt for use in brewing beet...
+
+[https://www.youtube.com/watch?v=U9Wr7VEPGXA](https://www.youtube.com/watch?v=U9Wr7VEPGXA)
+
+## Student's t-test: compares the means of two groups 
+
+- Developed by William Sealy Gosset, who published under the pseudonym Student
+- Gosset worked for Guinness and was interested in the quality of barley malt for use in brewing beer
+- He was interested in small sample sizes, so he developed the t-test
+- He also developed the concept of statistical power
+- He was a chemist, not a statistician, so he published under a pseudonym
+
+
+
+## Student's t-test: compares the means of two groups 
+               
+- pairwise comparison: what are the pairs?
+
+        - one sample: comparing one group against a standard value
+        - two-sample or independent t-test: compares two groups from different populations 
+        - paired t-test: compares a single group as in before and after comparison
+
+- One or two tails
+
+        - Two tailed test: tells if they are different, either greater or less
+        - One tailed test: tells if one group is specifically greater or less, bot not either
+        
+Other points:
+
+        - degrees of freedom = n - 1
+        - When t-test degrees of freedom > 30, it converges on the z-score
+        - t-test is more conservative than z-score
+        
+## More conservative than the z-score: distribution of t-scores
+                
+![t-distribution](t-dist.png)       
+
+## More conservative than the z-score: distribution of t-scores 
+
+![t vs z dist](tzdist.png)
+                
+
+                
+## z-score: continuous, normally distributed variables
+                        
+- Continuous variables 
+- normal distribution
+
+        - Central Limit Theorem can get us to normal distribution
+        
+- known population standard deviation 
+
+        - "known" ~ accepted estimate of the population standard deviation from LLN and CLT
+
+- Use if: if the population standard deviation is known or reliably estimated and sample size > 30
+                
+
+                
+## ANOVA (Analysis of Variance)
+
+- tests difference of means between 3 or more indendepnt groups
+- This is often used to test removing variables one at a time from a multi-variable model (something we will not be doing)
+- Uses the *F-test*
+- The same F-test in regression results - model fit
+                
+              
+
+## Deeper look at t-tests
+ 
+- Paired sample t-test
+- $t = \frac{\bar{x}_{diff}}{\sigma_{diff}/\sqrt{n}}$
+ 
+<br><br> 
+
+- $\bar{x}_{diff}$: sample mean of the differences
+- $\sigma_{diff}$: sample standard deviation of the differences
+- n: sample size (in pairs)
+
+## Short example
+
+<embed src="t-test-examples.pdf" type="application/pdf" width="1200" height="600">
+
+
+## Second Example Data:
+
+
+Group 1: (12.2, 14.6, 13.4, 11.2, 12.7, 10.4, 15.8, 13.9, 9.5, 14.2)
+Group 2: (13.5, 15.2, 13.6, 12.8, 13.7, 11.3, 16.5, 13.4, 8.7, 14.6)
+
+More on reading t-tables plus 1- and 2- tailed tables here:
+
+[https://www.statisticshowto.com/tables/t-distribution-table/](https://www.statisticshowto.com/tables/t-distribution-table/)
+
+
+
+## Authorship, License, Credits
+
+- Author: Tom Hanna
+
+- Website: <a href="https://tom-hanna.org/">tomhanna.me</a>
+
+- License: This work is licensed under a <a href= "http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.</a>
+
+<a href= "http://creativecommons.org/licenses/by-nc-sa/4.0/">![Creative Commons License](creative_commons_license.png)</a>
+
+
+
