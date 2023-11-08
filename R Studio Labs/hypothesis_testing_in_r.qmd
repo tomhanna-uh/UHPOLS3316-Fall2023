@@ -1,0 +1,204 @@
+---
+title: |
+    | Hypothesis Testing in R
+    | POLS 3316, Fall 2023
+author: "Tom Hanna"
+format:
+        html:
+                self-contained: true
+                code-fold: true
+                code-summary: "Show the code"
+                theme: vapor
+---
+
+
+## Chi square
+
+#### Checking scores
+
+Use pchisq - first argument is the score, second argument is degrees of freedom
+
+Our critical value is .05. For any value less than .05, we reject the null hypothesis.
+
+So, to get the p-value for X^2 score of 4, df of 1:
+
+```{r}
+
+1 - pchisq(4, df = 1)
+
+# or
+
+pchisq(4, df = 1, lower.tail = FALSE)
+
+```
+For this value we:  Reject the null hypothesis that the two variables are independent.
+
+
+```{r}
+
+1 - pchisq(1, df =  3)
+
+# or 
+
+pchisq(1, df = 3, lower.tail = FALSE)
+
+
+```
+For this value we: Fail to reject the null hypothesis that the two variables are independent.
+
+## Running chisquare on data
+
+
+
+```{r}
+
+#Reading in some sample data
+#Author DataFlair
+data_frame <- read.csv("https://goo.gl/j6lRXD")  #Reading CSV
+table(data_frame$treatment, data_frame$improvement)
+
+
+
+```
+
+Format is:
+
+chisq.test(first_variable,second_variable, correct = FALSE) if all cells have at least 5 observations
+
+chisq.test(first_variable,second_variable, correct = TRUE) if any cell has less than 5 observations
+
+```{r}
+
+chisq.test(data_frame$treatment,data_frame$improvement, correct = FALSE)
+```
+
+
+
+
+## paired sample t-test
+
+Second Example Data:
+
+
+Group 1: (12.2, 14.6, 13.4, 11.2, 12.7, 10.4, 15.8, 13.9, 9.5, 14.2)
+
+Group 2: (13.5, 15.2, 13.6, 12.8, 13.7, 11.3, 16.5, 13.4, 8.7, 14.6)
+
+Are the means of the two groups different?
+
+This is a two-tailed test because there is no direction.
+
+If the question was, is Group 1 greater than Group 2, then it would be a one-tailed test.
+
+## Loading the data as vectors
+                
+```{r}
+#Group 1 as vector named Group 1 using the c() function
+Group1 <- c(12.2, 14.6, 13.4, 11.2, 12.7, 10.4, 15.8, 13.9, 9.5, 14.2)
+
+# Group 2 as vector named Group 2 using the c() function
+Group2 <- c(13.5, 15.2, 13.6, 12.8, 13.7, 11.3, 16.5, 13.4, 8.7, 14.6)
+
+
+```
+ 
+#combining the vectors into a data frame
+ 
+```{r}
+
+# combining the vectors into a dataframe using the data.frame() function
+data <- data.frame(Group1,Group2)
+
+#look at the data using the head() function
+head(data)
+```
+            
+```{r}
+# summary of the data using the summary() function
+# gives a summary of every variable in the dataframe
+summary(data)
+```
+
+## Two ways to solve
+
+### Option 1: Work it out step by step.
+
+1. Create a variable with the sample differences.
+          
+```{r}
+
+# ceate a third vector named difference in the dataframe
+data$difference <- data$Group1 - data$Group2
+
+# Summary of the difference variable
+summary(data$difference)
+
+```
+         
+2. Get the number of observations (n), mean of the sample differences and standard deviation of the sample differences and assign to objects:
+
+```{r}
+
+# mean of the difference variable
+n <- as.numeric(length(data$Group1))
+
+mean_diff <- mean(data$difference)
+mean_diff
+
+sd_diff <- sd(data$difference)
+sd_diff
+```
+
+3. Fill in the formula using the objects created above
+
+$$t = \frac{\bar{x} - \mu}{\frac{s}{\sqrt{n}}}$$
+
+
+```{r}
+
+mean_diff/(sd_diff/sqrt(n))
+
+
+```
+
+4. Check the t-score against the table.
+
+
+The function is 
+
+2 * pt(x, df, lower.tail=TRUE) for a two-tailed test
+
+or
+
+pt(x, df, lower.tail=TRUE) for a one-tailed test
+
+where:
+
+x: The t-score
+
+df: The degrees of freedom
+
+
+
+```{r}
+
+2 * pt(-2.27202, 9, lower.tail=TRUE)
+
+```
+
+More on reading t-tables plus 1- and 2- tailed tables here:
+
+[https://www.statisticshowto.com/tables/t-distribution-table/](https://www.statisticshowto.com/tables/t-distribution-table/)
+
+### Option 2:  using R functions
+
+Or we can use the R function
+
+```{r}
+
+#Vectors go in x,y
+#this is a paired test, so paired = TRUE
+test1 <- t.test(Group1,Group2, paired = TRUE)
+test1
+
+```
