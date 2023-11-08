@@ -151,8 +151,8 @@ sd_diff
 
 3. Fill in the formula using the objects created above
 
-$$t = \frac{\bar{x} - \mu}{\frac{s}{\sqrt{n}}}$$
 
+$t = \frac{\bar{x}_{diff}}{\sigma_{diff}/\sqrt{n}}$
 
 ```{r}
 
@@ -166,15 +166,15 @@ mean_diff/(sd_diff/sqrt(n))
 
 The function is 
 
-2 * pt(x, df, lower.tail=TRUE) for a two-tailed test
+2 * pt(q, df, lower.tail=TRUE) for a two-tailed test
 
 or
 
-pt(x, df, lower.tail=TRUE) for a one-tailed test
+pt(q, df, lower.tail=TRUE) for a one-tailed test
 
 where:
 
-x: The t-score
+q: The t-score
 
 df: The degrees of freedom
 

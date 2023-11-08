@@ -8,7 +8,7 @@
 
 <meta name="author" content="Tom Hanna">
 
-<title>quarto-input7d6ebff1</title>
+<title>quarto-inpute61ac6d5</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -3344,7 +3344,7 @@ X-squared = 5.5569, df = 1, p-value = 0.01841</code></pre>
 <ol start="3" type="1">
 <li>Fill in the formula using the objects created above</li>
 </ol>
-<p><span class="math display">\[t = \frac{\bar{x} - \mu}{\frac{s}{\sqrt{n}}}\]</span></p>
+<p><span class="math inline">\(t = \frac{\bar{x}_{diff}}{\sigma_{diff}/\sqrt{n}}\)</span></p>
 <div class="cell">
 <details>
 <summary>Code</summary>
@@ -3358,11 +3358,11 @@ X-squared = 5.5569, df = 1, p-value = 0.01841</code></pre>
 <li>Check the t-score against the table.</li>
 </ol>
 <p>The function is</p>
-<p>2 * pt(x, df, lower.tail=TRUE) for a two-tailed test</p>
+<p>2 * pt(q, df, lower.tail=TRUE) for a two-tailed test</p>
 <p>or</p>
-<p>pt(x, df, lower.tail=TRUE) for a one-tailed test</p>
+<p>pt(q, df, lower.tail=TRUE) for a one-tailed test</p>
 <p>where:</p>
-<p>x: The t-score</p>
+<p>q: The t-score</p>
 <p>df: The degrees of freedom</p>
 <div class="cell">
 <details>

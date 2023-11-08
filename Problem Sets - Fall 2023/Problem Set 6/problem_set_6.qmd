@@ -79,10 +79,10 @@ Complete a paired sample t-test on the following data using the R function `t.te
 | | Before | After |            
 | --- | --- | --- |
 | A | 10 | 20 |
-| B | 15 | 25 |
-| C | 20 | 30 |
+| B | 24 | 25 |
+| C | 18 | 30 |
 | D | 25 | 35 |
-| E | 30 | 40 |
+| E | 41 | 40 |
 | F | 35 | 45 |
 
 
@@ -92,7 +92,10 @@ Complete a paired sample t-test on the following data using the R function `t.te
 # Your code here
 
 
+
 ```
+
+
 
 t-score:
 
