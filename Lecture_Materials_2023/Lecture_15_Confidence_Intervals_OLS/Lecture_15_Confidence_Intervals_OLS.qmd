@@ -1,0 +1,244 @@
+---
+title: |
+    | Confidence Intervals
+    | Intro to OLS Regression
+    | POLS 3316: Statistics for Political Scientists
+date: today
+author: "Tom Hanna"
+format: 
+        revealjs:
+                self-contained: true
+                code-fold: true
+                code-summary: "Show the code"
+                transition: convex
+                theme: [moon, custom.css]
+                logo: logo.png
+                footer: "POLS3316, Fall 2023, Instructor: Tom Hanna"
+---
+
+## Confidence Intervals
+
++ Review $X^2$ and t-test 
++ General hypothesis testing: scores and critical values
++ Confidence intervals 
+
+## $X^2$ and t-test
+
++ Note on formulas: Numbers in numerator or denominator of a fraction all get solved together as if in parentheses. PEMDAS is shorthand, but the P should really be G for "grouping symbols" and includes:  parentheses ( ), brackets [ ], braces \{ \}, and even fraction bars.
+
+## Terms
+
+- null hypothesis
+- alternative hypothesis
+- critical value (cutoff point)
+- critical value is found using degrees of freedom and desired probability or alpha. (In z-scores, only probability is needed.)
+- probability or p - confidence level 
+
+
+
+## Test Scores and Critical Values
+
+- if the test score is greater than the critical value, reject the null
+
+- The critical value is minimum
+- Above that value, the probability that the null hypothesis is true is equal to or less than the target so we reject
+- This all leads to confidence intervals
+                
+
+ 
+ # Confidence intervals
+ 
+ ## What is a confidence interval?
+ 
+- Range where we could expect to find the true measurement based on the probability level we specify if we had the full population data instead of just the sample. 
+- Range where we expect to find the true population parameter given the sample statistic
+- If we say the 95% confidence interval of the mean is from 45 to 55, it means we are 95% certain that the true population mean lies somewhere in that range. 
+        
+## Getting the confidence interval
+        
+- The confidence intervals are based on the thing we actually measured, the probability level, and the distribution. 
+- If we know the population parameters (especially standard deviation) we can create simple CI using 68-95-99 rule or accurate CI using z-scores
+- For small samples or uncertain population standard deviation we use appropriate distributions, such as Student's t, to adjust for both these uncertainties 
+
+              
+  
+ 
+## Using t-scores to find confidence intervals
+
+ 
+- For small samples or uncertain population standard deviation we use t-scores to adjust for these uncertainties 
+ 
+                - If we wanted to get a 95% confidence interval with 68-95-99, we would look for a value 2 standard deviations either side of the statistic we want to find a CI for 
+                - With t-test scores we divide the standard deviation by the square root of sample size and multiply times a t-table critical value instead.
+                - We can get the critical value using the qt() function in R as in the examples
+
+## Using t-scores to find confidence intervals
+ 
+          
+- $CI_\mu$ Confidence interval of the population mean
+                
+- $CI_\mu$ = $\bar{x} \pm t \frac{\sigma_{s}}{\sqrt{n}}$
+
+
+
+Where:
+
+- $\bar{x}$ = Sample mean
+- $\mu$ = Population mean
+- $\sigma_{s}$ = sample standard deviation
+- n = sample size
+
+     
+ 
+## What about the normal distribution?
+
+The 68-95-99 rule gives an oversimplified CI. 
+
+For normal distributions, the actual formula is:
+
+## What about the normal distribution?
+
+$CI_\mu$ Confidence interval of the population mean
+
+$CI_\mu = \bar{x} \pm z \frac{\sigma}{\sqrt{n}}$
+
+Where:
+
+$\bar{x}$ Sample mean
+$\sigma$ population standard deviation
+$n$ is the sample size
+
++ We can get the z-score from a z-table or from the qnorm() function in R
+
+
+## Examples:
+
+We'll go through a couple of example computations, then I'll provide you some sample R lab scripts (Quarto files).
+
+## Examples:
+
+- Sample mean: 50 = $\bar{x}$
+- Sample standard deviation 5 = $\sigma_{s}$
+- Sample size 18 = $n$
+- Looking for a 95% confidence interval. 
+
+We need the t-score for a two-tailed test:
+
+```{r echo=TRUE}
+
+qt(.025,17)
+
+```
+
+
+## Examples:
+
+```{r echo=TRUE}
+
+qt(.025,17)
+
+```
+
+Then we can fill in the formula:
+
++ $CI_\mu$ = $\bar{x} \pm t \frac{\sigma_{s}}{\sqrt{n}}$
+
+```{r echo=TRUE}
+
+50 + c(-2.11, 2.11) * 5 / sqrt(18)
+
+```
+
+
+## Example 2:
+
+Using the z-score:
+
+- Sample mean: 50
+- Population standard deviation: 5
+- Sample size: 500
+
+- We need a z-score for 95% (.025% above and .025% below):
+
+```{r echo=TRUE}
+
+qnorm(.025)
+
+```
+## Example 2
+
+Then we apply the formula:
+
+$CI_\mu = \bar{x} \pm z \frac{\sigma}{\sqrt{n}}$
+
+
+```{r echo=TRUE}
+
+50 + c(-1.96, 1.96) * 5 / sqrt(500)
+
+
+
+```
+
+
+                
+                
+## Is this just about means?
+
+NO!
+
+The biggest use I see of confidence intervals is confidence intervals for **regression coefficients**
+
+- $y = \alpha + \beta X + \epsilon$
+                
+If we find that the $\beta$ in the equation defining the relationship between our explanatory (x) and dependent (y) variables is 0.9, the confidence interval can tell us that it's actually 95% likely that the true relationship is between 0.88 and 0.92. 
+
+Even better, we can graph it...
+
+## Sample of graphing confidence interval in OLS
+
+
+
+```{r}
+library(ggplot2)
+library(ggthemes)
+
+# plot the data  
+
+ggplot(data = mtcars, aes(x = wt, y = mpg)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = TRUE) +
+  theme_economist() +
+  labs(title = "Confidence Interval for Regression Coefficient",
+       subtitle = "95% Confidence Interval for the Slope",
+       caption = "Source: mtcars dataset from R") + 
+        xlab("Weight") + 
+        ylab("Miles per Gallon") 
+
+
+
+```
+
+
+
+## Additional Resources for Confidence Intervals
+
+ https://www.statisticshowto.com/probability-and-statistics/confidence-interval/#WhatisCI
+ 
+ https://www.statisticshowto.com/probability-and-statistics/statistics-definitions/confidence-level/
+ 
+ https://www.statisticshowto.com/95-percent-confidence-interval/
+ 
+ ## Authorship, License, Credits
+
+- Author: Tom Hanna
+
+- Website: <a href="https://tom-hanna.org/">tomhanna.me</a>
+
+- License: This work is licensed under a <a href= "http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.</a>
+
+<a href= "http://creativecommons.org/licenses/by-nc-sa/4.0/">![Creative Commons License](creative_commons_license.png)</a>
+
+
+
+

@@ -1,0 +1,36 @@
+---
+title: "Problem Set 7"
+author: "Your Name"
+format: 
+        html:
+                self-contained: true
+editor: source
+---
+
+The preferred format would be to do your work in a code chunk at the end of this document after the instructions. Use echo=TRUE for your code chunk so that your code is visible. 
+
+Do not alter the top lines between --- and --- except to *carefully* add your name inside the quotes.
+
+Using your project data set, or any built in R dataset, do the following:
+
+1. Using your chosen y (dependent) variable and one of your chosen x (explanatory) variables, perform a simple OLS regression using R. Follow these steps:
+
+A. Load your data into a dataframe object
+B. define a model object using the lm() function
+
+        - The format is `model <- lm(y ~ x, data = dataframe)`
+        - where:
+        - y is the dependent variable name from your dataframe
+        - x is the explanatory variable name from your dataframe
+        - and dataframe is the name of your dataframe object
+
+C. report the model statistics using the summary() function
+
+        - The format is `summary(model)`
+
+D. produce a model table using the stargazer() function from the stargazer library with type = "text" 
+
+        - The format is `stargazer(model, type = "text")`
+  
+2. Using the same variables, produce a scatterplot with an lm() line and 95% confidence interval. You may use the base r plot() function or the ggplot() function from Lecture 15.
+
