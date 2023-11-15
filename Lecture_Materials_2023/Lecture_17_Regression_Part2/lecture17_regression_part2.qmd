@@ -1,0 +1,105 @@
+---
+title: |
+    | Regression Part 2
+    | POLS 3316: Statistics for Political Scientists
+date: today
+author: "Tom Hanna"
+format: 
+        revealjs:
+                self-contained: true
+                code-fold: true
+                code-summary: "Show the code"
+                transition: convex
+                theme: [moon, custom.css]
+                logo: logo.png
+                footer: "POLS3316, Fall 2023, Instructor: Tom Hanna"
+---
+
+
+## Regression (Part 2)
+
+-   Review
+
+-   More on some terms that have been used occasionally: fit, fitted, predicted, residual, predictors, estimates (plus estimator and estimand)
+
+-   Regression with two or more Xs: multiple linear regression
+
+- Interpreting Regression Results
+
+## Review
+
+<p style="color:red;text-align:center;font-size: 40px;">
+
+$y = \alpha + \beta X + \epsilon$
+
+</p>
+
+##   Assumptions (Testable)
+
+- Linearity
+- Normality
+- Independence
+- Homoskedasticity
+- No *perfect* multicollinearity
+
+
+## The process of *least squared* residuals
+
+- Similar to the process of finding variance by measuring squared distances to the mean
+- This measures squared distances to the line given by the equation
+- The method aims to minimize the sum of the squared distances - the sum of squared residuals
+
+## New terms (or new definitions)
+
+-   fit, fitted, predicted - the model's prediction for the expected value of y for a given value of x
+-   predictors - x variables
+-   estimates (plus estimator and estimand) - the values of the parameters (alpha and beta) estimated by the model
+-   residual - the vertical distance between the observed and the estimated (fitted, predicted) using estimated parameters.
+
+
+## Multiple Linear Regression
+
+-   During the lecture on causation, I said that causes aren't simple - there are often multiple causes
+
+-   So how do we analyze 2 (or 3 or 20) explanatory (X) variables?
+
+## Multiple Linear Regression: Answer
+
+With OLS regression.
+
+When we add a second X, we add a new axis so now we don't have a line, we have the 3d equivalent::
+
+## Multiple Linear Regression: Answer
+
+![Multiple Regression plane](mrplane.png)
+
+## Multiple Linear Regression: Answer
+
+We can't really visualize more than two Xes geometrically, but the idea is the same.
+
+
+## Interpreting and writing regression results
+
+- Examples focusing on sample project and your project data
+        
+
+
+
+
+
+
+
+## Authorship, License, Credits
+
+- Author: Tom Hanna
+
+- Website: <a href="https://tom-hanna.org/">tomhanna.me</a>
+
+- License: This work is licensed under a <a href= "http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.</a>
+
+<a href= "http://creativecommons.org/licenses/by-nc-sa/4.0/">![Creative Commons License](creative_commons_license.png)</a>
+
+
+
+
+
