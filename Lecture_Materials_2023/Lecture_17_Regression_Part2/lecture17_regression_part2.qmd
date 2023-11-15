@@ -80,8 +80,24 @@ We can't really visualize more than two Xes geometrically, but the idea is the s
 
 ## Interpreting and writing regression results
 
-- Examples focusing on sample project and your project data
+- Example: focusing on sample project and your project data
         
+https://github.com/tomhanna-uh/demonstration_semester_project
+
+and in Posit Cloud:
+
+https://posit.cloud/spaces/422701/join?access_code=i9VTqnd2IhMmH1vkEjNADBKf7bYILcAtEJxjiO0Q
+
+## Interpreting and writing regression results
+
+-   The regression equation for a single X variable is:
+
+    $y = \alpha + \Beta * X + \epsilon$
+    
+- $\alpha$ is the intercept or Constant
+- $\beta$ is the slope or coefficient for X given by the "Coefficient" in the model summary
+- $\epsilon$ is the error term and is random (you don't have to do anything with it)
+
 
 
 
